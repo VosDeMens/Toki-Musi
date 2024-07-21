@@ -15,6 +15,8 @@ from words import (
     todo,
 )
 
+st.set_page_config(layout="wide")
+
 speed: float = 1
 
 st.title("Toki Musi")

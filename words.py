@@ -287,7 +287,7 @@ TAWAd.description = "went, gone, something that's gone  \ngoing down in pitch af
 KAMA = Word.from_string(
     "0:4:2",
     "kama",
-    "come, arrive, arrival  \netymelogy: tawa but other direction, Spinvis - kom terug (line: drink wijn)",
+    "to come, to arrive, to start, to become, to pursue actions to arrive to (a certain state), to manage to, event, chance, beginning, coming, future, to summon  \netymelogy: tawa but other direction, Spinvis - kom terug (line: drink wijn)",
     ["cp", "sp"],
 )
 # 17
@@ -534,7 +534,11 @@ PINI = Word.from_string(
     "pini",
     "end, tip, to finish, to close  \netymelogy: linkin park - in the end",
 )
-SAMA = Word.from_string("0:4:7:6", "sama", "same, equal")
+SAMA = Word.from_string(
+    "0:4:7:6",
+    "sama",
+    "same, equal, like, as  \netymelogy: courtney barnett - sunday roast (you know it's all the same to me)",
+)
 
 words = {
     MI,
@@ -610,6 +614,7 @@ words = {
     SEWI,
     LAPEPONA,
     SITELEN,
+    SAMA,
 }
 
 grammar_indicators = [E, LI, PI, LA, A, O, FREEFORM]
@@ -653,6 +658,7 @@ other_four_note_words = [
     PO,
     SUNO,
     SITELEN,
+    SAMA,
 ]
 other_nonstandard_words = [UNPA]
 composite_words = [KAMAPONA, KAMASONA, TAWAPONA, LAPEPONA]
