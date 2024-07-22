@@ -202,7 +202,7 @@ ONA = Word.from_string(
 NI = Word.from_string(
     "0:2",
     "ni",
-    "this/that",
+    "this",
     ["pt", "cp", "sp"],
 )
 
@@ -287,7 +287,7 @@ TAWAd.description = "went, gone, something that's gone  \ngoing down in pitch af
 KAMA = Word.from_string(
     "0:4:2",
     "kama",
-    "to come, to arrive, to start, to become, to pursue actions to arrive to (a certain state), to manage to, event, chance, beginning, coming, future, to summon  \netymelogy: tawa but other direction, Spinvis - kom terug (line: drink wijn)",
+    "to come, to arrive, to become, to pursue actions to arrive to (a certain state), (as preverb) to come to (verb), beginning, (as transative verb) to call for / to let [direct object] come  \netymelogy: tawa but other direction, Spinvis - kom terug (line: drink wijn)",
     ["cp", "sp"],
 )
 # 17
@@ -539,6 +539,13 @@ SAMA = Word.from_string(
     "sama",
     "same, equal, like, as  \netymelogy: courtney barnett - sunday roast (you know it's all the same to me)",
 )
+TENPONI = Word.from_string(
+    "0:9:7:2",
+    "tenpo ni",
+    "then  \netymelogy: composite word from tenpo and ni (0:9:7:**~~0~~**:2)",
+)
+KAMAJO = Word.from_string("0:4:2:7:9", "kama jo" "to receive, to acquire")
+
 
 words = {
     MI,
@@ -615,6 +622,7 @@ words = {
     LAPEPONA,
     SITELEN,
     SAMA,
+    TENPONI,
 }
 
 grammar_indicators = [E, LI, PI, LA, A, O, FREEFORM]
@@ -661,7 +669,7 @@ other_four_note_words = [
     SAMA,
 ]
 other_nonstandard_words = [UNPA]
-composite_words = [KAMAPONA, KAMASONA, TAWAPONA, LAPEPONA]
+composite_words = [KAMAPONA, KAMASONA, TAWAPONA, LAPEPONA, TENPONI]
 
 
 def get_random_word() -> "Word":
@@ -687,7 +695,6 @@ todo = [
     "ilo (tool)",
     "kin (also)",
     "ante (other)",
-    "sama (same, equal, like)",
     "kalama (sound, to make noise, to play (instrument))",
     "sin (to add, new thing, addition, new, another)",
     "lipu (book, page, flat bendable thing, document, file)",
