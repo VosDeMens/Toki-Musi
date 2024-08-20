@@ -85,32 +85,36 @@ class Word:
         n1 = word1.notes_string.split(":")[1:]
         n2 = word2.notes_string.split(":")[1:]
         nc = notes_string.split(":")[1:]
-        assert ":".join(nc) in [":".join(c) for c in generate_contractions(
-            n1, n2, min(len(n1) - 1, len(n2) - 1)
-        )], "not a possible contraction"
+        assert ":".join(nc) in [
+            ":".join(c)
+            for c in generate_contractions(n1, n2, min(len(n1) - 1, len(n2) - 1))
+        ], "not a possible contraction"
         overlap = len(n1) + len(n2) - len(nc)
-        notes_string_rep = f"{word1.notes_string}:**~~{":".join((["0"]+n2)[:overlap+1])}~~**:{":".join((["0"]+n2)[overlap+1:])}"
-        etymelogies = [f"composite word from {word1.name} and {word2.name} {notes_string_rep}"]
+        notes_string_rep = f"{word1.notes_string}:**~~{':'.join((['0']+n2)[:overlap+1])}~~**:{':'.join((['0']+n2)[overlap+1:])}"
+        etymelogies = [
+            f"composite word from {word1.name} and {word2.name} {notes_string_rep}"
+        ]
         composite_word = cls(
             f"{word1.name} {word2.name}",
-            notes_string, description,
-            len(nc)+1,
+            notes_string,
+            description,
+            len(nc) + 1,
             etymelogies,
             False,
             word1.particle,
             word1.content_word,
             word1.preposition,
             word1.interjection,
-            word1.pluralizable,            
-            word1.past_tensifiable,            
+            word1.pluralizable,
+            word1.past_tensifiable,
             word1.comparativizable,
             word1.questionifiable,
-            word1.colour, 
-            True
-            )
-            
+            word1.colour,
+            True,
+        )
+
         return composite_word
-    
+
     def wave(self, speed: int = 10) -> floatlist:
         ft = freq_timeline_from_str(self.get_notes_string(), speed)
         return generate_phase_continuous_wave(ft)
@@ -245,7 +249,6 @@ class InvalidWordException(Exception):
 
 
 def get_sentence_wave(
-        
     sentence: list[Word], pause: float = 1, speed: int = 10
 ) -> floatlist:
     waves_per_word = [word.wave(speed) for word in sentence]
@@ -293,6 +296,7 @@ def get_words_from_sentence(sentence: str, existing_words: list[Word]) -> list[W
                 raise InvalidWordException(word_string)
         word_objects.append(word_object)
     return word_objects
+
 
 todo = [
     "nimi (name, word)",
