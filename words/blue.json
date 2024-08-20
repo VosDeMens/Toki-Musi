@@ -1,0 +1,24 @@
+{
+    "name": "blue",
+    "notes_string": "0:2:7_:4",
+    "description": "blue",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Electric Light Orchestra - Mr Blue Sky ([mis-] [-ter] [blue] [sky]; during intermezzo)"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

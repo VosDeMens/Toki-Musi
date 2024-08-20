@@ -1,0 +1,27 @@
+{
+    "name": "telo jelo",
+    "notes_string": "0:4:5:7_:9:2",
+    "description": "urine",
+    "nr_of_notes": 6,
+    "etymelogies": [
+        "composite word from telo and jelo 0:4:5:7:**~~0:7_~~**:9:2"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

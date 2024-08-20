@@ -1,0 +1,27 @@
+{
+    "name": "pona lawa",
+    "notes_string": "0:4:7_:9:7",
+    "description": "therapy",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from pona and lawa 0:4:**~~0~~**:7_:9:7"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

@@ -1,0 +1,27 @@
+{
+    "name": "tenpo kama",
+    "notes_string": "0:9_:7:4:2",
+    "description": "future, later",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from tenpo and kama 0:9_:7:**~~0~~**:4:2"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

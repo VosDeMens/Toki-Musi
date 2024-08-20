@@ -1,0 +1,22 @@
+{
+    "name": "seme",
+    "notes_string": "0/7",
+    "description": "question word",
+    "nr_of_notes": 1,
+    "etymelogies": [],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

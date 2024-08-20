@@ -1,0 +1,22 @@
+{
+    "name": "backspace",
+    "notes_string": ":12",
+    "description": "used to indicate you messed up and you're gonna redo the last word",
+    "nr_of_notes": 1,
+    "etymelogies": [],
+    "toki_pona": false,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

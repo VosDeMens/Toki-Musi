@@ -1,0 +1,22 @@
+{
+    "name": "a",
+    "notes_string": "7/5/0",
+    "description": "used to indicate emphasis and emotion",
+    "nr_of_notes": 1,
+    "etymelogies": [],
+    "toki_pona": true,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

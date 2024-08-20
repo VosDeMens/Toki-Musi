@@ -1,0 +1,24 @@
+{
+    "name": "wale",
+    "notes_string": "0:2:3",
+    "description": "to have to",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "wile but sad"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

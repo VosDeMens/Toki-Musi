@@ -1,0 +1,24 @@
+{
+    "name": "purple",
+    "notes_string": "0:2:3:5:6",
+    "description": "purple",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "Yebba - Paranoia Purple ([pa-] [-ra-] [-no-] [-ia] [pur-])"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

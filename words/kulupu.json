@@ -1,0 +1,24 @@
+{
+    "name": "kulupu",
+    "notes_string": "0:-5:2",
+    "description": "group, club, team",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "A-Team theme (third measure)"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

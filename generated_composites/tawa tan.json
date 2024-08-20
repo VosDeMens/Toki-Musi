@@ -1,0 +1,27 @@
+{
+    "name": "tawa tan",
+    "notes_string": "0:4:7:9_:5",
+    "description": "flee",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from tawa and tan 0:4:7:**~~0~~**:9_:5"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": true,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

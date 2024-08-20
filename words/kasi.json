@@ -1,0 +1,28 @@
+{
+    "name": "kasi",
+    "notes_string": "0:7:2",
+    "description": "plant",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "Dan Gibson's Solitudes - Nurturing Rain ([*root*] [*melody*] [*melody*])",
+        "Zelda Twilight Princess - Midna's Theme (not as semantically related but there do be a bunch of a plant in that game)"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

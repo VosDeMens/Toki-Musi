@@ -1,0 +1,26 @@
+{
+    "name": "suno",
+    "notes_string": "0:2:5:7",
+    "description": "sun, light, to shine, bright",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Jacob Collier - The Sun Is In Your Eyes ([the sun] [is] [in] [your])",
+        "The Beatles - Here Comes The Sun (melody after \"it's all right\")"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

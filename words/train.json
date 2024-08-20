@@ -1,0 +1,27 @@
+{
+    "name": "train",
+    "notes_string": "0:2:4:5_:7:9",
+    "description": "train (vehicle)",
+    "nr_of_notes": 6,
+    "etymelogies": [
+        "\ud83d\udc40"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

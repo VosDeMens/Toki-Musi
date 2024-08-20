@@ -1,0 +1,27 @@
+{
+    "name": "pilin musi",
+    "notes_string": "0:7_:3:5:7",
+    "description": "humour",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from pilin and musi 0:7_:3:**~~0~~**:5:7"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}
