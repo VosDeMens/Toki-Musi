@@ -1,0 +1,27 @@
+{
+    "name": "nasin toki",
+    "notes_string": "0:7_:5_:4:7",
+    "description": "grammar",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from nasin and toki 0:7_:5_:4:**~~0~~**:7"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

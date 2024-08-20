@@ -1,0 +1,24 @@
+{
+    "name": "tan",
+    "notes_string": "0:9_:5",
+    "description": "from, because of, cause, to be from",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "Jules de Corte - Ik Zou Wel Eens Willen Weten ([*root-ish*] [daa-] [-rom])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": true,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

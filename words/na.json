@@ -1,0 +1,24 @@
+{
+    "name": "na",
+    "notes_string": "0:2:2",
+    "description": "that",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "ni but different"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

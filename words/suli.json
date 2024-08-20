@@ -1,0 +1,24 @@
+{
+    "name": "suli",
+    "notes_string": "0:1:2",
+    "description": "big, significant, importance, to matter",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "increasing melody"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

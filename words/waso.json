@@ -1,0 +1,27 @@
+{
+    "name": "waso",
+    "notes_string": "0:7_:4:7_:4",
+    "description": "bird",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "song of the great tit ([*root*] [chirp] [chirp] [chirp] [chirp])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

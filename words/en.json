@@ -1,0 +1,22 @@
+{
+    "name": "en",
+    "notes_string": "0:1",
+    "description": "and (used more freely than in toki pona, can be used as comma, separating sentences)",
+    "nr_of_notes": 2,
+    "etymelogies": [],
+    "toki_pona": true,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

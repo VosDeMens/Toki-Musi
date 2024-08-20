@@ -1,0 +1,27 @@
+{
+    "name": "nasin",
+    "notes_string": "0:7_:5_:4",
+    "description": "way, manner, road",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Maarten van Roozendaal - Christoffel (main instrumental melody) (this song is basically one long sequence of directions to get to someone's house and honestly look this guy up, there's a lot of dutch music there's very dear to me and it's hard to pick favourites but the song Red Mij Niet, by him, is def up there, and just look at him in [this song about how beautiful spring is](www.youtube.com/watch?v=RwQq6y29YSA)"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

@@ -1,0 +1,22 @@
+{
+    "name": "freestyle",
+    "notes_string": "0/12",
+    "description": "indicates freestyle mode start or end. Use to indicate you are gonna just use melody to convey a message. Could be the jingle of a shop you're going to, or the line of a song you both know that carries a particular meaning, or any other soundbite",
+    "nr_of_notes": 1,
+    "etymelogies": [],
+    "toki_pona": false,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

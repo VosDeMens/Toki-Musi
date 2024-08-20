@@ -1,0 +1,25 @@
+{
+    "name": "tenpo ni",
+    "notes_string": "0:9_:7:2",
+    "description": "now",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from tenpo and ni (0:9_:7:**~~0~~**:2)"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

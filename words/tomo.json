@@ -1,0 +1,24 @@
+{
+    "name": "tomo",
+    "notes_string": "0:7:4:2",
+    "description": "house, room",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Beach Boys - In My Room ([*root*] [in] [my] [room])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

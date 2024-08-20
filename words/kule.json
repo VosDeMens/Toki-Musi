@@ -1,0 +1,24 @@
+{
+    "name": "kule",
+    "notes_string": "0:4:7:9",
+    "description": "colour",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Cyndi Lauper - True Colors ([i] [see] [your] [true])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

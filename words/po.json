@@ -1,0 +1,25 @@
+{
+    "name": "po",
+    "notes_string": "0:9:5:9",
+    "description": "police, to police",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "siren"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

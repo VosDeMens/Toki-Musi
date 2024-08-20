@@ -1,0 +1,27 @@
+{
+    "name": "weka",
+    "notes_string": "0:8",
+    "description": "remove, delete, loss, distance, leave, away, 0 (for phone numbers for example)",
+    "nr_of_notes": 2,
+    "etymelogies": [
+        "counting is in binary (and 8 represents a 0 in binary bc i hadn't assigned anything else to 0:8 yet), but there is no toki pona word for zero (except ofc ala), so i thought might as well use weka"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

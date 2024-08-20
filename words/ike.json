@@ -1,0 +1,24 @@
+{
+    "name": "ike",
+    "notes_string": "0:3",
+    "description": "negative qualitites (not used for negation, see ala)",
+    "nr_of_notes": 2,
+    "etymelogies": [
+        "minor third = sad. i'm sorry to be like dat but man gotta draw some lines when make language"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

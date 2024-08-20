@@ -1,0 +1,28 @@
+{
+    "name": "ma",
+    "notes_string": "0:2:4_:7",
+    "description": "place, land, earth",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Shire (Lord Of The Rings) Theme",
+        "Leaving Of Liverpool"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

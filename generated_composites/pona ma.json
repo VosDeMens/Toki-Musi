@@ -1,0 +1,27 @@
+{
+    "name": "pona ma",
+    "notes_string": "0:4:2:4_:7",
+    "description": "environmental, sustainable",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from pona and ma 0:4:**~~0~~**:2:4_:7"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

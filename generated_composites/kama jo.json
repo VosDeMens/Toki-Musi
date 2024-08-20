@@ -1,0 +1,27 @@
+{
+    "name": "kama jo",
+    "notes_string": "0:4:2:5:9",
+    "description": "to receive, to attain",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from kama and jo 0:4:2:**~~0~~**:5:9"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}
