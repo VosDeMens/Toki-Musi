@@ -1,0 +1,27 @@
+{
+    "name": "open",
+    "notes_string": "0:1:3:8_:5",
+    "description": "open, begin, start",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "Bruno Mars, Anderson .Paak - Leave The Door Open"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

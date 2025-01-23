@@ -1,0 +1,24 @@
+{
+    "name": "mute",
+    "notes_string": "0/7\\5\\0\\-2",
+    "description": "indicates intensity or quantity",
+    "nr_of_notes": 1,
+    "etymelogies": [
+        "sounds like woaw, or at least it should"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": true,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

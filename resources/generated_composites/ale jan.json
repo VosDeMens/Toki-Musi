@@ -1,0 +1,27 @@
+{
+    "name": "ale jan",
+    "notes_string": "0:8_:3:5",
+    "description": "humanity",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from ale and jan 0:8_:3:**~~0~~**:5"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

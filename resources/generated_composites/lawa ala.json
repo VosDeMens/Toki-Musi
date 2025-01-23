@@ -1,0 +1,27 @@
+{
+    "name": "lawa ala",
+    "notes_string": "0:-1:2:-3",
+    "description": "illegal, crime",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from lawa and ala 0:-1:2:**~~0~~**:-3"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

@@ -1,0 +1,27 @@
+{
+    "name": "linja mama",
+    "notes_string": "0:5_:4:9_:7",
+    "description": "heritage",
+    "nr_of_notes": 5,
+    "etymelogies": [
+        "composite word from linja and mama 0:5_:4:**~~0:4~~**:9_:7"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

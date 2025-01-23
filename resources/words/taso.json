@@ -1,0 +1,27 @@
+{
+    "name": "taso",
+    "notes_string": "0:-4",
+    "description": "only, but",
+    "nr_of_notes": 2,
+    "etymelogies": [
+        "Yazoo - Only You (synth melody about halfway through the song)"
+    ],
+    "toki_pona": true,
+    "particle": true,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

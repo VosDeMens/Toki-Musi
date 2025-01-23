@@ -1,0 +1,27 @@
+{
+    "name": "pipi",
+    "notes_string": "0:9:7_:-5",
+    "description": "bug",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Jacob Mann - Anthill Dial-Up"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}
