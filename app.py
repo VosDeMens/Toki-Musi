@@ -1,7 +1,5 @@
 import streamlit as st
 
-st.set_page_config(page_title="Dictionary", page_icon="📖")
-
 import sys
 import os
 
@@ -127,7 +125,7 @@ if __name__ == "__main__":
     WORDS = load_words_from_folder([WORDS_FOLDER])
     EXAMPLES = load_examples_from_file()
 
-    st.set_page_config(layout="wide")
+    st.set_page_config(page_title="Dictionary", page_icon="📖", layout="wide")
 
     st.title("Toki Musi")
 
