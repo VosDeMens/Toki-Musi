@@ -19,6 +19,8 @@ from src.file_management import (
     WORDS_FOLDER,
 )
 
+st.set_page_config(page_title="Dictionary", page_icon="📖")
+
 
 def display_word(word: Word) -> None:
     """Creates an `st.expander` object for `word`, displaying its information.
