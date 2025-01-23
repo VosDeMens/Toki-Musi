@@ -1,4 +1,4 @@
-from . import clashes_checking as clashes_checking
+# from . import clashes_checking as clashes_checking
 from . import file_management as file_management
 from . import my_types as my_types
 from . import wave_generation as wave_generation
