@@ -1,9 +1,12 @@
+import streamlit as st
+
+st.set_page_config(page_title="Dictionary", page_icon="📖")
+
 import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-import streamlit as st
 from typing import Any
 
 from src.util_streamlit import st_audio
@@ -18,8 +21,6 @@ from src.file_management import (
     load_words_from_folder,
     WORDS_FOLDER,
 )
-
-st.set_page_config(page_title="Dictionary", page_icon="📖")
 
 
 def display_word(word: Word) -> None:
