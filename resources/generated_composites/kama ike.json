@@ -1,0 +1,27 @@
+{
+    "name": "kama ike",
+    "notes_string": "0:4:-5:3",
+    "description": "to corrupt, to fail",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from kama and ike 0:4:-5:**~~0~~**:3"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

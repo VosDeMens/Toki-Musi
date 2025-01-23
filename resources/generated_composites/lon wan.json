@@ -1,0 +1,27 @@
+{
+    "name": "lon wan",
+    "notes_string": "0:4:5:9",
+    "description": "somewhere",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from lon and wan 0:4:5:**~~0~~**:9"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": true,
+    "interjection": true,
+    "pluralizable": false,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

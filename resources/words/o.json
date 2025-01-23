@@ -1,0 +1,24 @@
+{
+    "name": "o",
+    "notes_string": "12\\0",
+    "description": "indicates vocative",
+    "nr_of_notes": 1,
+    "etymelogies": [
+        "sounds like oi"
+    ],
+    "toki_pona": true,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

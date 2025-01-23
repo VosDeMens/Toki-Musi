@@ -1,0 +1,25 @@
+{
+    "name": "kama pona",
+    "notes_string": "0:4:-5:4",
+    "description": "welcome",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "composite word from kama and pona (0:4:-5:**~~0~~**:4)"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": false,
+    "preposition": false,
+    "interjection": true,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": true,
+    "colour": false,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

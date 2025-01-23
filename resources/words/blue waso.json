@@ -1,0 +1,27 @@
+{
+    "name": "blue waso",
+    "notes_string": "0:2:7_:4:7_:4",
+    "description": "sky",
+    "nr_of_notes": 6,
+    "etymelogies": [
+        "composite word from blue and waso 0:2:7_:4:**~~0:7_:4~~**:7_:4"
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": true,
+    "composite": true,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

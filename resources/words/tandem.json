@@ -1,0 +1,27 @@
+{
+    "name": "tandem",
+    "notes_string": "0:3_:5:3",
+    "description": "tandem",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Kid On The Run (wow i'm in the list!) - De Tandem ([tandem] [jij] [en] [ik])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

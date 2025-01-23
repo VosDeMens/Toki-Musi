@@ -1,0 +1,24 @@
+{
+    "name": "kama",
+    "notes_string": "0:4:-5",
+    "description": "to come, to arrive, to become",
+    "nr_of_notes": 3,
+    "etymelogies": [
+        "tawa but last note octave down"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false
+}

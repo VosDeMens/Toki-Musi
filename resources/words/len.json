@@ -1,0 +1,27 @@
+{
+    "name": "len",
+    "notes_string": "0:5_:7:9",
+    "description": "clothing, fabric, cover",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "Fleet Foxes - Bedouin Dress ([*root-ish*] [i] [have] [bor-])"
+    ],
+    "toki_pona": true,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}

@@ -1,0 +1,27 @@
+{
+    "name": "unpi",
+    "notes_string": "-",
+    "description": "End of a pi clause (see pi). This is not necessary in Toki Pona, but since we key change back to the original key after a pi clause in Toki Musi, we need a way to indicate this if we wanna generate the sound.",
+    "nr_of_notes": 0,
+    "etymelogies": [
+        ""
+    ],
+    "toki_pona": true,
+    "particle": true,
+    "content_word": false,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": false,
+    "past_tensifiable": false,
+    "comparativizable": false,
+    "questionifiable": false,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}
