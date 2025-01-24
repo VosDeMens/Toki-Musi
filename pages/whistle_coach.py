@@ -48,21 +48,22 @@ WORDS_WITHOUT_SLIDES = [
 ]
 
 
-def get_dict_from_examples_with_words(words: list[Word]) -> dict[str, str]:
+def get_examples_with_words(words: list[Word]) -> list[tuple[str, str]]:
     all_examples = load_examples_from_file()
-    all_examples_splat = [example.split(" - ") for example in all_examples]
-    filtered_examples_splat = all_examples_splat[:]
-    for example in all_examples_splat:
+    filtered_examples = all_examples[:]
+    for example in all_examples:
         tm, _ = example
         try:
-            get_words_from_sentence(tm, words)
+            words_sentence = get_words_from_sentence(tm, words)
+            for w in words_sentence:
+                if w.past_tense and w.question:
+                    filtered_examples.remove(example)
         except InvalidWordException:
-            filtered_examples_splat.remove(example)
-    filtered_examples_dict = {key: value for key, value in filtered_examples_splat}
-    return filtered_examples_dict
+            filtered_examples.remove(example)
+    return filtered_examples
 
 
-EXAMPLES_DICT = get_dict_from_examples_with_words(WORDS_WITHOUT_SLIDES)
+EXAMPLES = get_examples_with_words(WORDS_WITHOUT_SLIDES)
 
 
 def plot_with_target(
@@ -215,13 +216,19 @@ def analyse_and_show_analysis():
             st.header(str(word))
         else:
             st.header("???")
-        st.write("Your audio:")  # type: ignore
-        st_audio(recording_word)
-        if synthesised_word is not None:
-            st.write("Corrected version:")  # type: ignore
-            st_audio(synthesised_word)
+
+        if word is not None and word.name == "pi":
+            st.write("This word is represented by a key change up by 2 semitones")  # type: ignore
+        elif word is not None and word.name in ["la", "unpi"]:
+            st.write("This word is represented by a key change down by 2 semitones")  # type: ignore
         else:
-            st.write("No correction available")  # type: ignore
+            st.write("Your audio:")  # type: ignore
+            st_audio(recording_word)
+            if synthesised_word is not None:
+                st.write("Corrected version:")  # type: ignore
+                st_audio(synthesised_word)
+            else:
+                st.write("No correction available")  # type: ignore
 
 
 def callback():
@@ -321,8 +328,8 @@ try:
         words_in_sentence = get_words_from_sentence(
             st.session_state["reference"], WORDS_WITHOUT_SLIDES
         )
-        if st.session_state["reference"] in EXAMPLES_DICT:
-            st.write(f'Meaning: {EXAMPLES_DICT[st.session_state["reference"]]}')  # type: ignore
+        if st.session_state["reference"] in EXAMPLES:
+            st.write(f'Meaning: {EXAMPLES[st.session_state["reference"]]}')  # type: ignore
         st.write(  # type: ignore
             f"Notes string:&nbsp;&nbsp;&nbsp;{'&nbsp;&nbsp;&nbsp;'.join(w.get_notes_string(True) for w in words_in_sentence)}"
         )
@@ -334,7 +341,7 @@ except InvalidWordException:
 st.button(
     "Randomise",
     on_click=lambda: setattr(
-        st.session_state, "reference", choice(list(EXAMPLES_DICT.keys()))
+        st.session_state, "reference", choice([tm for tm, _ in EXAMPLES])
     ),
 )
 

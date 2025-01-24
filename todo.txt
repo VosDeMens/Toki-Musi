@@ -1,11 +1,17 @@
 - add all other existing words
-- create whistle coach with fft
-- scrape websites for example phrases
 - keywords per word
-- waddup with number words?
-- pi enzo uit de whistle coach wbw ding halen
-- app -> dictionary in de ding
+- wawa -> mutemute
 
+- pi enzo uit de whistle coach wbw ding halen
+- examples disclaimer
+- check whether whistle coach can do -ed-?
+- how are examples loaded? should be through Word objects bc of suffices
+- consider adding button to load examples
+- scrape websites for example phrases
+- add unpi to examples
+- waddup with number words?
+- app -> dictionary in de ding
+- create whistle coach with fft
 
 0:5:9
 0:9:5

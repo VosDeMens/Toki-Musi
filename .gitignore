@@ -6,6 +6,8 @@ transribe_coach.py
 ideeen.txt
 todo.txt
 ku_pairs.json
+scrape.py
+redundant/
 
 .DS_Store
 

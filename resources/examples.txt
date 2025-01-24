@@ -1,116 +1,368 @@
-jan ala _lon poka ona - there is nobody next to him
+mi _lape - I am sleeping.
+mi _lape-ed - I slept.
+sina _tawa - You're walking.
+sina _tawa-ed - You walked.
+sina _tawa-ed-? - Did you WALK?
+sina-? _tawa-ed - Did YOU walk?
+sina _mama - You're a parent.
+sina _pona-? - Are you okay?
+toki - Hello! (Conversation!)
+mi _toki - I speak.
+mi _moku - I eat.
+mi _pona - I am good.
+mi _pona-er - I am better.
+mi _pona-est - I am the best.
+sina-? _tawa - are YOU leaving?
+sina _tawa-? - are you LEAVING?
+mi _jan - I am somebody.
+mi _lili - I am small.
+mi _mama - I am a parent.
+sina _musi - You are fun.
+sina _moku - You eat.
+sina _ike - You are bad.
+sina _suli - You are tall.
+
+mama _musi - Mom is hilarious.
+kulupu _suli _pona - The community is huge, and wonderful.
+jan _tawa _lape - The person walks, and goes to sleep.
+jan _mi - The person is me / belongs to me.
+telo _lete - The water is cold.
+kiwen _ko - The rock is dusty.
+moku _ko - The food is slimy.
+kasi _suli - The tree is big.
+wawa _nasa - Magic is ridiculous.
+kasi _nasa - The plant is psychoactive.
+moku _suwi - The food is sweet.
+ko _seli - The sand is hot.
+moku _jaki - The food is gross.
+telo _ike _jaki - The water is bad and gross.
+nasa _suli _wawa - Being different is important, and powerful.
+moku _seli _pona - The food is hot, and tasty.
+mama _moku-ed _lape-ed - Dad ate and went to bed.
+kasi _lete _kiwen - The tree is cold, and hard.
+
+mi _pona .jan - I help somebody.
+lape _wawa-er .sina - Sleep makes you stronger.
+jan _pilin .kiwen - The person feels a rock.
+mi _wile .telo - I want water.
+kasi _pilin .suno .telo - The plant is feeling the sun and the water.
+mi _moku .suwi-s .lete-s - I eat sweets and ice cubes.
+kasi _suwi _pana .ko - The plant is sweet, and gives off dust.
+kasi _pana .ko _suwi - The plant gives off dust, and is sweet.
+jan _jaki-ed .lipu _telo-ed .lipu - The person made a mess on the book and cleaned the book.
+jan _jaki _telo .lipu - Somebody made a mess on the book, and cleaned it. / Somebody is gross, and cleaned the book.
+moku _pona .sina - The food will make you feel better.
+mi _sona-ed .lipu - I understood the textbook.
+mi _jo .kiwen - I have a rock...
+mama _lukin .sina - Mom sees you.
+telo _pali .ko - The water is making foam.
+sina _pakala-ed .musi - You ruined the game!
+sina _ante-ed .lipu - You changed the code.
+mi _kute .kulupu - I hear the choir.
+jan _pana .sona - People will teach you!
+sina _pilin .ko - You're feeling the gum!
+kasi _wile .pona - The garden needs help!
+kasi _nasa _jaki - The flower is weird and smelly!
+mama _pona .sina .mi - Mom and dad are gonna make you and I better!
+mi _lukin-ed .mi .sina .mama - I looked at me, and you, and mom, and dad!
+tawa _pona .sina _suli - Walking helps you, and is important!
+jan _pana .seli _pakala-ed .kasi - Somebody has fire, and burnt the garden!
+wawa _tawa .sina _nasa .sina - The magic moves you, and confuses you!
+
+sina en mi _musi - You and I are having fun!
+pali en lape _pona .jan - Creating and sleeping heals people.
+mi en sina en kulupu _tawa _moku .kasi-s .telo - Me, you, and the group travel, and eat plants and water!
+lipu musi - Joke book
+jan pona _toki - The person is giving instructions!
+mi _sona suli .lipu. - I critically understand the paper.
+sina _lukin .kasi suwi - You're looking at a cute flower!
+kulupu mi _pakala wawa .kiwen suli - My team absolutely crushed a huge boulder.
+mi _sona .wawa nasa lete - I know a magical ice power!
+jan _kalama musi suwi - Somebody is singing sweetly.
+mi _jan pi pali kasi - I'm a gardener.
+mi _jan suli pi sona kasi - I'm an expert botanist.
+mi _jo pona .pana sina - I safely have your gift!
+pilin mi _ni rest ona _kute sona .mi - My thought is that they heard and understood me!
+kule kasi _ante - The plants are changing colour!
+ko jelo kasi _ike .mi - Pollen gives me allergies.
+lete walo ni ale _suwi mute - All this vanilla ice cream is very sweet!
+ona _pana .kasi-s laso loje - They gifted red and blue flowers.
+jan lili _toki .ni rest mi toki pi nasa mute - A small child said this: I speak weirdly!
+sona mi pi toki musi unpi _suli - My understanding of Toki Musi is huge!
+lipu orange _jo .sona mi - The orange journal has my knowledge.
+
+mi _wile pali - I want to create.
+mi _ken wawa - I can be strong.
+sina _kama sona - You are learning!
+kasi _kama suli - The plant is growing!
+jan lili _kama lape - The child goes to sleep.
+mi _awen kute - I am still listening.
+ona _sona pakala .ni - They know how to break this. / They poorly understand this.
+mi _awen ken mama .kasi - I am still able to raise plants.
+mi _ken awen mama .kasi - I am able to continue raising plants.
+mi _pona ala - I'm not well.
+jan ala _ante-ed .lipu - Nobody changed the book.
+kasi _kama-ed ala ike - The plant did not get hurt!
+ona _jan pi pana ala - They are not a giving person.
+jan sona _wile kulupu .jan-s pi kama sona - The teacher wants to group together all the students!
+kasi-s mute _ken lipu - Many plants can be papery.
+telo _kama-ed laso .kiwen - The water turned the rock green!
+wile sina _awen suli - Your wishes are still important.
+mi _sona pali .kulupu suli - I know how to create a huge community.
+jan pi toki pona unpi _alasa nasa .kulupu-s ona - Toki Pona speakers try to make their communities weird!
+ona _awen pona-er - They are still getting better.
+mi _wile alasa sona .kule-s ale - I want to try understanding all the colours.
+ona _ken ala ni - They can't do this.
+sina _sona ala wawa .ken sina - You don't know how to empower your ability.
+mi _wile ala awen lape - I don't want to keep sleeping.
+mi _alasa ala kama loje - I'm not trying to get sunburnt!
+ona _pana .ni ala rest ona _pana .ni! - They gave NOT this. They gave that!
+ni _jaki mute! mi pilin ala .ni - That is so gross. I'm not touching that!
+
+mi _tawa telo suli - I'm traveling to the ocean!
+ona _pana-ed .sona _tawa jan-s ante - They gave knowledge to different people.
+ni _pona mute tawa mi - This is fantastic to me!
+kasi ni _suli tawa jan - This plant is huge to people!
+jan _pali-ed .ni tawa sona - The person created this for understanding!
+mi _ni-ed tawa ona - I did this for them.
+kulupu _lon kiwen-s walo jelo - The group is on the yellow and white rocks!
+suno _lon tenpo suli - The sun has existed for a long time.
+mi _toki lon sona alasa mi - I am talking about my hunting knowledge!
+mi _tan kulupu musi - I'm from a comedy troupe!
+mi _wawa tan moku pona - I'm strong because of good food!
+pali sona sina _sama pali pi mama mi - Your teaching job is the same as my dad's job!
+ona _ken tawa wawa sama jan wawa - They can move quickly, like a sprinter!
+jan _seli .moku kepeken ilo seli - The person is cooking the food using a heating tool.
+ona _kama-ed jo .pan suwi tan jan pi pali moku unpi tawa pilin pona - They received some cake from a baker, to feel better
+ona _toki lon lape ona, sama mama pi jan mi - They talk in their sleep, same as my partner's dad!
+pilin-s mi _kama pona tan lape rest tan tawa telo - My feelings have gotten better from sleeping and from swimming.
+kiwen suno _tawa ala mi - The shiny rock is not for me!
+jan-s pali _kepeken ala lipu na - The employees are not using that document!
+mi _pilin nasa sama ala sina - I'm feeling weird, unlike you.
+sina _tan kulupu pi jan pana - You're from the philanthropy community!
+ilo _pali .supa kepeken ilo-s ante - The machine is creating furniture using other machines!
+nasin sona ni _pona tawa sona jan - This learning method is great for people's understanding.
+mi _pali lon tenpo mute - I work for a lot of time.
+mi _wale tawa ma ante - I have to go somewhere different!
+ma _suli-er ala tawa sewi rest ona _suli-er tawa jan-s - The earth isn't larger than the sky. It's larger than people.
+mi _pilin ike tan tawa-ed anpa lon tenpo poka - I'm feeling bad because I fell down recently.
+mi _pana .ni tawa sina _tan wale-ed mi - I'm giving this to you because I had to.
+mi _ken lon ma ale lon tenpo ale - I can be in any place, at any time!
+kasi-s _lon ala ma sewi - Plants aren't on ground that is way high up!
+kasi-s lili _sama ala kasi suli - The shrubs and grasses are not similar to the trees.
+nasin mi _tan ala ma mi - My philosophy is not from where I was born!
+kiwen lete _lon ala ma ni tan ni rest telo _lon ala - There is no ice here because of this: there is no water.
+
+o lukin .kulupu kasi - Look at the forest.
+jan lili o musi nasa ala - Child, stop being silly! / The child should stop being silly.
+lipu o pakala ala - The paper should not be ripped.
+o pakala ala .lipu - Do not tear the paper.
+mama o - Mom!
+jan sona o rest sina _pona - Teacher, you're excellent!
+sina _pona rest jan sona o - You're excellent, teacher!
+jan ale o rest o pana .lipu sina - Everyone, please turn in your papers!
+jan ale o pana .lipu sina - Everyone, please turn in your papers!
+mi _kute-ed .pakala rest taso mi _pona - I heard something break. But I'm alright!
+kute taso _pona .sona sina - Only listening can improve your understanding.
+kute _pona taso .sona sina - Listening will only improve your understanding.
+kute _pona .sona sina _taso - Listening will improve your understanding only.
+taso _pona - Being alone is good.
+ona _kama-ed taso - They became alone.
+o utala ala .soweli - Don't attack the animal!
+o lukin .kala suli - Look at this huge fish!
+o poki ala .waso-s - Don't put the birds in a box!
+o moli ala .sitelen sina! ona _pona - Don't kill your painting. It's fantastic!
+palisa-s o jaki ala .tomo! o weka .palisa-s - Sticks must not make the house gross. Remove the sticks!
+pipi o weka - Bugs, go away!
+o moli - Die!
+jan pi sona musi unpi o pana .sona - The person who knows about the game should explain!
+ona ale o tawa ala - They all must not move!
+pan sina o pona wawa - Your pasta has to come out amazingly!
+waso o - Hey bird!
+o moku .kili rest akesi lili o - Please eat the lettuce, little lizard
+suno _pona rest taso pimeja _pona .ken sitelen mi - The sun is good, but darkness helps my writing ability.
+mi _pilin .suno. taso mi _lete - I feel the sunlight, but I feel cold.
+mi _waso ala. taso mi _ken tawa sewi - I am not a bird, but I can fly!
+ala _pona taso - Nothing is exclusively good.
+jan pona sina _ike ala rest ona _pali taso rest ona _wile .sina - Your friends are not mean! They're only working. They want you. (As in they're not just ghosting you.)
+ona taso _ken wawa .kulupu - Only they are able to excite the party!
+
+tawa pona - Goodbye (if the other person leaves)
+mi _tawa - Goodbye (if you're leaving)
+awen pona - Stay well (response to tawa pona)
+musi pona - Have fun!
+kama pona - Welcome!
+mi _kama-ed jo .lipu a - I got a BOOK.
+soweli mi _weka a - My dog RAN AWAY.
+mi _sona ala a .toki sina - I really don't understand what you're saying
+sina _ken-? pali .ni - Can you make this?
+a! mi _pali - Yeah! I'll make it.
+mi _ken ala kute .jan poka tan kalama suli... ike! - I can't hear the person beside me because of all the loud noise. Oh no!
+mi _weka .lipu sona mi... pakala! - I lost my textbook. Crap!
+jan tomo _toki .ni rest mi _pana ala tawa jan pi tawa tenpo unpi rest jan pi tawa tenpo unpi _tawa tomo pi telo nasa. - The bartender says this: I don\'t serve time travellers! A time traveller walks into a bar.
+musi rest a a a - Hilarious! Hahaha
+kala na _suwi a! o lukin! - That fish is cute! Look!
+mi _suli-ed .kulupu kasi mi _lon tenpo lili taso - I made my garden grow big in only a little time!
+wawa - Wow!
+sina _ken kepeken ilo ni tawa pali tomo-s - You can use this tool for building homes.
+sona - Got it!
+sama - Same! (As in me too.)
+lon - True!
+mi _kute-ed .kalama rest taso mi _sona ala .tan ona - I heard a sound! But I don't know where it came from!
+nasa a - Weird!
+mi _kama-ed sona kepeken ilo suli tawa rest lon tomo pali mi - I learned how to use a forklift at my work!
+ona _ken tawa sike - They can do a cartwheel!
+mi-s _alasa .kulupu pi kasi suli unpi rest sina o tawa ma anpa - We're going to look for a jungle. You'll head to the cave.
+
+mi la sina _sewi lon utala - In my opinion, you'll win in the fight!
+sewi la sina _ken lukin .suno-s mute - In the sky, you can see many lanterns!
+pali sina la jan-s mute _kama-ed pona - You worked, so people healed!
+laso la kasi-s _pilin pona - When green, plants feel good.
+ike la soweli mi _moku-ed .lipu sona mi - Unfortunately, my dog ate my homework!
+utala la mi _pana-ed .kiwen - In a fight, I threw a rock!
+lon tomo la mi _lape - In a home, I sleep.
+sama kasi-s la mi _awen lon ma - Like plants, I stay still on the ground.
+sina _pona la mi _pona - If you're good, I'm good!
+jan-s _pona la mi _wile lon poka ona-s - If people are good, I want to be at their side.
+kasi-s _moku-ed .telo la ona-s _kama-ed suli - The flowers drank water, so they became tall!
+ona-s _tawa tomo la ona-s _kama wile lape - When they're traveling home, they get tired!
+sina _kama kala la sina _tawa telo - If you became a fish, you would swim!
+ken la mi _kama jo .ilo-s musi mute la mi _ken pana .ona-s tawa jan-s poka mi! - Maybe, if I get lots of fun toys, I can give them to my friends!
+sina _pali la sona mi la sina _ken ni! - If you work, then to my understanding, you can do this!
+sina _lukin .kasi-s suli la o tawa nasin kiwen - When you see the tall trees, travel down the rocky road.
+tenpo poka la poki kasi o lon supa - Soon, the flower pot must be on the table.
+sina _kepeken ilo utala sewi la sina _ken pini .ike pi akesi wawa - If you use the divine sword, you can stop the evil of the great lizard!
+wawa sewi _pimeja mute la mi _ken lukin .mun-s ale! - When the sky is very dark, I can see all of the stars!
+jan _olin .mi la mi _olin wawa .ona - When somebody loves me, I love them deeply.
+mi _lukin .sina la mi _lukin .linja sina - When I see you, I look at your hair.
+tenpo suli _open la mi-s ale _ken musi lon supa musi - When the carnival is open, we can have fun on the teacup ride!
+sina _weka .jaki la mi _pilin pona - You got rid of the trash, which I appreciate.
+mi _tawa tomo esun la mi _kama jo .poki pi telo pimeja unpi rest mi _ni lon tenpo ale. - If I go to the store, I get a cup of coffee! I do this every time.
+poki ni _awen tawa sike la mi _kama nasa jaki - If this ride keeps spinning, I'm gonna be sick!
+mi _esun .kon la mi _awen lon - If I exchange air (breathe), I remain alive
+open la mi _sona ala - At the beginning, I didn't understand.
+
+ona _moku-? .ale - Did they EAT everything?
+ona _moku .ale-? - Did they eat EVERYTHING?
+moku - Yes (in response to the above)
+ona _pini-? .musi - Did they end the game?
+ona _pini a - Yes, they ended (the game)! (in response to the above)
+
+o kama jo .ilo-s 3 - Pick up three tools.
+mi _wan .lipu-s ale - I combined all the papers.
+soweli _kipisi-ed .moku tawa pana - The animal divided up the food to gift.
+ni _pona nanpa 1 tawa mi - This is my favorite!
+sina _jo .kasi-s 27 - You have twenty seven plants.
+jan-s 201 _lon - There are two hundred and one people here.
+mi _lukin .lipu-s 15 - I've read fifteen books.
+mi kin _wile na - I also want to do that!
+kasi ni _loje kin - This plant is red (and another colour), too!
+mi _lukin .lipu kin - I read this book as well (and read something else).
+ona-s _pana .ni tawa sina _kin - They gave this to you (and somebody else), too
+mi anu sina _ken pali .ni - You or I can make this.
+sina _ken jo anu pakala .ilo - You can keep or break the tool.
+soweli _ken moku .kili anu kala - The cat can eat a fruit or a fish!
+jan alasa _lape lon tomo anu lon poki lape - The hunter is sleeping in their cabin or sleeping bag.
+
 seme la - how
 tenpo sike - year
-mi _kama jo-ed .lipu - i lose the book
-mi _toki tawa sina - i talk to you
-ona _jan - they (singular) are a person
-lete _lon - it's cold (dummy it)
-ni _musi a! - this is so fun!
-ala _lon poki ni - there is nothing in the cup
-akesi _wile lon nena - the lizard wants to be on the hill
-pilin mi _tawa mute - my heart is beating fast
+mi _kama jo-ed .lipu - I lose the book.
+ona _jan - They (singular) are a person.
+lete _lon - It's cold. (dummy it)
+ni _musi a! - This is so fun!
+ala _lon poki ni - There is nothing in this cup.
+ni_ _awen ala pona - These aren't good anymore.
+akesi _wile lon nena - The lizard wants to be on the hill.
+pilin mi _tawa mute - My heart is beating fast.
 tenpo lete - winter
 tan seme - why
-sina _ken toki musi - you speak toki musi
-mi _pilin pona backspace ike - i feel ~~good~~ bad
-mi _ken-? toki .nimi ona tawa sina - can i call you her name?
-ken suli la mi-s kama-ed lon tenpo ike-est - there's a big chance that we arrived at the worst time
-sina _ken kama sona .ale - you can learn everything
-jan-s _pona - people are nice
+sina _ken toki musi - You speak Toki Musi.
+mi _pilin pona backspace ike - I feel ~~good~~ bad.
+mi _ken-? toki .nimi ona tawa sina - Can i call you her name?
+ken suli la mi-s kama-ed lon tenpo ike-est - There's a big chance that we arrived at the worst time.
+sina _ken kama sona .ale - You can learn everything.
+jan-s _pona - People are nice.
 kasi nasa - weed
-sina _moku .seme - what are you eating?
-mi _ken toki musi - i speak toki musi
-ona _pali a .tomo - she BUILDS a house
-o ken .musi mi - let me play (enable my entertainment)
-toki - hello! (conversation!)
+sina _moku .seme - What are you eating?
+mi _ken toki musi - i speak toki musi.
+ona _pali a .tomo - She BUILDS a house.
+o ken .musi mi - Let me play! (enable my entertainment)
 mi en sina - me and you
-jan moku mi - my cook
-mi _ken toki musi, sina ken toki musi, ona ken toki musi, jan-s ale _ken toki musi - i speak toki musi, you speak toki musi, they speak toki musi, everybody speaks toki musi
-waso-s mute _lon - there are a lot of birds
-telo nasa _nasa .mi - beer makes me crazy
-mi taso _sona .lon - only i know the truth
-jan-s pona mi _toki-ed lon - my friends spoke the truth (were speaking truly)
-mi-s _pana-ed .moku tawa sina-s - we gave food to you (plural)
-tomo pali _pana .kon-s seli ike - the factory is emitting greenhouse gases
-taso mi _lukin .kule-s lon sina _suno tawa insa - but i see your true colours shining through
-mi _kama-ed jo .lipu - i received the book
-tenpo black pini la pana pana pana .jan tawa mi tawa mi tawa mi - gimme gimme gimme a man after midnight
-a a a - hahaha
+jan moku - person who eats
+jan-s ale _ken toki musi - Everybody speaks toki musi.
+waso-s mute _lon - There are a lot of birds.
+telo nasa _nasa .mi - Beer makes me crazy.
+mi taso _sona .lon - Only I know the truth.
+jan-s pona mi _toki-ed lon - My friends spoke the truth. (were speaking truly)
+mi-s _pana-ed .moku tawa sina-s - We gave food to you.
+tomo pali _pana .kon-s seli ike - The factory is emitting greenhouse gases.
+taso mi _lukin .kule-s lon sina _suno tan insa - But I see your true colours shining through.
+mi _kama-ed jo .lipu - I received the book.
+tenpo pimeja pini la pana pana pana .jan tawa mi tawa mi tawa mi - Gimme gimme gimme a man after midnight.
 ala - no
-ona-s _toki .mi - they are talking about me
-o tawa - go!
-mi _jo .toki kepeken sina - i have a conversation with you
-ike _insa kulupu po - evil is inside the police force
-tenpo black - night
-mi _ken tawa sina lon ni: pali mi _pini - i can go to you if (on this): my work is finished
+ona-s _toki .mi - They are talking about me.
+mi _jo .toki kepeken sina - I have a conversation with you.
+ike _insa kulupu po - Evil is inside the police force.
+tenpo pimeja - night
+mi _ken tawa sina lon ni rest pali mi _pini - I can go to you if (on this): my work is finished.
 pona - OK / thanks
-kasi-s na _kule seme - what colour are those plants
+kasi-s na _kule seme - What colour are those plants.
 po-s ale _jan-s ike - ACAB
-mi _sona pali .moku - i know how to cook
-sina-s _pona mute - you (plural) are great
-o - oi!
-jan pi moku mi - cooker of my food
+mi _sona pali .moku - I know how to cook.
+sina-s _pona mute - You (plural) are great.
+o - Oi!
+jan pi moku mi - Cooker of my food
 tenpo kama - future
-lon - true!
-mi-s _lon - we're here
-ni _waso jelo ala - this is not a jelo bird
-na _lon ala - that is not true
-toki pona - good language
-kon _tawa-ed .lipu-s kasi lili - the wind moved the small leaves
-ona _ken toki musi - they (singular) speak toki musi
-po-s _ike .ma - the police are ruining the country
-mi _tawa moku .kala - i will eat the fish
-o kama .jan sona sijelo - call for a doctor (make come the person of knowledge of body)
-ni _lon - this is true
-mi _kama lukin .soweli suwi - i spotted (came to see) a cute animal
+mi-s _lon - We're here.
+ni _waso jelo ala - This is not a yellow bird
+na _lon ala - That is not true.
+kon _tawa-ed .lipu-s kasi lili - The wind moved the small leaves.
+mi _tawa moku .kala - I will eat the fish.
+o kama .jan sona sijelo - Call for a doctor. (make come the person of knowledge of body)
+mi _kama lukin .soweli suwi - I spotted (came to see) a cute animal.
 tenpo seme - when
-mi _pilin pona - i feel good
-mi-s tawa-ed ala telo - we didn't go to the water
-mi _toki .lon - i say the truth
-tenpo kulupu la mi-s tenpo-ed .tenpo kulupu kama - during the meeting, we scheduled the next meeting
-tenpo seme la sina kama - when are you arriving
+mi _pilin pona - I feel good.
+mi-s tawa-ed ala telo - We didn't go to the water.
+tenpo kulupu la mi-s _tenpo-ed .tenpo kulupu kama - During the meeting, we scheduled the next meeting.
+tenpo seme la sina kama - When are you arriving?
 tenpo pini - past
-a! - Oh!
-telo nasa - beer
-mi anu sina - me or you
 tenpo ni - now
 mute - woooorrdd
-po-s _ike tawa mi - i dislike the police
-mi la po-s _ike - i dislike the police
+po-s _ike tawa mi - I dislike the police.
+mi la po-s _ike - I dislike the police.
 tomo kama sona - school (building of coming to know)
 tenpo esun - week
 jan pona mi o - (addressing a friend)
-mi _pilin .kiwen - i touch the rock
+mi _pilin .kiwen - I touch the rock.
+o pilin .kasi - Touch grass.
 ken-s jan - human rights
 tenpo nasa - trip
-mute _lili - the quantity is small
-sona _wawa - knowledge is power
-mi _ale backspace _pilin ike - i feel bad (backspaced ale)
-ona _nasa - they are weird / they are tripping
-pana-s len _lon anpa kasi - wrapped gifts are under the tree
-mi o lape - i should sleep
-mi _wale tawa - i have to go
-ona-s _kama .pona - they brought goodness
+mute _lili - The quantity is small.
+sona _wawa - Knowledge is power.
+mi _ale backspace _pilin ike - I feel bad. (backspaced ale)
+ona _nasa - They are weird. / They are tripping.
+pana-s len _lon anpa kasi - Wrapped gifts are under the tree.
+mi o lape - I should sleep.
+mi _wale tawa - I have to go.
+ona-s _kama .pona - They brought goodness.
 tenpo na - then
-ona a _pali .tomo - SHE builds a house
-mi _wile tawa telo taso - i only want to swim
+mi _wile tawa telo taso - I only want to swim.
 jan seme - who
-seme - what?
-mi _lon tomo mi - i'm home
-ona _pona - they (singular) are nice
-ona _lon jan - they are at the person
-jan kule - person of colour (toki pona uses jan kule for queer person, but i think that's weird bc how else would you say person of colour. for queer, see the word [rainbow])
-jan pona mi o tawa - go, my friend!
-ona _pona .poki telo - they (singular) fix the bath
-mi _wile lape wan taso - i want to sleep alone
+seme - What?
+mi _lon tomo mi - I'm home.
+ona _pona - They are nice.
+ona-s _lon jan - They are at the person.
+jan kule - person of colour (toki pona uses jan kule for queer person bc of the rainbow flag i guess, but i think that's weird bc how else would you say person of colour. so i decided to go with jan rainbow for queer)
+mi _wile lape wan taso - I want to sleep alone.
 lon seme - where
-mi _wile lape en taso mi ken ala - i want to sleep but i can't (and only = but)
-ano _kama pona - it improved
-akesi _tawa ma ante - the frog went to another place
-sijelo sina o kama pona - i hope you get better
+mi _wile lape rest taso mi ken ala - I want to sleep, but I can't.
+ano _kama-ed pona - It improved.
+akesi _tawa-ed ma ante - The frog went to another place.
+sijelo sina o kama pona - I hope you get better.
 tenpo mun - month
 jan kama - visitor
-ona-s _wile ala sona - they don't want to know
-mi _pali .jan tan sina - i'll make a man out of you
-mi _sona seli .moku - i know how to cook
-mi _wile toki tawa ma - i want to speak to the earth
+ona-s _wile ala sona - They don't want to know.
+mi _pali .jan tan sina - I'll make a man out of you.
+mi _sona seli .moku - I know how to cook.
+tandem pakala - bike (broken tandem)
+mi-s _lon tandem rest lon ni la pona _lon - We are on the tandem bike. It's really nice here.
