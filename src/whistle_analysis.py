@@ -1154,6 +1154,8 @@ def get_synthesised_versions_of_words(
         The onsets and ends of the recorded notes.
     offset : float
         The nr of semitones by which to transpose.
+    sample_rate_pm : int
+        The sample rate used in the pitch analysis.
 
     Returns
     -------
@@ -1227,6 +1229,8 @@ def merge_into_one_wave(
         The length of the full original recording.
     segment_bounds : segbounds
         The onsets and ends of the recorded notes.
+    sample_rate_pm : int
+        The sample rate used in the pitch analysis.
 
     Returns
     -------
@@ -1256,6 +1260,8 @@ def determine_bounds_for_notes_in_recording(
         All notes in a recorded sentence.
     segment_bounds : segbounds
         The segment bounds of the notes in the recorded sentence.
+    sample_rate_pm : int
+        The sample rate used in the pitch analysis.
 
     Returns
     -------
@@ -1292,6 +1298,8 @@ def extract_individual_words_from_recording(
         The notes that were found in the recording.
     segment_bounds : segbounds
         The beginnings and ends of the words in terms of samples in the pitch analysis.
+    sample_rate_pm : int
+        The sample rate used in the pitch analysis.
 
     Returns
     -------

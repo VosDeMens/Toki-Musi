@@ -76,8 +76,12 @@ def save_strings_to_file(strings: tuple[str, ...], file_path: str) -> None:
             f.write("\n" + string)
 
 
-def load_examples_from_file() -> list[str]:
-    return load_strings_from_file(EXAMPLES_FILE)
+def load_examples_from_file() -> list[tuple[str, str]]:
+    return [
+        ((splat := line.split(" - "))[0], splat[1])
+        for line in load_strings_from_file(EXAMPLES_FILE)
+        if line
+    ]
 
 
 def load_unimportant_compositions_from_file() -> set[str]:

@@ -10,11 +10,11 @@ Things to keep in mind:
 
 - It doesn't matter how fast you whistle, as long as you're consistent.
 
-- Try to whistle steadily. The more consistent your volume and timing, the better the results. The beginning and end of a word are determined by your pauses, so be sure to leave some silence between words, and make sure to make short notes short, and long notes long. The Whistle Coach can be quite pedantic, and is here to really drill you on precision. There's a good chance people might be able to understand what you mean from context, but the Whistle Coach doesn't care about context.
+- Try to whistle steadily. The more consistent your volume and timing, the better the results. The beginning and end of a word are determined by your pauses, so be sure to leave some silence between words, and make sure to make short notes short, and long notes long. The Whistle Coach can be quite pedantic, and is here to really drill you on precision. There's a good chance people might be able to understand what you mean from context, but the Whistle Coach doesn't care about context. Often notes that are in the middle of your range will be much louder than notes at the edge of your range, especially low notes. If notes are not detected, practise consistency in volume.
 
-- The Whistle Coach can't understand words with slides between notes, only slides at the end. So words like seme and mute are currently not supported.
+- The Whistle Coach can't understand words with slides unless it's at the very end. So words like seme and mute are currently not supported, and neither are words that are both past tense and questions.
 
-- Of course you probably should be in an otherwise pretty quiet environment. Study areas and libraries usually have great acoustics.
+- Of course you probably should be in an otherwise pretty quiet environment. ~Study areas and libraries usually have great acoustics.~
 
 - If you whistle something that's not recognised as a word, the Whistle Coach tries to find the best match, depending on how close you got to existing words, and if there are multiple candidates, it will pick the most common one.
 
