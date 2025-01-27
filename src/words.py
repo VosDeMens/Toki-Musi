@@ -386,11 +386,9 @@ def make_printable(notes_string: str) -> str:
     printable_string = notes_string.replace("__", "_")
     printable_string = printable_string.replace(":-1:", ":&#8203;-1:")
     if printable_string == "+":
-        return "No melody, this word is represented by a key change, up by 2 semitones"
+        return "[key change +2]"
     if printable_string == "-":
-        return (
-            "No melody, this word is represented by a key change, down by 2 semitones"
-        )
+        return "[key change -2]"
     return printable_string
 
 

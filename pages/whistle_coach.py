@@ -343,7 +343,11 @@ try:
         st.write(  # type: ignore
             f"Notes string:&nbsp;&nbsp;&nbsp;{'&nbsp;&nbsp;&nbsp;'.join(w.get_notes_string(True) for w in words_in_sentence)}"
         )
-        st_audio(marginify_wave(get_sentence_wave(words_in_sentence)))
+        st_audio(
+            marginify_wave(
+                get_sentence_wave(words_in_sentence, speed=st.session_state["speed"])
+            )
+        )
 except InvalidWordException:
     st.write("Invalid sentence")  # type: ignore
 
