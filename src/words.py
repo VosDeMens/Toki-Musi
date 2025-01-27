@@ -132,7 +132,7 @@ class Word:
 
         return composite_word
 
-    def wave(self, speed: float = 10, offset: float = 0) -> floatlist:
+    def wave(self, speed: float = 10, offset: float = 0) -> floatlist | None:
         """Synthesises a sound wave for this word.
 
         Parameters
@@ -147,8 +147,8 @@ class Word:
         floatlist
             A well-behaved sound wave, matching the provided frequencies at every point in time.
         """
-        if self.get_notes_string() == "-" or self.get_notes_string() == "+":
-            return np.array([])
+        if self.nr_of_notes == 0:
+            return None
         return pcw_from_string(self.get_notes_string(), speed, offset)
 
     def __eq__(self, value: object) -> bool:
@@ -455,6 +455,8 @@ def get_sentence_wave(
             offset -= 2
             continue
         wave = word.wave(speed, offset)
+        if wave is None:
+            continue
         with_pause = add_pause(wave, pause, speed)
         waves_per_word.append(with_pause)
 
