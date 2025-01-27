@@ -3,9 +3,11 @@ import streamlit as st
 from typing import Any
 
 from src.util_streamlit import st_audio
-from src.words import (
+from src.word import (
     InvalidWordException,
     Word,
+)
+from src.words_functions import (
     get_words_from_sentence,
     get_sentence_wave,
 )
