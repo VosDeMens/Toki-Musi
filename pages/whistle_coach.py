@@ -133,7 +133,14 @@ def analyse_and_show_analysis():
                     st.session_state["reference"], WORDS_WITHOUT_SLIDES
                 ),
             )
-            if len(target_words) == len(strings_from_recording):
+            nr_of_sounded_target_words = len(
+                [
+                    w
+                    for w in target_words
+                    if w is not None and w.nr_of_notes != 0 and w.name != "rest"
+                ]
+            )
+            if nr_of_sounded_target_words == len(strings_from_recording):
                 usable_reference = True
             else:
                 st.write(  # type: ignore

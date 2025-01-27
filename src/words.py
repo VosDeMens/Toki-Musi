@@ -237,11 +237,6 @@ class Word:
         copy.direct_object = True
         return copy
 
-    def show_info(self):
-        max_width = max(len(attr) for attr in self.__dict__.keys()) + 1
-        for attr, value in self.__dict__.items():
-            print(f"{(f'{attr}:'):<{max_width}} {value}")
-
 
 class NumberWord(Word):
     """A word representing a number.
@@ -385,6 +380,7 @@ def make_printable(notes_string: str) -> str:
     # printable_string = replace_slash_if_needed(notes_string)
     printable_string = notes_string.replace("__", "_")
     printable_string = printable_string.replace(":-1:", ":&#8203;-1:")
+    printable_string = printable_string.replace("\\", "\\\\")
     if printable_string == "+":
         return "[key change +2]"
     if printable_string == "-":
