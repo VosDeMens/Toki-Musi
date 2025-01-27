@@ -69,8 +69,18 @@ EXAMPLES = get_examples_with_words(WORDS_WITHOUT_SLIDES)
 def plot_with_target(
     recording: floatlist, synthesised_version: floatlist, offset: float
 ):
+    """Displays a plot of the pitch of a recording, against the pitch of a corrected version.
+
+    Parameters
+    ----------
+    recording : floatlist
+        The recording to plot the pitch of.
+    synthesised_version : floatlist
+        The corrected version to plot the pitch of.
+    offset : float
+        The pitch to consider 0, expressed in semitones from the standard key.
+    """
     snd_recording = parselmouth.Sound(recording, sampling_frequency=SAMPLE_RATE)  # type: ignore
-    # TODO: use f_min an f_max
     pm_recording = snd_recording.to_pitch_ac(pitch_floor=st.session_state["f_min"], pitch_ceiling=st.session_state["f_max"], silence_threshold=0.1)  # type: ignore
     frequencies_recording = np.array(pm_recording.selected_array["frequency"], dtype=float)  # type: ignore
     pitch_recording = freqs_to_float_pitches(frequencies_recording) - offset

@@ -1,5 +1,6 @@
 from math import log
 import re
+from typing import cast
 import numpy as np
 from itertools import pairwise, product
 import parselmouth
@@ -1170,7 +1171,7 @@ def get_synthesised_versions_of_words(
     d_offsets: list[int] = []
     i_sb = 0
     for word, nr_of_notes in zip(sentence, nr_of_notes_per_word):
-        if word is None:
+        if word is None or word.wave() is None:
             speed_per_word.append(None)
         elif nr_of_notes == 0:
             speed_per_word.append(None)
@@ -1180,6 +1181,7 @@ def get_synthesised_versions_of_words(
                 d_offsets.append(-2)
         else:
             wave_for_word = word.wave(10, 0)
+            wave_for_word = cast(floatlist, wave_for_word)
             lower = segment_bounds[i_sb][0]
             upper = segment_bounds[i_sb + nr_of_notes - 1][1]
             expected_nr_of_samples_from_segment_bounds = (

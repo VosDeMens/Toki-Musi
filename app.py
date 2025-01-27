@@ -31,7 +31,9 @@ def display_word(word: Word) -> None:
     with st.expander(str(word)):
         st.write(word.description, unsafe_allow_html=True)  # type: ignore
         st.write(f"notes: {word.get_notes_string(True)}")  # type: ignore
-        st_audio(word.wave())
+        wave = word.wave()
+        if wave is not None:
+            st_audio(wave)
         if word.etymelogies:
             st.header("Etymelogy")
         for etymelogy in word.etymelogies:
