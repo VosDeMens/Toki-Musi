@@ -23,13 +23,12 @@ from src.whistle_analysis import (
     merge_into_one_wave,
     pitch_string_by,
 )
-from src.words import (
+from src.word import (
     InvalidWordException,
     Word,
-    get_sentence_wave,
-    get_words_from_sentence,
     make_printable,
 )
+from src.words_functions import get_sentence_wave, get_words_from_sentence
 from src.my_types import floatlist
 from src.file_management import (
     WORDS_FOLDER,

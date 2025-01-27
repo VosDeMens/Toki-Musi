@@ -1,7 +1,7 @@
 import json
 import os
 
-from src.words import Word
+from src.word import Word
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 

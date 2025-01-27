@@ -16,14 +16,14 @@ from src.note import Note
 from src.file_management import load_words_from_folder
 from src.util import split_numeric_part
 from src.wave_generation import marginify_wave
-from src.words import (
+from src.word import (
     InvalidWordException,
     NumberWord,
     Word,
-    get_prevalence,
     is_number_notes_string,
     notes_string_to_number,
 )
+from src.words_functions import get_prevalence
 
 WORDS = load_words_from_folder()
 
@@ -215,7 +215,7 @@ def process_segments(segment_bounds: segbounds) -> segbounds:
 
 
 def determine_pause_thresholds(
-    segment_bounds: segbounds, short_factor: float = 0.4, long_factor: float = 2
+    segment_bounds: segbounds, short_factor: float = 0.4, long_factor: float = 1.7
 ) -> tuple[float, float]:
     """Determines the thresholds for a regular silence between notes of the same word.
 

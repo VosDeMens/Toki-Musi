@@ -1,11 +1,9 @@
 from copy import deepcopy
 import json
-import numpy as np
 
 from src.augmentation import Augmentation
 from src.util import generate_contractions
 from src.wave_generation import (
-    add_pause,
     pcw_from_string,
 )
 from src.my_types import floatlist
@@ -351,19 +349,6 @@ def notes_string_to_number(s: str) -> int:
     return int(s, 2)
 
 
-# def replace_slash_if_needed(s: str):
-#     pattern = r"(\d+)/(\d+)"
-
-#     def replacer(match: re.Match[str]):
-#         left_num = int(match.group(1))
-#         right_num = int(match.group(2))
-#         if left_num > right_num:
-#             return f"{left_num}\\{right_num}"
-#         return match.group(0)
-
-#     return re.sub(pattern, replacer, s)
-
-
 def make_printable(notes_string: str) -> str:
     """Turns a notes string into one that can be printed neatly.
 
@@ -416,143 +401,3 @@ class InvalidWordException(Exception):
 
 class MessingWithNumberException(Exception):
     pass
-
-
-def get_sentence_wave(
-    sentence: list[Word], pause: float = 1, speed: float = 10, offset: float = 0
-) -> floatlist:
-    """Turns a `list` of words into a sound wave.
-
-    Parameters
-    ----------
-    sentence : list[Word]
-        The `list` of `Word` objects to turn into a sound wave.
-    pause : float, optional
-        The lengths of a pause, in proportion to a regular note, by default 1
-    speed : int, optional
-        The speed of the sound, which can be altered by the user, by default 10
-    offset : float, optional
-        The nr of semitones by which to transpose, by default 0
-
-    Returns
-    -------
-    floatlist
-        The sound wave associated with the sentence.
-    """
-    waves_per_word: list[floatlist] = []
-
-    for word in sentence:
-        if word.get_notes_string() == "+":
-            offset += 2
-            continue
-        if word.get_notes_string() == "-":
-            offset -= 2
-            continue
-        wave = word.wave(speed, offset)
-        if wave is None:
-            continue
-        with_pause = add_pause(wave, pause, speed)
-        waves_per_word.append(with_pause)
-
-    return np.concatenate(waves_per_word)
-
-
-def get_words_from_sentence(sentence: str, existing_words: list[Word]) -> list[Word]:
-    """Converts a sentence (of text) to a `list` of `Word` objects.
-
-    The words in the sentence have a couple of rules they should conform to.
-    They have to be existing words in the language, with these modifications:
-    - A word is allowed to start with a `"."`, indicating a direct object.
-    - A word is allowed to start with a `"_"`, indicating a finite verb.
-    - A word is allowed to have a `"-ed"` suffix, indicating past tense.
-    - A word is allowed to have a `"-s"` suffix, indicating plural.
-    - A word is allowed to have a `"-er"` suffix, indicating comparative.
-    - A word is allowed to have a `"-est"` suffix, indicating superlative.
-    - A word is allowed to have a `"-?"` suffix, indicating question.
-
-    A word can have any number of suffices, but not both be comparative and superlative.
-    A word can't both be a direct object and a finite verb.
-
-    Parameters
-    ----------
-    sentence : str
-        The sentence in text.
-    existing_words : list[Word]
-        The vocabulary of words, that the words in the sentence have to be based on.
-
-    Returns
-    -------
-    list[Word]
-        A `list` of `Word` objects, representing the sentence.
-
-    Raises
-    ------
-    InvalidWordException
-        If a word is not in the vocabulary.
-    InvalidWordException
-        If a word has an invalid suffix.
-    """
-    word_names = [word.name for word in existing_words]
-    word_objects: list[Word] = []
-    sentence = sentence.replace("!", "")
-    for word_string in sentence.split(" "):
-        if not len(word_string):
-            continue
-        if word_string.isnumeric():
-            word_objects.append(NumberWord(int(word_string)))
-            continue
-        if word_string[0] == "_":
-            finite_verb = True
-            word_string = word_string[1:]
-        else:
-            finite_verb = False
-        if word_string[0] == ".":
-            direct_object = True
-            word_string = word_string[1:]
-        else:
-            direct_object = False
-        parts = word_string.split("-")
-        if parts[0] not in word_names:
-            raise InvalidWordException(parts[0])
-        word_object = existing_words[word_names.index(parts[0])]
-        if finite_verb:
-            word_object = word_object.finite_verbify()
-        if direct_object:
-            word_object = word_object.direct_objectify()
-        for part in parts[1:]:
-            if part == "ed":
-                word_object = word_object.past_tensify()
-            elif part == "s":
-                word_object = word_object.pluralize()
-            elif part == "er":
-                word_object = word_object.comparativize()
-            elif part == "est":
-                word_object = word_object.superlativize()
-            elif part == "?":
-                word_object = word_object.questionify()
-            else:
-                raise InvalidWordException(word_string)
-        word_objects.append(word_object)
-    return word_objects
-
-
-# TODO: make
-def get_prevalence(word: Word) -> int:
-    return 0
-
-
-todo = [
-    "nimi (name, word)",
-    "kepeken (to use)",
-    "ijo (thing)",
-    "ilo (tool)",
-    "kin (also)",
-    "ante (other)",
-    "kalama (sound, to make noise, to play (instrument))",
-    "sin (to add, new thing, addition, new, another)",
-    "lipu (book, page, flat bendable thing, document, file)",
-    "pakala (accident, mistake, damage, to hurt, to break, FUCK)",
-    "kanker (kanker)",
-    "soweli (animal, esp land animal)",
-    "nasin (way, manner, road, path, system)",
-]
