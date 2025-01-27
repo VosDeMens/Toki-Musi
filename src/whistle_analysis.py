@@ -1171,9 +1171,10 @@ def get_synthesised_versions_of_words(
     d_offsets: list[int] = []
     i_sb = 0
     for word, nr_of_notes in zip(sentence, nr_of_notes_per_word):
-        if word is None or word.wave() is None:
+        if word is None:
             speed_per_word.append(None)
-        elif nr_of_notes == 0:
+            d_offsets.append(0)
+        elif word.wave() is None or word.name == "rest":
             speed_per_word.append(None)
             if word.name == "pi":
                 d_offsets.append(2)
