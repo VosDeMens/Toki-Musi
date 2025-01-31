@@ -2,6 +2,7 @@ from copy import deepcopy
 import json
 
 from src.augmentation import Augmentation
+from src.constants import SAMPLE_RATE
 from src.util import generate_contractions
 from src.wave_generation import (
     pcw_from_string,
@@ -130,7 +131,9 @@ class Word:
 
         return composite_word
 
-    def wave(self, speed: float = 10, offset: float = 0) -> floatlist | None:
+    def wave(
+        self, speed: float = 10, offset: float = 0, sample_rate: int = SAMPLE_RATE
+    ) -> floatlist | None:
         """Synthesises a sound wave for this word.
 
         Parameters
@@ -139,6 +142,8 @@ class Word:
             Speed of the sound, which can be altered by the user, by default 10
         offset : float, optional
             Semitones to transpose by, where `0` corresponds to C, by default 0
+        sample_rate : int, optional
+            The sample rate, by default SAMPLE_RATE := 44100
 
         Returns
         -------
@@ -147,7 +152,7 @@ class Word:
         """
         if self.nr_of_notes == 0:
             return None
-        return pcw_from_string(self.get_notes_string(), speed, offset)
+        return pcw_from_string(self.get_notes_string(), speed, offset, sample_rate)
 
     def __eq__(self, value: object) -> bool:
         return (
@@ -280,7 +285,7 @@ class NumberWord(Word):
             f"the number {n}",
             notes_string.count(":") + 1,
             [
-                "Numbers are represented in one of two ways:\n1. By repeated short notes\n2. In binary form, where a long note represents a 1 and a short note represents a 0\nSo 5 could be represented like 0:0:0:0:0 or like 0_:0:0_."
+                "Numbers are represented in one of two ways:\n1. By repeated short notes\n2. In binary form, where a long note represents a 1 and a short note represents a 0\nSo 5 could be represented like 0:0:0:0:0 or like 0_:0:0_. The number 0 is represented by one long note (with pitch 0), so the number 1 has to be represented by a short note (with pitch 0)."
             ],
         )
 

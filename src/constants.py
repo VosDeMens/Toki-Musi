@@ -1,11 +1,14 @@
 # default sample rate for recordings
 SAMPLE_RATE = 44100
 
-# default nr of samples for a fade in/out of a synthesised bit of sound
-FADE_DURATION = 1000
+# how many notes in a second by default (speed := 10)
+NOTES_PER_SEC = 5
 
-# the amount of samples in a parselmouth pitch output
-SAMPLE_RATE_PARSELMOUTH = 400
+# default nr of samples for a fade in/out of a synthesised bit of sound
+NOTE_FADE_DURATION_SEC = 0.025
+
+# default nr of samples for a fade in/out of a recording / audio
+AUDIO_FADE_DURATION_SEC = 0.25
 
 # 0 == A; 3 == C
 ROOT: int = 3

@@ -1,4 +1,5 @@
 import numpy as np
+from src.constants import SAMPLE_RATE
 from src.file_management import (
     WORDS_FOLDER,
     load_examples_from_file,
@@ -220,7 +221,11 @@ def get_prevalence(word: Word) -> int:
 
 
 def get_sentence_wave(
-    sentence: list[Word], pause: float = 1, speed: float = 10, offset: float = 0
+    sentence: list[Word],
+    pause: float = 1,
+    speed: float = 10,
+    offset: float = 0,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Turns a `list` of words into a sound wave.
 
@@ -234,6 +239,8 @@ def get_sentence_wave(
         The speed of the sound, which can be altered by the user, by default 10
     offset : float, optional
         The nr of semitones by which to transpose, by default 0
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -249,10 +256,10 @@ def get_sentence_wave(
         if word.get_notes_string() == "-":
             offset -= 2
             continue
-        wave = word.wave(speed, offset)
+        wave = word.wave(speed, offset, sample_rate)
         if wave is None:
             continue
-        with_pause = add_pause(wave, pause, speed)
+        with_pause = add_pause(wave, pause, speed, sample_rate)
         waves_per_word.append(with_pause)
 
     return np.concatenate(waves_per_word)
