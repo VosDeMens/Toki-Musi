@@ -180,89 +180,87 @@ def filter_words(words: list[Word]) -> list[Word]:
     return list(filtered)  # type: ignore
 
 
-if __name__ == "__main__":
-    st.set_page_config(page_title="Dictionary", page_icon="📖", layout="wide")
-    if "words" not in st.session_state:
-        st.session_state["words"] = WORDS
-    if "clicked_buttons" not in st.session_state:
-        st.session_state["clicked_buttons"] = set()
-    if "loaded_examples" not in st.session_state:
-        st.session_state["loaded_examples"] = {}
-    if "displayed_sentences" not in st.session_state:
-        st.session_state["displayed_sentences"] = set()
-    if "nr_of_notes" not in st.session_state:
-        st.session_state["nr_of_notes"] = 0
-    if "toki_pona" not in st.session_state:
-        st.session_state["toki_pona"] = False
-    if "particle" not in st.session_state:
-        st.session_state["particle"] = False
-    if "content_word" not in st.session_state:
-        st.session_state["content_word"] = False
-    if "preposition" not in st.session_state:
-        st.session_state["preposition"] = False
-    if "interjection" not in st.session_state:
-        st.session_state["interjection"] = False
-    if "colour" not in st.session_state:
-        st.session_state["colour"] = False
-    if "atomic" not in st.session_state:
-        st.session_state["atomic"] = True
+# Building the page
 
-    st.title("Dictionary")
+if "words" not in st.session_state:
+    st.session_state["words"] = WORDS
+if "clicked_buttons" not in st.session_state:
+    st.session_state["clicked_buttons"] = set()
+if "loaded_examples" not in st.session_state:
+    st.session_state["loaded_examples"] = {}
+if "displayed_sentences" not in st.session_state:
+    st.session_state["displayed_sentences"] = set()
+if "nr_of_notes" not in st.session_state:
+    st.session_state["nr_of_notes"] = 0
+if "toki_pona" not in st.session_state:
+    st.session_state["toki_pona"] = False
+if "particle" not in st.session_state:
+    st.session_state["particle"] = False
+if "content_word" not in st.session_state:
+    st.session_state["content_word"] = False
+if "preposition" not in st.session_state:
+    st.session_state["preposition"] = False
+if "interjection" not in st.session_state:
+    st.session_state["interjection"] = False
+if "colour" not in st.session_state:
+    st.session_state["colour"] = False
+if "atomic" not in st.session_state:
+    st.session_state["atomic"] = True
 
-    with st.expander("Filters"):
-        st.number_input(
-            "Number of Notes (gliding counts as one note, set to 0 to disable filter)",
-            min_value=0,
-            step=1,
-            value=st.session_state["nr_of_notes"],
-            key="nr_of_notes_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Taken from Toki Pona (slight changes apply)",
-            value=st.session_state["toki_pona"],
-            key="toki_pona_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is a particle",
-            value=st.session_state["particle"],
-            key="particle_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is a content word",
-            value=st.session_state["content_word"],
-            key="content_word_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is a preposition",
-            value=st.session_state["preposition"],
-            key="preposition_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is a interjection",
-            value=st.session_state["interjection"],
-            key="interjection_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is a colour",
-            value=st.session_state["colour"],
-            key="colour_input",
-            on_change=update_filters,
-        )
-        st.checkbox(
-            "Is atomic (not a combination of other words put together)",
-            value=st.session_state["atomic"],
-            key="atomic_input",
-            on_change=update_filters,
-        )
+with st.expander("Filters"):
+    st.number_input(
+        "Number of Notes (gliding counts as one note, set to 0 to disable filter)",
+        min_value=0,
+        step=1,
+        value=st.session_state["nr_of_notes"],
+        key="nr_of_notes_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Taken from Toki Pona (slight changes apply)",
+        value=st.session_state["toki_pona"],
+        key="toki_pona_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is a particle",
+        value=st.session_state["particle"],
+        key="particle_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is a content word",
+        value=st.session_state["content_word"],
+        key="content_word_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is a preposition",
+        value=st.session_state["preposition"],
+        key="preposition_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is a interjection",
+        value=st.session_state["interjection"],
+        key="interjection_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is a colour",
+        value=st.session_state["colour"],
+        key="colour_input",
+        on_change=update_filters,
+    )
+    st.checkbox(
+        "Is atomic (not a combination of other words put together)",
+        value=st.session_state["atomic"],
+        key="atomic_input",
+        on_change=update_filters,
+    )
 
-    st.header("The Words")
+st.header("The Words")
 
-    for word in sorted(st.session_state["words"], key=get_prevalence, reverse=True):
-        if not word.composite:
-            display_word(word)
+for word in sorted(st.session_state["words"], key=get_prevalence, reverse=True):
+    if not word.composite:
+        display_word(word)

@@ -3,3 +3,4 @@ scipy
 matplotlib
 praat-parselmouth
 streamlit_mic_recorder
+st-pages
