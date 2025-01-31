@@ -7,7 +7,7 @@ from src.constants import SAMPLE_RATE
 from src.wave_generation import fade_in_fade_out
 
 
-def play(signal: floatlist, sample_rate: int = SAMPLE_RATE) -> ipd.Audio:
+def player(signal: floatlist, sample_rate: int = SAMPLE_RATE) -> ipd.Audio:
     """Creates a playable object in a Jupyter Notebook. (Not suitable for Streamlit.)
 
     Parameters
@@ -23,6 +23,10 @@ def play(signal: floatlist, sample_rate: int = SAMPLE_RATE) -> ipd.Audio:
         The playable object.
     """
     return ipd.Audio(signal, rate=sample_rate)
+
+
+def play(signal: floatlist, sample_rate: int = SAMPLE_RATE) -> None:
+    sd.play(signal, sample_rate, blocking=True)  # type: ignore
 
 
 def record(nr_of_seconds: int = 8) -> floatlist:
