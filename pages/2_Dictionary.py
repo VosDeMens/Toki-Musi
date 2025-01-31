@@ -1,24 +1,22 @@
 import streamlit as st
 
-from typing import Any
-
 from src.util_streamlit import st_audio
 from src.word import (
     InvalidWordException,
     Word,
 )
 from src.words_functions import (
+    get_prevalence,
     get_words_from_sentence,
     get_sentence_wave,
 )
 from src.file_management import (
     load_examples_from_file,
     load_words_from_folder,
-    WORDS_FOLDER,
 )
 
 
-WORDS = load_words_from_folder([WORDS_FOLDER])
+WORDS = load_words_from_folder()
 EXAMPLES = load_examples_from_file()
 
 
@@ -138,26 +136,26 @@ def sentences_match(sentence_input: list[Word], sentence_actual: list[Word]) -> 
     return True
 
 
-def apply_filters(filters: dict[str, str | int]) -> None:
-    """Filters out words that we don't want to display, and updates `st.session_state`.
+def update_filters() -> None:
+    """Filters out words that we don't want to display, and updates `st.session_state`."""
+    setattr(st.session_state, "nr_of_notes", st.session_state["nr_of_notes_input"])
+    setattr(st.session_state, "toki_pona", st.session_state["toki_pona_input"])
+    setattr(st.session_state, "particle", st.session_state["particle_input"])
+    setattr(st.session_state, "content_word", st.session_state["content_word_input"])
+    setattr(st.session_state, "preposition", st.session_state["preposition_input"])
+    setattr(st.session_state, "interjection", st.session_state["interjection_input"])
+    setattr(st.session_state, "colour", st.session_state["colour_input"])
+    setattr(st.session_state, "atomic", st.session_state["atomic_input"])
+    st.session_state["words"] = filter_words(WORDS)
 
-    Parameters
-    ----------
-    filters : dict[str, Any]
-        The filters to apply.
-    """
-    st.session_state["words"] = filter_words(WORDS, filters)
 
-
-def filter_words(words: list[Word], filters: dict[str, str | int]) -> list[Word]:
+def filter_words(words: list[Word]) -> list[Word]:
     """Filters out words that we don't want to display, and returns the rest.
 
     Parameters
     ----------
     words : list[Word]
         A `list` of words to filter.
-    filters : dict[str, str | int]
-        The filters to use, represented by the names of the filter, and the values to filter for.
 
     Returns
     -------
@@ -165,21 +163,21 @@ def filter_words(words: list[Word], filters: dict[str, str | int]) -> list[Word]
         A filtered `list` of words.
     """
     filtered = words.copy()
-    if filters["nr_of_notes"]:
-        filtered = filter(lambda w: w.nr_of_notes == filters["nr_of_notes"], filtered)
-    if filters["toki_pona"]:
-        filtered = filter(lambda w: w.toki_pona, filtered)
-    if filters["particle"]:
-        filtered = filter(lambda w: w.particle, filtered)
-    if filters["content_word"]:
-        filtered = filter(lambda w: w.content_word, filtered)
-    if filters["preposition"]:
-        filtered = filter(lambda w: w.preposition, filtered)
-    if filters["interjection"]:
-        filtered = filter(lambda w: w.interjection, filtered)
-    if filters["colour"]:
-        filtered = filter(lambda w: w.colour, filtered)
-    return list(filtered)
+    if st.session_state["nr_of_notes"]:
+        filtered = filter(lambda w: w.nr_of_notes == st.session_state["nr_of_notes"], filtered)  # type: ignore
+    if st.session_state["toki_pona"]:
+        filtered = filter(lambda w: w.toki_pona, filtered)  # type: ignore
+    if st.session_state["particle"]:
+        filtered = filter(lambda w: w.particle, filtered)  # type: ignore
+    if st.session_state["content_word"]:
+        filtered = filter(lambda w: w.content_word, filtered)  # type: ignore
+    if st.session_state["preposition"]:
+        filtered = filter(lambda w: w.preposition, filtered)  # type: ignore
+    if st.session_state["interjection"]:
+        filtered = filter(lambda w: w.interjection, filtered)  # type: ignore
+    if st.session_state["colour"]:
+        filtered = filter(lambda w: w.colour, filtered)  # type: ignore
+    return list(filtered)  # type: ignore
 
 
 if __name__ == "__main__":
@@ -192,56 +190,79 @@ if __name__ == "__main__":
         st.session_state["loaded_examples"] = {}
     if "displayed_sentences" not in st.session_state:
         st.session_state["displayed_sentences"] = set()
-
-    st.title("Toki Musi")
+    if "nr_of_notes" not in st.session_state:
+        st.session_state["nr_of_notes"] = 0
+    if "toki_pona" not in st.session_state:
+        st.session_state["toki_pona"] = False
+    if "particle" not in st.session_state:
+        st.session_state["particle"] = False
+    if "content_word" not in st.session_state:
+        st.session_state["content_word"] = False
+    if "preposition" not in st.session_state:
+        st.session_state["preposition"] = False
+    if "interjection" not in st.session_state:
+        st.session_state["interjection"] = False
+    if "colour" not in st.session_state:
+        st.session_state["colour"] = False
+    if "atomic" not in st.session_state:
+        st.session_state["atomic"] = True
 
     st.title("Dictionary")
 
-    with st.expander("Filter words"):
-        filters: dict[str, Any] = {
-            "nr_of_notes": 0,
-            "toki_pona": False,
-            "particle": False,
-            "content_word": False,
-            "preposition": False,
-            "interjection": False,
-            "colour": False,
-        }
-        filters["nr_of_notes"] = st.number_input(
+    with st.expander("Filters"):
+        st.number_input(
             "Number of Notes (gliding counts as one note, set to 0 to disable filter)",
             min_value=0,
             step=1,
-            key="filter_nr_of_notes",
-            on_change=apply_filters(filters),
+            value=st.session_state["nr_of_notes"],
+            key="nr_of_notes_input",
+            on_change=update_filters,
         )
-        filters["toki_pona"] = st.checkbox(
+        st.checkbox(
             "Taken from Toki Pona (slight changes apply)",
-            key="filter_toki_pona",
-            on_change=apply_filters(filters),
+            value=st.session_state["toki_pona"],
+            key="toki_pona_input",
+            on_change=update_filters,
         )
-        filters["particle"] = st.checkbox(
-            "Is a particle", key="filter_particle", on_change=apply_filters(filters)
+        st.checkbox(
+            "Is a particle",
+            value=st.session_state["particle"],
+            key="particle_input",
+            on_change=update_filters,
         )
-        filters["content_word"] = st.checkbox(
+        st.checkbox(
             "Is a content word",
-            key="filter_content_word",
-            on_change=apply_filters(filters),
+            value=st.session_state["content_word"],
+            key="content_word_input",
+            on_change=update_filters,
         )
-        filters["preposition"] = st.checkbox(
+        st.checkbox(
             "Is a preposition",
-            key="filter_preposition",
-            on_change=apply_filters(filters),
+            value=st.session_state["preposition"],
+            key="preposition_input",
+            on_change=update_filters,
         )
-        filters["interjection"] = st.checkbox(
-            "Is an interjection",
-            key="filter_interjection",
-            on_change=apply_filters(filters),
+        st.checkbox(
+            "Is a interjection",
+            value=st.session_state["interjection"],
+            key="interjection_input",
+            on_change=update_filters,
         )
-        filters["colour"] = st.checkbox(
-            "Is a colour", key="filter_colour", on_change=lambda: apply_filters(filters)
+        st.checkbox(
+            "Is a colour",
+            value=st.session_state["colour"],
+            key="colour_input",
+            on_change=update_filters,
+        )
+        st.checkbox(
+            "Is atomic (not a combination of other words put together)",
+            value=st.session_state["atomic"],
+            key="atomic_input",
+            on_change=update_filters,
         )
 
-    st.header("the words")
+    st.header("The Words")
 
-    for word in WORDS:
-        display_word(word)
+    for word in sorted(st.session_state["words"], key=get_prevalence, reverse=True):
+        if not word.composite:
+            display_word(word)

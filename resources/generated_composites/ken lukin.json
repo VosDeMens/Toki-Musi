@@ -1,10 +1,10 @@
 {
     "name": "ken lukin",
-    "notes_string": "0:5:7_:5:5",
+    "notes_string": "0:5:7_:5:2:7",
     "description": "visible",
-    "nr_of_notes": 5,
+    "nr_of_notes": 6,
     "etymelogies": [
-        "composite word from ken and lukin 0:5:7_:5:**~~0:5~~**:5"
+        "composite word from ken and lukin 0:5:7_:5:**~~0~~**:2:7"
     ],
     "toki_pona": false,
     "particle": false,

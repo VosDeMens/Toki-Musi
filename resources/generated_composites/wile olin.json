@@ -1,10 +1,10 @@
 {
     "name": "wile olin",
-    "notes_string": "0:2:4:5:7:9",
+    "notes_string": "0:2:4_:2_:9:7",
     "description": "crush (being in love)",
     "nr_of_notes": 6,
     "etymelogies": [
-        "composite word from wile and olin 0:2:4:**~~0~~**:5:7:9"
+        "composite word from wile and olin 0:2:4:**~~0:4~~**:2_:9_:7"
     ],
     "toki_pona": false,
     "particle": false,

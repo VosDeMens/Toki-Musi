@@ -1,10 +1,10 @@
 {
     "name": "kalama",
-    "notes_string": "0:2_:4:5",
-    "description": "sound",
-    "nr_of_notes": 4,
+    "notes_string": "0:2_:4:5:5",
+    "description": "to hear",
+    "nr_of_notes": 5,
     "etymelogies": [
-        "Paper Kites - Never Heard A Sound ([*root*-ish] [still] [you] [i])"
+        "kute with a doubled last note"
     ],
     "toki_pona": true,
     "particle": false,

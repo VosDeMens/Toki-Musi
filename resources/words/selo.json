@@ -1,12 +1,12 @@
 {
-    "name": "kon wawa",
-    "notes_string": "0:5_:3_:7:5",
-    "description": "storm",
-    "nr_of_notes": 5,
+    "name": "selo",
+    "notes_string": "0:-4:-5",
+    "description": "shell, skin",
+    "nr_of_notes": 3,
     "etymelogies": [
-        "composite word from kon and wawa 0:5_:3_:7:**~~0:7~~**:5"
+        "Hang Youth - SHELL IS EEN PRIMA BEDRIJF (ALS IK DE WEBSITE MAG GELOVEN) (chords chorus)"
     ],
-    "toki_pona": false,
+    "toki_pona": true,
     "particle": false,
     "content_word": true,
     "preposition": false,
@@ -16,7 +16,7 @@
     "comparativizable": true,
     "questionifiable": true,
     "colour": false,
-    "composite": true,
+    "composite": false,
     "plural": false,
     "past_tense": false,
     "comparative": false,

@@ -1,12 +1,12 @@
 {
-    "name": "moli sewi",
-    "notes_string": "0:3:5:9:7",
-    "description": "sacrifice",
-    "nr_of_notes": 5,
+    "name": "kute",
+    "notes_string": "0:2_:4:5",
+    "description": "to hear",
+    "nr_of_notes": 4,
     "etymelogies": [
-        "composite word from moli and sewi 0:3:5:**~~0:5~~**:9:7"
+        "Paper Kites - Never Heard A Sound ([*root*-ish] [still] [you] [i])"
     ],
-    "toki_pona": false,
+    "toki_pona": true,
     "particle": false,
     "content_word": true,
     "preposition": false,
@@ -16,7 +16,7 @@
     "comparativizable": true,
     "questionifiable": true,
     "colour": false,
-    "composite": true,
+    "composite": false,
     "plural": false,
     "past_tense": false,
     "comparative": false,

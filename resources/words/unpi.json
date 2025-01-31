@@ -4,7 +4,7 @@
     "description": "End of a pi clause (see pi). This is not necessary in Toki Pona, but since we key change back to the original key after a pi clause in Toki Musi, we need a way to indicate this if we wanna generate the sound.",
     "nr_of_notes": 0,
     "etymelogies": [
-        ""
+        "A key change down seemed like a nice way to indicate we're going back to the main sentence."
     ],
     "toki_pona": true,
     "particle": true,

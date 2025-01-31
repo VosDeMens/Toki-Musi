@@ -1,10 +1,10 @@
 {
     "name": "kalama pona",
-    "notes_string": "0:2_:4:5:4",
+    "notes_string": "0:2_:4:5:5:4",
     "description": "cheer",
-    "nr_of_notes": 5,
+    "nr_of_notes": 6,
     "etymelogies": [
-        "composite word from kalama and pona 0:2_:4:5:**~~0~~**:4"
+        "composite word from kalama and pona 0:2_:4:5:5:**~~0~~**:4"
     ],
     "toki_pona": false,
     "particle": false,

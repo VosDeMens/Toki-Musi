@@ -1,10 +1,10 @@
 {
     "name": "kiwen lukin",
-    "notes_string": "0:2:5:2:5:5",
+    "notes_string": "0:2:5:2:5:2:7",
     "description": "glass",
-    "nr_of_notes": 6,
+    "nr_of_notes": 7,
     "etymelogies": [
-        "composite word from kiwen and lukin 0:2:5:2:5:**~~0:5~~**:5"
+        "composite word from kiwen and lukin 0:2:5:2:5:**~~0~~**:2:7"
     ],
     "toki_pona": false,
     "particle": false,
