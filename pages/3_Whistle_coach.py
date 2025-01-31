@@ -31,7 +31,6 @@ from src.word import (
 from src.words_functions import get_sentence_wave, get_words_from_sentence
 from src.my_types import floatlist
 from src.file_management import (
-    WORDS_FOLDER,
     load_examples_from_file,
     load_markdown_from_file,
     WHISTLE_COACH_INSTRUCTIONS_FILE,
@@ -42,12 +41,17 @@ INTRUCTIONS = load_markdown_from_file(WHISTLE_COACH_INSTRUCTIONS_FILE)
 
 WORDS_WITHOUT_SLIDES = [
     w
-    for w in load_words_from_folder([WORDS_FOLDER])
-    if "/" not in w.notes_string and "\\" not in w.notes_string
+    for w in load_words_from_folder()
+    if "/" not in w.notes_string
+    and "\\" not in w.notes_string
+    and "^" not in w.notes_string
+    and "*" not in w.notes_string
 ]
 
 
-def get_examples_with_words(words: list[Word]) -> list[tuple[str, str]]:
+def get_examples_with_words(
+    words: list[Word], include_words: bool = True
+) -> list[tuple[str, str]]:
     all_examples = load_examples_from_file()
     filtered_examples = all_examples[:]
     for example in all_examples:
@@ -59,6 +63,11 @@ def get_examples_with_words(words: list[Word]) -> list[tuple[str, str]]:
                     filtered_examples.remove(example)
         except InvalidWordException:
             filtered_examples.remove(example)
+    if include_words:
+        tms = [tm for tm, _ in filtered_examples]
+        for word in words:
+            if word.name not in tms and word.nr_of_notes >= 2:
+                filtered_examples.append((word.name, word.description))
     return filtered_examples
 
 
@@ -255,6 +264,10 @@ def callback():
 
 if "speed" not in st.session_state:
     st.session_state["speed"] = 10
+if "prefer_composites" not in st.session_state:
+    st.session_state["prefer_composites"] = False
+if "allow_keychanges" not in st.session_state:
+    st.session_state["allow_keychanges"] = False
 if "f_min" not in st.session_state:
     st.session_state["f_min"] = 300
 if "f_max" not in st.session_state:
@@ -284,6 +297,36 @@ with st.expander("Settings"):
         key="speed_input",
         on_change=lambda: setattr(
             st.session_state, "speed", st.session_state["speed_input"]
+        ),
+    )
+    st.divider()
+    st.subheader("Prefer composites")
+    st.write(  # type: ignore
+        "If two words belong together, you can turn their melodies into one melody. Check the #guide for more information on how that works. If you select this option, established combinations of words will be turned into composite words."
+    )
+    st.checkbox(
+        " ",
+        value=st.session_state["prefer_composites"],
+        key="prefer_composites_input",
+        on_change=lambda: setattr(
+            st.session_state,
+            "prefer_composites",
+            st.session_state["prefer_composites_input"],
+        ),
+    )
+    st.divider()
+    st.subheader("Allow keychanges")
+    st.write(  # type: ignore
+        "When loading a random reference sentence, allow sentences with key changes (more difficult)."
+    )
+    st.checkbox(
+        " ",
+        value=st.session_state["allow_keychanges"],
+        key="allow_keychanges_input",
+        on_change=lambda: setattr(
+            st.session_state,
+            "allow_keychanges",
+            st.session_state["allow_keychanges_input"],
         ),
     )
     st.divider()
@@ -342,10 +385,17 @@ st.text_input(
 try:
     if st.session_state["reference"]:
         words_in_sentence = get_words_from_sentence(
-            st.session_state["reference"], WORDS_WITHOUT_SLIDES
+            st.session_state["reference"],
+            WORDS_WITHOUT_SLIDES,
+            st.session_state["prefer_composites"],
         )
-        if st.session_state["reference"] in EXAMPLES:
-            st.write(f'Meaning: {EXAMPLES[st.session_state["reference"]]}')  # type: ignore
+        print(":")
+        print(st.session_state["reference"])
+        print(st.session_state["reference"] in EXAMPLES)
+        if st.session_state["reference"] in (
+            dictionary := {tm: en for tm, en in EXAMPLES}
+        ):
+            st.write(f'Meaning: {dictionary[st.session_state["reference"]]}')  # type: ignore
         st.write(  # type: ignore
             f"Notes string:&nbsp;&nbsp;&nbsp;{'&nbsp;&nbsp;&nbsp;'.join(w.get_notes_string(True) for w in words_in_sentence)}"
         )
@@ -361,7 +411,16 @@ except InvalidWordException:
 st.button(
     "Randomise",
     on_click=lambda: setattr(
-        st.session_state, "reference", choice([tm for tm, _ in EXAMPLES])
+        st.session_state,
+        "reference",
+        choice(
+            [
+                tm
+                for tm, _ in EXAMPLES
+                if st.session_state["allow_keychanges"]
+                or (" la " not in tm and " pi " not in tm)
+            ]
+        ),
     ),
 )
 

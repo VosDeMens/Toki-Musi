@@ -83,10 +83,10 @@ mi _jan pi pali kasi - I'm a gardener.
 mi _jan suli pi sona kasi - I'm an expert botanist.
 mi _jo pona .pana sina - I safely have your gift!
 pilin mi _ni rest ona _kute sona .mi - My thought is that they heard and understood me!
-kule kasi _ante - The plants are changing colour!
+kule kasi-s _ante - The plants are changing colour!
 ko jelo kasi _ike .mi - Pollen gives me allergies.
 lete walo ni ale _suwi mute - All this vanilla ice cream is very sweet!
-ona _pana .kasi-s laso loje - They gifted red and blue flowers.
+ona _pana .kasi-s laso loje - They gifted red and green flowers.
 jan lili _toki .ni rest mi toki pi nasa mute - A small child said this: I speak weirdly!
 sona mi pi toki musi unpi _suli - My understanding of Toki Musi is huge!
 lipu orange _jo .sona mi - The orange journal has my knowledge.
@@ -117,7 +117,7 @@ sina _sona ala wawa .ken sina - You don't know how to empower your ability.
 mi _wile ala awen lape - I don't want to keep sleeping.
 mi _alasa ala kama loje - I'm not trying to get sunburnt!
 ona _pana .ni ala rest ona _pana .ni! - They gave NOT this. They gave that!
-ni _jaki mute! mi pilin ala .ni - That is so gross. I'm not touching that!
+ni _jaki mute! mi luka ala .ni - That is so gross. I'm not touching that!
 
 mi _tawa telo suli - I'm traveling to the ocean!
 ona _pana-ed .sona _tawa jan-s ante - They gave knowledge to different people.
@@ -170,7 +170,7 @@ taso _pona - Being alone is good.
 ona _kama-ed taso - They became alone.
 o utala ala .soweli - Don't attack the animal!
 o lukin .kala suli - Look at this huge fish!
-o poki ala .waso-s - Don't put the birds in a box!
+o poki ala .waso-s - Don't cage the birds!
 o moli ala .sitelen sina! ona _pona - Don't kill your painting. It's fantastic!
 palisa-s o jaki ala .tomo! o weka .palisa-s - Sticks must not make the house gross. Remove the sticks!
 pipi o weka - Bugs, go away!
@@ -179,7 +179,7 @@ jan pi sona musi unpi o pana .sona - The person who knows about the game should 
 ona ale o tawa ala - They all must not move!
 pan sina o pona wawa - Your pasta has to come out amazingly!
 waso o - Hey bird!
-o moku .kili rest akesi lili o - Please eat the lettuce, little lizard
+o moku .kili rest akesi lili o - Please eat the fruit, little lizard
 suno _pona rest taso pimeja _pona .ken sitelen mi - The sun is good, but darkness helps my writing ability.
 mi _pilin .suno. taso mi _lete - I feel the sunlight, but I feel cold.
 mi _waso ala. taso mi _ken tawa sewi - I am not a bird, but I can fly!
@@ -250,8 +250,8 @@ ona _pini a - Yes, they ended (the game)! (in response to the above)
 
 o kama jo .ilo-s 3 - Pick up three tools.
 mi _wan .lipu-s ale - I combined all the papers.
-soweli _kipisi-ed .moku tawa pana - The animal divided up the food to gift.
-ni _pona nanpa 1 tawa mi - This is my favorite!
+soweli _kipisi-ed .moku tawa pana - The animal divided up the food to give (it).
+ni _nanpa 1 tawa mi - This is my favorite!
 sina _jo .kasi-s 27 - You have twenty seven plants.
 jan-s 201 _lon - There are two hundred and one people here.
 mi _lukin .lipu-s 15 - I've read fifteen books.
@@ -297,7 +297,7 @@ jan-s pona mi _toki-ed lon - My friends spoke the truth. (were speaking truly)
 mi-s _pana-ed .moku tawa sina-s - We gave food to you.
 tomo pali _pana .kon-s seli ike - The factory is emitting greenhouse gases.
 taso mi _lukin .kule-s lon sina _suno tan insa - But I see your true colours shining through.
-mi _kama-ed jo .lipu - I received the book.
+mi _kama-ed jo .lipu sin - I received the new book.
 tenpo pimeja pini la pana pana pana .jan tawa mi tawa mi tawa mi - Gimme gimme gimme a man after midnight.
 ala - no
 ona-s _toki .mi - They are talking about me.
@@ -333,8 +333,8 @@ mi la po-s _ike - I dislike the police.
 tomo kama sona - school (building of coming to know)
 tenpo esun - week
 jan pona mi o - (addressing a friend)
-mi _pilin .kiwen - I touch the rock.
-o pilin .kasi - Touch grass.
+mi _luka .kiwen - I touch the rock.
+o luka .kasi - Touch grass.
 ken-s jan - human rights
 tenpo nasa - trip
 mute _lili - The quantity is small.
@@ -364,5 +364,38 @@ jan kama - visitor
 ona-s _wile ala sona - They don't want to know.
 mi _pali .jan tan sina - I'll make a man out of you.
 mi _sona seli .moku - I know how to cook.
-tandem pakala - bike (broken tandem)
-mi-s _lon tandem rest lon ni la pona _lon - We are on the tandem bike. It's really nice here.
+
+pipi-s _monsuta .jan-s mute rest taso .mi ala - Bugs scare many people, but not me.
+mi-s _lon tandem rest lon ni la pona _lon - We are on the tandem. It's really nice here.
+seme la waso-s purple _lon ala - How/Why are there no purple birds?
+tenpo ni la o pake ala .mi - Don't stop me now!
+mi _anpa-ed wawa la selo mi _pakala-ed - My skin is bruised because i fell down hard.
+leko-s lili lon poka nena - Little boxes on the hillside.
+alasa soko-s _pona-er awen tawa isipin-s jan-s - Foraging mushrooms is safer than people think.
+ijo-s _ken kama sama ala isipin sina - Things may not work out how you thought.
+tenpo ala la sinpin wawa sina _powe .jan - Your brave face is never fooling anyone.
+ona la mani _suli-est - It's all about the money (to them).
+o pakala lili .monsi mi - Please scratch my back.
+medikeke sin rest mi sin - New meds, new me.
+kalama musi ni _mowi - This music is moving.
+kulupu pi jan pona unpi ni _mowi - This friend group is wholesome.
+tenpo suno ale la mi _kama majuna-er lili kin - Everyday i grow a little older too.
+mi _kama lukin .lupa len rest eureka - I discover a hidden passage... 🗡️🛡️🧝‍♂️
+tenpo suno ni la blue waso _mowi - The sky is beautiful today.
+telo _blue la mi _pilin ni rest mi-s _ken moku .ni - Because the water is blue, i think we can drink it.
+mi _lukin ni rest sina _pilin blue - I see you're feeling blue.
+kiwen-s uta mi _pakala - My teeth are hurting.
+o pana .uta tawa mi - Give me a kiss.
+poki mi _jo .lupa - There's a hole in my bucket.
+monsi sina tawa lupa la ala _lon - Nothing's gonna happen with your back against the door.
+sina _pona _sona ni la o _kamala kepeken luka-s sina - If you're happy and you know it, clap your hands.
+moku ni _namako la o awen - Be careful, because the food is spicy.
+mi _wile .pana namako - I want an extra gift.
+sin la train mi _tenpo ike - My train is late again.
+mi _jo .noka 1 _lon supa .noka ante _lon train - I got one foot on the platform, the other foot on a train.
+o pake .train ni - Stop this train.
+ona _pink rest _pink pona - It's pink, pretty pink.
+soweli pink - Pink panther.
+sina _wile-? unpa kepeken mi - Voulez vous couchez avec moi?
+lawa pi ma kasi suli - The law of the jungle.
+lon la lawa _pali ala ijo-s nasa ike - The government is definitely not doing shady stuff.

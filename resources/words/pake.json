@@ -1,10 +1,10 @@
 {
     "name": "pake",
-    "notes_string": "0:4_:5_:4_:2",
+    "notes_string": "0:4_:2:2",
     "description": "prevent, stop, forbid",
-    "nr_of_notes": 5,
+    "nr_of_notes": 4,
     "etymelogies": [
-        "John Mayer - Stop This Train ([i] [wan-] [-na] [get] [off])"
+        "John Mayer - Stop This Train ([*root*] [stop] [this] [train])"
     ],
     "toki_pona": true,
     "particle": false,

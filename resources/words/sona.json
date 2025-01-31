@@ -1,10 +1,10 @@
 {
     "name": "sona",
-    "notes_string": "0:2_:5",
+    "notes_string": "0:7:5",
     "description": "to know, knowledge, understand",
-    "nr_of_notes": 3,
+    "nr_of_notes": 4,
     "etymelogies": [
-        "Tally Hall - Never Meant To Know ([there] [are] [some-])"
+        "Ezra Glatt - You Are You ([kno-] [-o-] [-o-] [-ow])"
     ],
     "toki_pona": true,
     "particle": false,
@@ -21,5 +21,7 @@
     "past_tense": false,
     "comparative": false,
     "superlative": false,
-    "question": false
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
 }

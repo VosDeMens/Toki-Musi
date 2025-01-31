@@ -12,7 +12,11 @@ BASIC_WORDS = load_words_from_folder([WORDS_FOLDER])
 ALL_WORDS = load_words_from_folder()
 
 
-def get_words_from_sentence(sentence: str, existing_words: list[Word]) -> list[Word]:
+def get_words_from_sentence(
+    sentence: str,
+    existing_words: list[Word] = ALL_WORDS,
+    prefer_composites: bool = False,
+) -> list[Word]:
     """Converts a sentence (of text) to a `list` of `Word` objects.
 
     The words in the sentence have a couple of rules they should conform to.
@@ -34,6 +38,9 @@ def get_words_from_sentence(sentence: str, existing_words: list[Word]) -> list[W
         The sentence in text.
     existing_words : list[Word]
         The vocabulary of words, that the words in the sentence have to be based on.
+    prefer_composites : bool
+        Flag to interpret word combination that are contractable as one unit whenever possible,
+        by default False
 
     Returns
     -------
@@ -69,26 +76,105 @@ def get_words_from_sentence(sentence: str, existing_words: list[Word]) -> list[W
         parts = word_string.split("-")
         if parts[0] not in word_names:
             raise InvalidWordException(parts[0])
+
         word_object = existing_words[word_names.index(parts[0])]
-        if finite_verb:
-            word_object = word_object.finite_verbify()
-        if direct_object:
-            word_object = word_object.direct_objectify()
         for part in parts[1:]:
-            if part == "ed":
-                word_object = word_object.past_tensify()
-            elif part == "s":
+            if part == "s":
                 word_object = word_object.pluralize()
             elif part == "er":
                 word_object = word_object.comparativize()
             elif part == "est":
                 word_object = word_object.superlativize()
+            elif part == "ed":
+                word_object = word_object.past_tensify()
             elif part == "?":
                 word_object = word_object.questionify()
             else:
                 raise InvalidWordException(word_string)
+        if finite_verb:
+            word_object = word_object.finite_verbify()
+        if direct_object:
+            word_object = word_object.direct_objectify()
+
         word_objects.append(word_object)
+
+    if prefer_composites:
+        word_objects_with_composites: list[Word] = []
+        i = 0
+        while i < len(word_objects):
+            print(f"{i = }")
+            first_word_of_composite = word_objects[i]
+            print(f"{first_word_of_composite = }")
+            name_of_composite = first_word_of_composite.name
+            j = 1
+            while i + j < len(word_objects):
+                print(f"{j = }")
+                print(f"{name_of_composite = }")
+                next_word = word_objects[i + j]
+                print(f"{next_word = }")
+                new_name = f"{name_of_composite} {next_word.name}"
+                print(f"{new_name = }")
+                if next_word.is_modified() or new_name not in word_names:
+                    break
+                name_of_composite = new_name
+                j += 1
+            word_objects_with_composites.append(
+                generate_composite(
+                    name_of_composite,
+                    first_word_of_composite,
+                    word_names,
+                    existing_words,
+                )
+            )
+            print(f"{word_objects_with_composites = }")
+            i += j
+
+        return word_objects_with_composites
+
     return word_objects
+
+
+def generate_composite(
+    name_of_composite: str,
+    first_word_of_composite: Word,
+    word_names: list[str],
+    existing_words: list[Word],
+) -> Word:
+    """Creates a `Word` object from `name_of_composite`, with the modifications of `first_word_of_composite`.
+
+    Parameters
+    ----------
+    name_of_composite : str
+        The name of the composite word to generate.
+    first_word_of_composite : Word
+        The first word in the composition, whose modifications will be copied to the composite.
+    word_names : list[str]
+        The names of all existing words, in the same order as `existing_words`.
+    existing_words : list[Word]
+        `Word` objects for all existing words, in the same order as `word_name`.
+
+    Returns
+    -------
+    Word
+        The composite word.
+    """
+    composite_object = existing_words[word_names.index(name_of_composite)]
+    composite_object = composite_object.pluralize(first_word_of_composite.plural)
+    composite_object = composite_object.comparativize(
+        first_word_of_composite.comparative
+    )
+    composite_object = composite_object.superlativize(
+        first_word_of_composite.superlative
+    )
+    composite_object = composite_object.past_tensify(first_word_of_composite.past_tense)
+    composite_object = composite_object.questionify(first_word_of_composite.question)
+    composite_object = composite_object.finite_verbify(
+        first_word_of_composite.finite_verb
+    )
+    composite_object = composite_object.direct_objectify(
+        first_word_of_composite.direct_object
+    )
+    return composite_object
 
 
 def determine_prevalences(examples: list[tuple[str, str]]) -> dict[str, int]:

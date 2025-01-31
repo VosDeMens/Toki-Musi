@@ -1,9 +1,10 @@
 {
     "name": "lon",
     "notes_string": "0:4:5",
-    "description": "to exist, to be, at, true. don't use to say they are a person, just say ona li jan",
+    "description": "to exist, to be, at, true. don't use to say they are a person, just say ona _jan",
     "nr_of_notes": 3,
     "etymelogies": [
+        "Jarrod Lawson - He's There ([his] [pre-] [-sence])",
         "The Beatles - Let It Be ([*root*] [when] [i])"
     ],
     "toki_pona": true,
@@ -11,14 +12,17 @@
     "content_word": true,
     "preposition": true,
     "interjection": true,
-    "pluralizable": false,
+    "pluralizable": true,
     "past_tensifiable": true,
     "comparativizable": true,
     "questionifiable": true,
     "colour": false,
+    "composite": false,
     "plural": false,
     "past_tense": false,
     "comparative": false,
     "superlative": false,
-    "question": false
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
 }

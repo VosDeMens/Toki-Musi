@@ -17,7 +17,7 @@
     "comparativizable": true,
     "questionifiable": true,
     "colour": false,
-    "composite": true,
+    "composite": false,
     "plural": false,
     "past_tense": false,
     "comparative": false,

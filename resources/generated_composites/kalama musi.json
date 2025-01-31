@@ -1,10 +1,10 @@
 {
     "name": "kalama musi",
-    "notes_string": "0:2_:4:5:7",
+    "notes_string": "0:2_:4:5_:9",
     "description": "music",
     "nr_of_notes": 5,
     "etymelogies": [
-        "composite word from kalama and musi 0:2_:4:5:**~~0:5~~**:7"
+        "composite word from kalama and musi 0:2_:4:**~~5:5:0~~**:5_:9"
     ],
     "toki_pona": false,
     "particle": false,

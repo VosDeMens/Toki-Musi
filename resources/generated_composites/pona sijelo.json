@@ -1,16 +1,16 @@
 {
-    "name": "nena linja",
-    "notes_string": "0:2:5_:7:5_:4",
-    "description": "angle",
-    "nr_of_notes": 6,
+    "name": "pona sijelo",
+    "notes_string": "0:4:5:3",
+    "description": "health",
+    "nr_of_notes": 4,
     "etymelogies": [
-        "composite word from nena and linja 0:2:5_:7:**~~0~~**:5_:4"
+        "composite word from pona and sijelo 0:4:**~~0~~**:5:3"
     ],
     "toki_pona": false,
     "particle": false,
     "content_word": true,
     "preposition": false,
-    "interjection": false,
+    "interjection": true,
     "pluralizable": true,
     "past_tensifiable": true,
     "comparativizable": true,

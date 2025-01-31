@@ -198,42 +198,62 @@ class Word:
             string = make_printable(string)
         return string
 
-    def past_tensify(self):
+    def pluralize(self, value: bool = True):
         copy = self.copy()
-        copy.past_tense = True
+        copy.plural = value
         return copy
 
-    def comparativize(self):
+    def comparativize(self, value: bool = True):
         copy = self.copy()
-        copy.comparative = True
-        copy.superlative = False
+        copy.comparative = value
+        if value:
+            copy.superlative = False
         return copy
 
-    def superlativize(self):
+    def superlativize(self, value: bool = True):
         copy = self.copy()
-        copy.comparative = False
-        copy.superlative = True
+        if value:
+            copy.comparative = False
+        copy.superlative = value
         return copy
 
-    def pluralize(self):
+    def past_tensify(self, value: bool = True):
         copy = self.copy()
-        copy.plural = True
+        copy.past_tense = value
         return copy
 
-    def questionify(self):
+    def questionify(self, value: bool = True):
         copy = self.copy()
-        copy.question = True
+        copy.question = value
         return copy
 
-    def finite_verbify(self):
+    def finite_verbify(self, value: bool = True):
         copy = self.copy()
-        copy.finite_verb = True
+        copy.finite_verb = value
         return copy
 
-    def direct_objectify(self):
+    def direct_objectify(self, value: bool = True):
         copy = self.copy()
-        copy.direct_object = True
+        copy.direct_object = value
         return copy
+
+    def is_modified(self) -> bool:
+        """Whether this word has any modification at all.
+
+        Returns
+        -------
+        bool
+            ...
+        """
+        return (
+            self.plural
+            or self.comparative
+            or self.superlative
+            or self.past_tense
+            or self.question
+            or self.finite_verb
+            or self.direct_object
+        )
 
 
 class NumberWord(Word):

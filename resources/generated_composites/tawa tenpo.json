@@ -1,10 +1,10 @@
 {
     "name": "tawa tenpo",
-    "notes_string": "0:4:7:9:7",
+    "notes_string": "0:4:7:9_:7",
     "description": "until",
     "nr_of_notes": 5,
     "etymelogies": [
-        "composite word from tawa and tenpo 0:4:7:**~~0~~**:9:7"
+        "composite word from tawa and tenpo 0:4:7:**~~0~~**:9_:7"
     ],
     "toki_pona": false,
     "particle": false,

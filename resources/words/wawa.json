@@ -1,10 +1,10 @@
 {
     "name": "wawa",
-    "notes_string": "0:7:5",
+    "notes_string": "0/5\\0/5\\0",
     "description": "strong, hard, fast",
-    "nr_of_notes": 3,
+    "nr_of_notes": 1,
     "etymelogies": [
-        "Daft Punk - Harder, Better, Faster, Stronger ([*root*] [har-] [-der])"
+        "WOWOW"
     ],
     "toki_pona": true,
     "particle": false,
