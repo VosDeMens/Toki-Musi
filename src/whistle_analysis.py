@@ -100,10 +100,8 @@ def analyse_recording_to_notes(
     for i in range(len(new_notes)):
         if new_notes[i]:
             unexpected_one_note_word = (
-                i == len(new_notes) - 1
-                or new_notes[i + 1]
-                and (float_notes[i] < -2.5 or float_notes[i] > 2.5)
-            )
+                i == len(new_notes) - 1 or new_notes[i + 1]
+            ) and (float_notes[i] < -2.5 or float_notes[i] > 2.5)
             if unexpected_one_note_word:
                 new_notes[i] = False
 
