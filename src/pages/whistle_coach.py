@@ -389,9 +389,6 @@ try:
             WORDS_WITHOUT_SLIDES,
             st.session_state["prefer_composites"],
         )
-        print(":")
-        print(st.session_state["reference"])
-        print(st.session_state["reference"] in EXAMPLES)
         if st.session_state["reference"] in (
             dictionary := {tm: en for tm, en in EXAMPLES}
         ):

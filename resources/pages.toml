@@ -1,0 +1,29 @@
+[[pages]]
+path = "src/pages/welcome.py"
+name = "Welcome"
+icon = ":house:"
+
+[[pages]]
+path = "src/pages/about.py"
+name = "About"
+icon = ":eyes:"
+
+[[pages]]
+path = "src/pages/guide.py"
+name = "Guide"
+icon = ":compass:"
+
+[[pages]]
+path = "src/pages/dictionary.py"
+name = "Dictionary"
+icon = ":book:"
+
+[[pages]]
+path = "src/pages/whistle_coach.py"
+name = "Whistle Coach"
+icon = ":dart:"
+
+[[pages]]
+path = "src/pages/transcribe_coach.py"
+name = "Transcribe Coach"
+icon = ":ear:"

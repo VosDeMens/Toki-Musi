@@ -102,18 +102,12 @@ def get_words_from_sentence(
         word_objects_with_composites: list[Word] = []
         i = 0
         while i < len(word_objects):
-            print(f"{i = }")
             first_word_of_composite = word_objects[i]
-            print(f"{first_word_of_composite = }")
             name_of_composite = first_word_of_composite.name
             j = 1
             while i + j < len(word_objects):
-                print(f"{j = }")
-                print(f"{name_of_composite = }")
                 next_word = word_objects[i + j]
-                print(f"{next_word = }")
                 new_name = f"{name_of_composite} {next_word.name}"
-                print(f"{new_name = }")
                 if next_word.is_modified() or new_name not in word_names:
                     break
                 name_of_composite = new_name
@@ -126,7 +120,6 @@ def get_words_from_sentence(
                     existing_words,
                 )
             )
-            print(f"{word_objects_with_composites = }")
             i += j
 
         return word_objects_with_composites
