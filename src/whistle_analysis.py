@@ -1,6 +1,5 @@
 from math import log
 import re
-from typing import cast
 import numpy as np
 from itertools import pairwise, product
 import parselmouth
@@ -8,7 +7,6 @@ import parselmouth
 from src.augmentation import Augmentation
 from src.constants import (
     FREQ_ROOT,
-    SAMPLE_RATE,
     VAR_THRESHOLD_FOR_LONG_NOTE,
 )
 from src.my_types import floatlist, segbounds
@@ -30,9 +28,9 @@ WORDS = load_words_from_folder()
 
 def analyse_recording_to_notes(
     recording: floatlist,
+    sample_rate_recording: int,
     f_min: float = 300,
     f_max: float = 4000,
-    sample_rate: int = SAMPLE_RATE,
 ) -> tuple[list[Note], segbounds, float, int]:
     """Extracts from a recording: the notes, when the notes occur, and the offset of the root from C.
 
@@ -43,8 +41,12 @@ def analyse_recording_to_notes(
     ----------
     recording : floatlist
         A `np.array` representing a sound wave of a monophonic recording (whistle or otherwise).
-    sample_rate : int, optional
-        The sample rate of the recording, by default SAMPLE_RATE := 44100.
+    sample_rate_recording : int
+        The sample rate of the recording.
+    f_min : float
+        The lowest frequency to detect in the recording.
+    f_max : float
+        The highest frequency to detect in the recording.
 
     Returns
     -------
@@ -58,9 +60,11 @@ def analyse_recording_to_notes(
             If the sentence is in D, this value will be 2.
         - The sample rate in the pitch analysis.
     """
-    snd = parselmouth.Sound(recording, sampling_frequency=sample_rate)  # type: ignore
+    snd = parselmouth.Sound(recording, sampling_frequency=sample_rate_recording)  # type: ignore
     parselmouth_output = snd.to_pitch_ac(  # type: ignore
-        pitch_floor=f_min, pitch_ceiling=f_max, silence_threshold=0.1
+        pitch_floor=f_min,
+        pitch_ceiling=f_max,
+        silence_threshold=0.1,
     )
     freqs: floatlist = np.array(parselmouth_output.selected_array["frequency"])  # type: ignore
     segment_bounds_raw = find_segment_bounds_parselmouth(freqs)
@@ -93,6 +97,16 @@ def analyse_recording_to_notes(
     pauses = determine_pause_lengths(segment_bounds)
     new_notes = [True] + [pause > long_pause_threshold for pause in pauses]
 
+    for i in range(len(new_notes)):
+        if new_notes[i]:
+            unexpected_one_note_word = (
+                i == len(new_notes) - 1
+                or new_notes[i + 1]
+                and (float_notes[i] < -2.5 or float_notes[i] > 2.5)
+            )
+            if unexpected_one_note_word:
+                new_notes[i] = False
+
     notes: list[Note] = [
         Note(pitch, length, augmentation_list, new_note)
         for pitch, length, augmentation_list, new_note in zip(
@@ -100,7 +114,12 @@ def analyse_recording_to_notes(
         )
     ]
 
-    return (notes, segment_bounds, offset, SAMPLE_RATE * len(freqs) // (len(recording)))
+    return (
+        notes,
+        segment_bounds,
+        offset,
+        sample_rate_recording * len(freqs) // (len(recording)),
+    )
 
 
 def find_segment_bounds_parselmouth(freqs: floatlist) -> segbounds:
@@ -136,7 +155,7 @@ def find_segment_bounds_parselmouth(freqs: floatlist) -> segbounds:
     return segment_bounds
 
 
-def determine_regular_note_length(segments: segbounds) -> int:
+def determine_regular_note_length(segments: segbounds) -> float:
     """Determines what we should expect as the length of a regular note.
 
     Parameters
@@ -148,17 +167,21 @@ def determine_regular_note_length(segments: segbounds) -> int:
 
     Returns
     -------
-    int
+    float
         The regular note length
     """
     lengths = [upper_bound - lower_bound for lower_bound, upper_bound in segments]
+    if len(lengths) == 0:
+        return 0
+    if len(lengths) == 1:
+        return lengths[0]
     lengths_sorted = sorted(lengths)
     shortest_part = lengths_sorted[: len(lengths_sorted) * 2 // 3]
     regular_segment_length = int(np.median(shortest_part))
     return regular_segment_length
 
 
-def determine_regular_pause_length(segment_bounds: segbounds) -> int:
+def determine_regular_pause_length(segment_bounds: segbounds) -> float:
     """Determines what we should expect as the length of a regular pause.
 
     Parameters
@@ -170,11 +193,14 @@ def determine_regular_pause_length(segment_bounds: segbounds) -> int:
 
     Returns
     -------
-    int
+    float
         The regular pause length
     """
     lengths = determine_pause_lengths(segment_bounds)
-
+    if len(lengths) == 0:
+        return 0
+    if len(lengths) == 1:
+        return lengths[0]
     lengths_sorted = sorted(lengths)
     shortest_part = lengths_sorted[: len(lengths_sorted) * 2 // 3]
     regular_pause_length = int(np.median(shortest_part))
@@ -254,13 +280,22 @@ def determine_pause_thresholds(
     if higher_lengths:
         relevant_lengths.append(min(higher_lengths))
     sorted_relevant_lengths = list(sorted(relevant_lengths))
-    index_of_last_short_note = np.argmax(np.diff(sorted_relevant_lengths))
+    if len(sorted_relevant_lengths) == 0:
+        return (0, 0)
+    if len(sorted_relevant_lengths) == 1:
+        return (sorted_relevant_lengths[0] - 1, sorted_relevant_lengths[0] + 1)
+    if (
+        len(sorted_relevant_lengths) == 2
+        and sorted_relevant_lengths[1] < 2 * sorted_relevant_lengths[0]
+    ):
+        return (sorted_relevant_lengths[0] - 1, sorted_relevant_lengths[1] + 1)
+    index_of_last_short_pause = np.argmax(np.diff(sorted_relevant_lengths))
     if sorted_relevant_lengths[-1] < long_pause_threshold_guess:
         long_pause_threshold = long_pause_threshold_guess
     else:
         long_pause_threshold = (
-            sorted_relevant_lengths[index_of_last_short_note]
-            + sorted_relevant_lengths[index_of_last_short_note + 1]
+            sorted_relevant_lengths[index_of_last_short_pause]
+            + sorted_relevant_lengths[index_of_last_short_pause + 1]
         ) / 2
     return (short_pause_threshold, long_pause_threshold)
 
@@ -326,6 +361,10 @@ def determine_note_thresholds(
     if higher_lengths:
         relevant_lengths.append(min(higher_lengths))
     sorted_relevant_lengths = list(sorted(relevant_lengths))
+    if len(sorted_relevant_lengths) == 0:
+        return (0, 0)
+    if len(sorted_relevant_lengths) == 1:
+        return (sorted_relevant_lengths[0] - 1, sorted_relevant_lengths[0] + 1)
     index_of_last_short_note = np.argmax(np.diff(sorted_relevant_lengths))
     if sorted_relevant_lengths[-1] < long_note_threshold_max:
         long_note_threshold = long_note_threshold_max
@@ -368,7 +407,6 @@ def merge_segment_bounds_with_distance(
             j += 1
         merged.append((segment_bounds[i][0], segment_bounds[j][1]))
         i = j + 1
-
     return merged
 
 
@@ -425,7 +463,7 @@ def freqs_to_float_pitches(freqs: floatlist, freq_root: float = FREQ_ROOT) -> fl
 
 def determine_float_note_and_augmentations_of_segment(
     float_pitches: floatlist,
-    regular_length: int,
+    regular_length: float,
     long_note_threshold: float,
     diff_threshold: float = 0.5,
     var_threshold: float = VAR_THRESHOLD_FOR_LONG_NOTE,
@@ -436,7 +474,7 @@ def determine_float_note_and_augmentations_of_segment(
     ----------
     float_pitches : floatlist
         The pitch values for every individual sample of a single note.
-    regular_length : int
+    regular_length : float
         The length we expect a note to be on average.
     long_note_threshold : float
         The threshold above which we consider a note intentionally enlongated.
@@ -673,6 +711,8 @@ def find_exact_word_for_notes_string(s: str) -> Word | None:
         or strings that have valid form, but simply don't exist in the vocabulary.
     """
     if is_number_notes_string(s):
+        if s == "0_":
+            return NumberWord(0)
         n = notes_string_to_number(s)
         return NumberWord(n)
 
@@ -1138,6 +1178,7 @@ def get_synthesised_versions_of_words(
     notes_per_word: list[list[Note]],
     segment_bounds: segbounds,
     offset: float,
+    sample_rate_recording: int,
     sample_rate_pm: int,
 ) -> list[floatlist | None]:
     """Creates synthesised versions of what the words should sound like.
@@ -1155,6 +1196,8 @@ def get_synthesised_versions_of_words(
         The onsets and ends of the recorded notes.
     offset : float
         The nr of semitones by which to transpose.
+    sample_rate_recording : int
+        The sample rate of the recording.
     sample_rate_pm : int
         The sample rate used in the pitch analysis.
 
@@ -1163,7 +1206,6 @@ def get_synthesised_versions_of_words(
     list[floatlist | None]
         A wave for every successfully identified word.
     """
-
     nr_of_notes_per_word = [len(notes_for_word) for notes_for_word in notes_per_word]
 
     # determine speed per word
@@ -1174,19 +1216,19 @@ def get_synthesised_versions_of_words(
         if word is None:
             speed_per_word.append(None)
             d_offsets.append(0)
-        elif word.wave() is None or word.name == "rest":
+        elif (
+            wave_for_word := word.wave(10, 0, sample_rate_recording)
+        ) is None or word.name == "rest":
             speed_per_word.append(None)
             if word.name == "pi":
                 d_offsets.append(2)
             if word.name in ["la", "unpi"]:
                 d_offsets.append(-2)
         else:
-            wave_for_word = word.wave(10, 0)
-            wave_for_word = cast(floatlist, wave_for_word)
             lower = segment_bounds[i_sb][0]
             upper = segment_bounds[i_sb + nr_of_notes - 1][1]
             expected_nr_of_samples_from_segment_bounds = (
-                (upper - lower) / sample_rate_pm * SAMPLE_RATE
+                (upper - lower) / sample_rate_pm * sample_rate_recording
             )
             nr_of_samples_for_synthesised_version = len(wave_for_word)
             speed_for_word = (
@@ -1203,7 +1245,7 @@ def get_synthesised_versions_of_words(
     cum_offsets = np.cumsum(d_offsets)
     word_waves = [
         (
-            word.wave(speed, offset + cum_offset)
+            word.wave(speed, offset + cum_offset, sample_rate_recording)
             if word is not None and speed is not None
             else None
         )
@@ -1218,6 +1260,7 @@ def merge_into_one_wave(
     notes_per_word: list[list[Note]],
     len_recording: int,
     segment_bounds: segbounds,
+    sample_rate_recording: int,
     sample_rate_pm: int,
 ) -> floatlist:
     """Turns synthesised waves, emulating a recording, into one big wave.
@@ -1232,6 +1275,8 @@ def merge_into_one_wave(
         The length of the full original recording.
     segment_bounds : segbounds
         The onsets and ends of the recorded notes.
+    sample_rate_recording : int
+        The sample rate of the recording.
     sample_rate_pm : int
         The sample rate used in the pitch analysis.
 
@@ -1242,7 +1287,7 @@ def merge_into_one_wave(
     """
     full_wave = np.zeros(len_recording)
     bounds_in_recording = determine_bounds_for_notes_in_recording(
-        notes_per_word, segment_bounds, sample_rate_pm
+        notes_per_word, segment_bounds, sample_rate_recording, sample_rate_pm
     )
     onsets = [onset for onset, _ in bounds_in_recording]
     for word_wave, onset in zip(wave_per_word, onsets):
@@ -1253,7 +1298,10 @@ def merge_into_one_wave(
 
 
 def determine_bounds_for_notes_in_recording(
-    notes_per_word: list[list[Note]], segment_bounds: segbounds, sample_rate_pm: int
+    notes_per_word: list[list[Note]],
+    segment_bounds: segbounds,
+    sample_rate_recording: int,
+    sample_rate_pm: int,
 ) -> segbounds:
     """Determines the start and end points of the words in a recording, in terms of samples.
 
@@ -1263,6 +1311,8 @@ def determine_bounds_for_notes_in_recording(
         All notes in a recorded sentence.
     segment_bounds : segbounds
         The segment bounds of the notes in the recorded sentence.
+    sample_rate_recording : int
+        The sample rate of the recording.
     sample_rate_pm : int
         The sample rate used in the pitch analysis.
 
@@ -1279,9 +1329,11 @@ def determine_bounds_for_notes_in_recording(
     onsets_pm: list[int] = [segment_bounds[i_fn][0] for i_fn in indices_of_first_notes]
     ends_pm: list[int] = [segment_bounds[i_ln][1] for i_ln in indices_of_last_notes]
     onsets: list[int] = [
-        onset_pm * SAMPLE_RATE // sample_rate_pm for onset_pm in onsets_pm
+        onset_pm * sample_rate_recording // sample_rate_pm for onset_pm in onsets_pm
     ]
-    ends: list[int] = [end_pm * SAMPLE_RATE // sample_rate_pm for end_pm in ends_pm]
+    ends: list[int] = [
+        end_pm * sample_rate_recording // sample_rate_pm for end_pm in ends_pm
+    ]
     return list(zip(onsets, ends))
 
 
@@ -1289,6 +1341,7 @@ def extract_individual_words_from_recording(
     recording: floatlist,
     notes_per_word: list[list[Note]],
     segment_bounds: segbounds,
+    sample_rate_recording: int,
     sample_rate_pm: int,
 ) -> list[floatlist]:
     """Processes a recording into segments for each individual word.
@@ -1301,6 +1354,8 @@ def extract_individual_words_from_recording(
         The notes that were found in the recording.
     segment_bounds : segbounds
         The beginnings and ends of the words in terms of samples in the pitch analysis.
+    sample_rate_recording : int
+        The sample rate of the recording.
     sample_rate_pm : int
         The sample rate used in the pitch analysis.
 
@@ -1310,7 +1365,7 @@ def extract_individual_words_from_recording(
         Waves for the individual words.
     """
     segment_bounds_samples = determine_bounds_for_notes_in_recording(
-        notes_per_word, segment_bounds, sample_rate_pm
+        notes_per_word, segment_bounds, sample_rate_recording, sample_rate_pm
     )
     return [
         marginify_wave(recording[onset - 4500 : end + 4500])

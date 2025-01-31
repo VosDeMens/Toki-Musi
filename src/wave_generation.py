@@ -1,23 +1,21 @@
 import numpy as np
 
 from src.augmentation import Augmentation
-from src.constants import FADE_DURATION
+from src.constants import (
+    AUDIO_FADE_DURATION_SEC,
+    NOTE_FADE_DURATION_SEC,
+    NOTES_PER_SEC,
+    SAMPLE_RATE,
+)
 from src.my_types import floatlist
 from src.util import pitch_to_freq
 
 # import sounddevice as sd  # type: ignore
 
-# 1 to 10
-SAMPLE_RATE: int = 44100
-DURATION: int = 441 * 20
 
-NOTES_PER_SEC_BASE: int = SAMPLE_RATE // DURATION
-
-# 0 == A
-ROOT: int = 3
-
-
-def generate_phase_continuous_wave(frequency_segments: list[floatlist]) -> floatlist:
+def generate_phase_continuous_wave(
+    frequency_segments: list[floatlist], sample_rate: int = SAMPLE_RATE
+) -> floatlist:
     """Generates a sound wave from the frequency values over time, taking into account phase.
 
     Parameters
@@ -25,6 +23,8 @@ def generate_phase_continuous_wave(frequency_segments: list[floatlist]) -> float
     frequency_segments : list[floatlist]
         For every note, this should contain a `np.array` of frequency values over time,
         one value per audio sample to be generated.
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -35,50 +35,62 @@ def generate_phase_continuous_wave(frequency_segments: list[floatlist]) -> float
         return np.array([])
     frequencies = np.concatenate(frequency_segments)
     amplitude_segments = [
-        get_amplitutude_segment(len(f_s)) for f_s in frequency_segments
+        get_amplitutude_segment(len(f_s), sample_rate=sample_rate)
+        for f_s in frequency_segments
     ]
     amplitudes = np.concatenate(amplitude_segments)
-    dt = 1 / SAMPLE_RATE
+    dt = 1 / sample_rate
     phases = np.cumsum(2 * np.pi * frequencies * dt)
     wave = 0.5 * np.sin(phases) * amplitudes
     return wave
 
 
 def get_amplitutude_segment(
-    length: int, fade_duration: int = FADE_DURATION
+    length: int,
+    fade_duration_sec: float = NOTE_FADE_DURATION_SEC,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Generates amplitude values over time for a single note, with a fade in and fade out.
 
     Parameters
     ----------
     length : int
-        Duration of the audio to be generated, in nr of samples
-    fade_duration : int, optional
-        Duration of the fade, by default FADE_DURATION := 1000
+        Duration of the audio to be generated, in nr of samples.
+    fade_duration_sec : float, optional
+        Duration of the fade, by default FADE_DURATION_SEC := 0.025
+    sample_rate : int, optional
+        The sample rate of the audio.
 
     Returns
     -------
     floatlist
-        Amplitude values over time
+        Amplitude values over time.
     """
-    actual_fade_duration = min(fade_duration, length // 2)
     amplitutude_segment: floatlist = np.array(
         [
-            *get_attack(actual_fade_duration),
-            *np.linspace(1, 1, length - 2 * actual_fade_duration),
-            *get_release(actual_fade_duration),
+            *get_attack(fade_duration_sec, sample_rate),
+            *np.linspace(1, 1, length - 2 * int(fade_duration_sec * sample_rate)),
+            *get_release(fade_duration_sec, sample_rate),
         ]
     )
     return amplitutude_segment
 
 
-def fade_in_fade_out(signal: floatlist) -> floatlist:
+def fade_in_fade_out(
+    signal: floatlist,
+    fade_duration_sec: float = AUDIO_FADE_DURATION_SEC,
+    sample_rate: int = SAMPLE_RATE,
+) -> floatlist:
     """Applies fade in and fade out to a wave.
 
     Parameters
     ----------
     signal : floatlist
         Original wave.
+    fade_duration_sec : float, optional
+        The duration of a fade in or out, expressed in seconds, by default AUDIO_FADE_DURATION_SEC := 0.25
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -86,44 +98,56 @@ def fade_in_fade_out(signal: floatlist) -> floatlist:
         Wave with fades.
     """
     assert len(signal.shape) == 1, "signal has to be 1D"
-    amplitutude_segment = get_amplitutude_segment(len(signal))
+    amplitutude_segment = get_amplitutude_segment(
+        len(signal), fade_duration_sec, sample_rate
+    )
     return signal * amplitutude_segment
 
 
-def get_attack(attack_duration: int = FADE_DURATION) -> floatlist:
+def get_attack(
+    attack_duration_sec: float = NOTE_FADE_DURATION_SEC, sample_rate: int = SAMPLE_RATE
+) -> floatlist:
     """Creates a smooth fade in envelope, based on cosine.
 
     Parameters
     ----------
-    attack_duration : int, optional
-        Duration in samples, by default FADE_DURATION := 1000
+    attack_duration_sec : int, optional
+        Duration in seconds, by default FADE_DURATION := 1000
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
     floatlist
         Amplitude values
     """
-    cos_input = np.linspace(-np.pi, 0, attack_duration)
+    attack_duration_samples = int(attack_duration_sec * sample_rate)
+    cos_input = np.linspace(-np.pi, 0, attack_duration_samples)
     cos_output = np.cos(cos_input)
     moved_up = cos_output + 1
     scaled_down = moved_up / 2
     return scaled_down
 
 
-def get_release(release_furation: int = FADE_DURATION) -> floatlist:
+def get_release(
+    release_duration_sec: float = NOTE_FADE_DURATION_SEC, sample_rate: int = SAMPLE_RATE
+) -> floatlist:
     """Creates a smooth fade out envelope, based on cosine.
 
     Parameters
     ----------
-    attack_duration : int, optional
-        Duration in samples, by default FADE_DURATION := 1000
+    release_duration_sec : int, optional
+        Duration in seconds, by default FADE_DURATION := 1000
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
     floatlist
         Amplitude values
     """
-    cos_input = np.linspace(0, np.pi, release_furation)
+    release_duration_samples = int(release_duration_sec * sample_rate)
+    cos_input = np.linspace(0, np.pi, release_duration_samples)
     cos_output = np.cos(cos_input)
     moved_up = cos_output + 1
     scaled_down = moved_up / 2
@@ -131,7 +155,10 @@ def get_release(release_furation: int = FADE_DURATION) -> floatlist:
 
 
 def add_pause(
-    wave_segment: floatlist, pause: float = 1, speed: float = 10
+    wave_segment: floatlist,
+    pause_length: float = 1,
+    speed: float = 10,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Adds silence at the end of a sound wave.
 
@@ -139,10 +166,12 @@ def add_pause(
     ----------
     wave_segment : floatlist
         Sound wave to extend with silence.
-    pause : float, optional
+    pause_length : float, optional
         Length of the pause, where `1` corresponds to the length of a regular note, by default 1
     speed : int, optional
         The speed of the generated audio, which can be altered by the user, by default 10
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -150,12 +179,17 @@ def add_pause(
         The input, extended with silence.
     """
     return np.concatenate(
-        [wave_segment, np.linspace(0, 0, int(DURATION * pause * 10 / speed))]
+        [
+            wave_segment,
+            np.linspace(
+                0, 0, int(sample_rate / NOTES_PER_SEC * 10 / speed * pause_length)
+            ),
+        ]
     )
 
 
-def freq_timeline_from_str(
-    s: str, speed: float = 10, offset: float = 0
+def freq_timeline_from_string(
+    s: str, speed: float = 10, offset: float = 0, sample_rate: int = SAMPLE_RATE
 ) -> list[floatlist]:
     """Converts a notes string of a word into a frequency timeline.
 
@@ -167,6 +201,8 @@ def freq_timeline_from_str(
         Speed of the eventual sound, which can be altered by the user, by default 10
     offset : float, optional
         Semitones to transpose by, where `0` corresponds to C, by default 0
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -227,9 +263,9 @@ def freq_timeline_from_str(
             freq_timeline_segments[-1] = np.concatenate(
                 [
                     freq_timeline_segments[-1],
-                    generate_frequency_timeline([start, dest], [1], speed),  # type: ignore
+                    generate_frequency_timeline([start, dest], [1], speed, sample_rate),
                 ]
-            )  # type: ignore
+            )
             continue
         # Indicating a rest between notes
         if s[i] == "r":
@@ -250,14 +286,16 @@ def freq_timeline_from_str(
 
         # We add the segment for the number we found without augmentations, and change it later if necessary.
         vanilla_segment: floatlist = generate_frequency_timeline(
-            [freq, freq], [1], speed
+            [freq, freq], [1], speed, sample_rate
         )
         freq_timeline_segments.append(vanilla_segment)
 
     return freq_timeline_segments
 
 
-def pcw_from_string(s: str, speed: float = 10, offset: float = 0) -> floatlist:
+def pcw_from_string(
+    s: str, speed: float = 10, offset: float = 0, sample_rate: int = SAMPLE_RATE
+) -> floatlist:
     """Generates a sound wave for a notes string.
 
     Parameters
@@ -268,20 +306,25 @@ def pcw_from_string(s: str, speed: float = 10, offset: float = 0) -> floatlist:
         Speed of the sound, which can be altered by the user, by default 10
     offset : float, optional
         Semitones to transpose by, where `0` corresponds to C, by default 0
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
     floatlist
         A well-behaved sound wave, matching the provided frequencies at every point in time.
     """
-    freq_timeline: list[floatlist] = freq_timeline_from_str(s, speed, offset)
-    return generate_phase_continuous_wave(freq_timeline)
+    freq_timeline: list[floatlist] = freq_timeline_from_string(
+        s, speed, offset, sample_rate
+    )
+    return generate_phase_continuous_wave(freq_timeline, sample_rate)
 
 
 def generate_frequency_timeline(
     frequencies: list[float],
     duration_scalars: list[float] | None = None,
     speed: float = 10,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Creates a "continuous" timeline of frequencies we want to synthesise sound from.
 
@@ -296,6 +339,8 @@ def generate_frequency_timeline(
         in the regular duration, by default None
     speed : int, optional
         The speed of the generated audio, which can be altered by the user, by default 10
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -313,14 +358,19 @@ def generate_frequency_timeline(
             start_freq = -1
             end_freq = -1
         freq_segment = np.linspace(
-            start_freq, end_freq, int(duration_scalar * DURATION * 10 / speed)
+            start_freq,
+            end_freq,
+            int(sample_rate / NOTES_PER_SEC * 10 / speed * duration_scalar),
         )
         freq_segments.append(freq_segment)
     return np.concatenate(freq_segments)
 
 
 def apply_lengthen(
-    frequency_segment: floatlist, duration_scalar: int = 2, speed: float = 10
+    frequency_segment: floatlist,
+    duration_scalar: int = 2,
+    speed: float = 10,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Extends a frequency timeline into a timeline with a tail.
 
@@ -333,6 +383,8 @@ def apply_lengthen(
         in the regular duration, by default None
     speed : int, optional
         The speed of the generated audio, which can be altered by the user, by default 10
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -341,13 +393,16 @@ def apply_lengthen(
     """
     tail = [
         frequency_segment[-1]
-        for _ in range(int(duration_scalar * DURATION * 10 / speed))
+        for _ in range(int(sample_rate / NOTES_PER_SEC * 10 / speed * duration_scalar))
     ]
     return np.concatenate([frequency_segment, tail])
 
 
 def apply_trill(
-    frequency_segment: floatlist, reach: int = 2, speed: float = 10
+    frequency_segment: floatlist,
+    reach: int = 2,
+    speed: float = 10,
+    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Turns a frequency timeline into a timeline with a trill in the middle.
 
@@ -359,6 +414,8 @@ def apply_trill(
         The intensity of the trill (in semitones), defaults to 2
     speed : int, optional
         The speed of the generated audio, which can be altered by the user, by default 10
+    sample_rate : int, optional
+        The sample rate, by default SAMPLE_RATE := 44100
 
     Returns
     -------
@@ -389,6 +446,7 @@ def apply_trill(
             ],
             [1 / 9 for _ in range(13)],
             speed,
+            sample_rate,
         )
     )
     trilled_segments[0] = trilled_segments[0][: -len(trilled_segments[1])]

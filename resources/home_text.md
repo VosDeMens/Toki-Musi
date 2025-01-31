@@ -2,9 +2,9 @@ And thanks for stopping by! This is a web app dedicated to Toki Musi, a melody b
 
 Credit where it's due, Toki Musi is barely its own language. If you're familiar with other conlangs (constructed languages), the name Toki Musi might remind you of Toki Pona. For everyone else: [Toki Pona](https://tokipona.org/) is a conlang designed by Sonja Lang, and developed further by the Toki Pona community. Toki Pona is famous (nerd famous) for only having up to about 140 words, depending on which ones you decide to need exactly. Toki Musi is essentially a port of Toki Pona to melody, but it has some additional words and grammatical features. If you're interested in learning Toki Musi, I suggest the following steps:
 
-## Let me [introduce myself](./about) (optional)
+## Let me [explain](./about) (optional)
 
-At the end of the day this is all about clout. If you're interested in the acknowledgements I'd like to make, or if you have any burning questions, like: Who would want to make a language that you can whistle? Or: There are already whistled languages, why would anyone bother making another one? Or: I wonder if the guy who made this has recently recorded a nose whistle cover of Desert Song by Säje and uploaded it to YouTube. I guess that's not exactly a question but boi do I have just the link for you.
+Who would want to make a language that you can whistle? There are already whistled languages out there, why would anyone bother making another one? Would the person who created this recently have recorded a nose whistle cover of Desert Song by Säje and uploaded it to YouTube? All *excellent* questions, and boi do I have just the link for you.
 
 ## Learn Toki Pona
 

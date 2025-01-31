@@ -1,10 +1,10 @@
 {
     "name": "wan",
-    "notes_string": "0:9",
-    "description": "one, to unite, individual, together",
-    "nr_of_notes": 2,
+    "notes_string": "0:2_:-5",
+    "description": "one, to unite, individual, together (for the number one, see the section of the guide on numbers.",
+    "nr_of_notes": 3,
     "etymelogies": [
-        "counting by repetition"
+        "De Fouryo's - 'k Zie Je Elke Morgen ([de] [vo-] [-gels])"
     ],
     "toki_pona": true,
     "particle": false,

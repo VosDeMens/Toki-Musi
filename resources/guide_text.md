@@ -23,3 +23,5 @@ Different from Toki Pona in terms of mi li
 ## Sentence structure
 
 ### Key changes
+
+## Numbers

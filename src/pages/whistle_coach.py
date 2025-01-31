@@ -9,7 +9,6 @@ from streamlit_mic_recorder import mic_recorder  # type: ignore
 from scipy.io import wavfile  # type: ignore
 
 
-from src.constants import SAMPLE_RATE
 from src.note import turn_into_notes_strings
 from src.util_streamlit import st_audio
 from src.wave_generation import marginify_wave
@@ -88,12 +87,16 @@ def plot_with_target(
     offset : float
         The pitch to consider 0, expressed in semitones from the standard key.
     """
-    snd_recording = parselmouth.Sound(recording, sampling_frequency=SAMPLE_RATE)  # type: ignore
+    snd_recording = parselmouth.Sound(  # type: ignore
+        recording, sampling_frequency=st.session_state["sample_rate"]
+    )
     pm_recording = snd_recording.to_pitch_ac(pitch_floor=st.session_state["f_min"], pitch_ceiling=st.session_state["f_max"], silence_threshold=0.1)  # type: ignore
     frequencies_recording = np.array(pm_recording.selected_array["frequency"], dtype=float)  # type: ignore
     pitch_recording = freqs_to_float_pitches(frequencies_recording) - offset
 
-    snd_synth = parselmouth.Sound(synthesised_version, sampling_frequency=SAMPLE_RATE)  # type: ignore
+    snd_synth = parselmouth.Sound(  # type: ignore
+        synthesised_version, sampling_frequency=st.session_state["sample_rate"]
+    )
     pm_synth = snd_synth.to_pitch_ac(pitch_floor=st.session_state["f_min"], pitch_ceiling=st.session_state["f_max"], silence_threshold=0.1)  # type: ignore
     frequencies_synth = np.array(pm_synth.selected_array["frequency"], dtype=float)  # type: ignore
     pitch_synth = (
@@ -117,22 +120,21 @@ def analyse_and_show_analysis():
 
     audio_buffer = io.BytesIO(audio_bytes)
     sample_rate, audio_data = wavfile.read(audio_buffer)  # type: ignore
-    sample_rate = cast(int, sample_rate)
+    st.session_state["sample_rate"] = cast(int, sample_rate)
     audio_data = cast(floatlist, audio_data)
 
-    st.audio(audio_bytes)
+    st_audio(audio_data, sample_rate)
 
     notes_from_recording, segment_bounds, offset, sample_rate_pm = (
         analyse_recording_to_notes(
             audio_data,
+            st.session_state["sample_rate"],
             st.session_state["f_min"],
             st.session_state["f_max"],
-            sample_rate,
         )
     )
 
     strings_from_recording = turn_into_notes_strings(notes_from_recording)
-
     target_words: list[Word | None] = []
     usable_reference = False
 
@@ -207,7 +209,11 @@ def analyse_and_show_analysis():
     )
 
     individual_words_from_recording = extract_individual_words_from_recording(
-        audio_data, notes_per_word, segment_bounds, sample_rate_pm
+        audio_data,
+        notes_per_word,
+        segment_bounds,
+        st.session_state["sample_rate"],
+        sample_rate_pm,
     )
 
     synthesised_versions_of_words = get_synthesised_versions_of_words(
@@ -215,6 +221,7 @@ def analyse_and_show_analysis():
         notes_per_word,
         segment_bounds,
         offset + st.session_state["octave"] * 12,
+        st.session_state["sample_rate"],
         sample_rate_pm,
     )
 
@@ -223,6 +230,7 @@ def analyse_and_show_analysis():
         notes_per_word,
         len(audio_data),
         segment_bounds,
+        st.session_state["sample_rate"],
         sample_rate_pm,
     )
 
@@ -251,10 +259,10 @@ def analyse_and_show_analysis():
             st.write("This word is represented by a key change down by 2 semitones")  # type: ignore
         else:
             st.write("Your audio:")  # type: ignore
-            st_audio(recording_word, sample_rate)
+            st_audio(recording_word, st.session_state["sample_rate"])
             if synthesised_word is not None:
                 st.write("Corrected version:")  # type: ignore
-                st_audio(synthesised_word, sample_rate)
+                st_audio(synthesised_word, st.session_state["sample_rate"])
             else:
                 st.write("No correction available")  # type: ignore
 
@@ -401,8 +409,13 @@ try:
         )
         st_audio(
             marginify_wave(
-                get_sentence_wave(words_in_sentence, speed=st.session_state["speed"])
-            )
+                get_sentence_wave(
+                    words_in_sentence,
+                    speed=st.session_state["speed"],
+                    sample_rate=st.session_state["sample_rate"],
+                )
+            ),
+            st.session_state["sample_rate"],
         )
 except InvalidWordException:
     st.write("Invalid sentence")  # type: ignore

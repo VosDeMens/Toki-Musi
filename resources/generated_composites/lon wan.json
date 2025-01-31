@@ -1,10 +1,10 @@
 {
     "name": "lon wan",
-    "notes_string": "0:4:5:9",
+    "notes_string": "0:4:5:2_:-5",
     "description": "somewhere",
-    "nr_of_notes": 4,
+    "nr_of_notes": 5,
     "etymelogies": [
-        "composite word from lon and wan 0:4:5:**~~0~~**:9"
+        "composite word from lon and wan 0:4:5:**~~0~~**:2_:-5"
     ],
     "toki_pona": false,
     "particle": false,
