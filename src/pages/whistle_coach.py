@@ -124,7 +124,10 @@ def analyse_and_show_analysis():
 
     notes_from_recording, segment_bounds, offset, sample_rate_pm = (
         analyse_recording_to_notes(
-            audio_data, st.session_state["f_min"], st.session_state["f_max"]
+            audio_data,
+            st.session_state["f_min"],
+            st.session_state["f_max"],
+            sample_rate,
         )
     )
 
@@ -248,10 +251,10 @@ def analyse_and_show_analysis():
             st.write("This word is represented by a key change down by 2 semitones")  # type: ignore
         else:
             st.write("Your audio:")  # type: ignore
-            st_audio(recording_word)
+            st_audio(recording_word, sample_rate)
             if synthesised_word is not None:
                 st.write("Corrected version:")  # type: ignore
-                st_audio(synthesised_word)
+                st_audio(synthesised_word, sample_rate)
             else:
                 st.write("No correction available")  # type: ignore
 

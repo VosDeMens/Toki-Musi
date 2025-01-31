@@ -4,7 +4,7 @@ Credit where it's due, Toki Musi is barely its own language. If you're familiar 
 
 ## Let me [introduce myself](./about) (optional)
 
-At the end of the day this is all about clout. If you're interested in the acknowledgements I'd like to make, or if you have any burning questions, like: Who would want to make a language that you can whistle? Or: There are already whistled languages, why anyone bother making another one? Or: I wonder if the guy who made this has recently recorded a nose whistle cover of Desert Song by Säje and uploaded it to YouTube. I guess that's not exactly a question but boi do I have just the link for you.
+At the end of the day this is all about clout. If you're interested in the acknowledgements I'd like to make, or if you have any burning questions, like: Who would want to make a language that you can whistle? Or: There are already whistled languages, why would anyone bother making another one? Or: I wonder if the guy who made this has recently recorded a nose whistle cover of Desert Song by Säje and uploaded it to YouTube. I guess that's not exactly a question but boi do I have just the link for you.
 
 ## Learn Toki Pona
 
