@@ -9,13 +9,13 @@ from streamlit_mic_recorder import mic_recorder  # type: ignore
 from scipy.io import wavfile  # type: ignore
 
 
-from src.note import turn_into_notes_strings
+from src.note import Note, turn_into_notes_strings
 from src.util_streamlit import st_audio
 from src.wave_generation import marginify_wave
 from src.whistle_analysis import (
     analyse_recording_to_notes,
     cut_notes_sentence_into_notes_per_word,
-    extract_individual_words_from_recording,
+    extract_recording_per_word,
     find_closest_words_for_notes_string,
     freqs_to_float_pitches,
     get_synthesised_versions_of_words,
@@ -125,7 +125,7 @@ def analyse_and_show_analysis():
 
     st_audio(audio_data, sample_rate)
 
-    notes_from_recording, segment_bounds, offset, sample_rate_pm = (
+    notes_from_recording, segment_bounds, new_word_flags, offset, sample_rate_pm = (
         analyse_recording_to_notes(
             audio_data,
             st.session_state["sample_rate"],
@@ -134,7 +134,8 @@ def analyse_and_show_analysis():
         )
     )
 
-    strings_from_recording = turn_into_notes_strings(notes_from_recording)
+    strings_from_recording: list[str] = turn_into_notes_strings(notes_from_recording)
+    print(f"{strings_from_recording = }")
     target_words: list[Word | None] = []
     usable_reference = False
 
@@ -164,29 +165,28 @@ def analyse_and_show_analysis():
             st.write("Reference sentence invalid, whistle interpreted freely.")  # type: ignore
 
     if not usable_reference:
-        target_words = []
-        i = 0
-        while i < len(strings_from_recording):
+        for i in range(len(strings_from_recording)):
             s = strings_from_recording[i]
-            try:
-                if (result := find_closest_words_for_notes_string(s)) is None:
-                    target_words.append(None)
-                else:
-                    closest_words, d_offset = result
-                    target_words += closest_words
-                    for mod in closest_words[:-1]:
-                        strings_from_recording.insert(i, mod.get_notes_string(True))
-                        i += 1
-                    for j in range(i, len(strings_from_recording)):
-                        strings_from_recording[j] = pitch_string_by(
-                            strings_from_recording[j], d_offset
-                        )
-            except:
-                raise Exception
-            i += 1
-        for i, word in enumerate(target_words):
-            if word is not None and word.nr_of_notes == 0:
-                strings_from_recording.insert(i, word.get_notes_string())
+            # try:
+            print(f"{s = }")
+            if (result := find_closest_words_for_notes_string(s)) is None:
+                target_words.append(None)
+            else:
+                best_match, d_offset = result
+                target_words += best_match
+                for j in range(i, len(strings_from_recording)):
+                    strings_from_recording[j] = pitch_string_by(
+                        strings_from_recording[j], d_offset
+                    )
+            # except:
+            #     raise Exception
+
+    for i, word in enumerate(target_words):
+        if word is None or word.nr_of_notes == 0 or word.name == "rest":
+            strings_from_recording.insert(i, "")
+
+    print(f"{strings_from_recording = }")
+    print(f"{target_words = }")
 
     strings_to_print = [
         (
@@ -198,54 +198,69 @@ def analyse_and_show_analysis():
             target_words, strings_from_recording
         )
     ]
+    print(f"{strings_to_print = }")
 
-    paired = zip(
-        strings_to_print,
-        [f"({str(word)})" if word is not None else "(???)" for word in target_words],
-    )
+    word_names = [
+        f"({str(word)})" if word is not None else "(???)" for word in target_words
+    ]
+    print(f"{word_names = }")
 
-    notes_per_word = cut_notes_sentence_into_notes_per_word(
+    notes_per_word: list[list[Note]] = cut_notes_sentence_into_notes_per_word(
         notes_from_recording, target_words
     )
 
-    individual_words_from_recording = extract_individual_words_from_recording(
+    for notes_for_word in notes_per_word:
+        print(f"{len(notes_for_word) = }")
+
+    recording_per_word: list[floatlist | None] = extract_recording_per_word(
         audio_data,
-        notes_per_word,
+        new_word_flags,
         segment_bounds,
-        st.session_state["sample_rate"],
-        sample_rate_pm,
-    )
-
-    synthesised_versions_of_words = get_synthesised_versions_of_words(
         target_words,
-        notes_per_word,
-        segment_bounds,
-        offset + st.session_state["octave"] * 12,
         st.session_state["sample_rate"],
         sample_rate_pm,
     )
 
-    full_wave = merge_into_one_wave(
+    synthesised_versions_of_words: list[floatlist | None] = (
+        get_synthesised_versions_of_words(
+            target_words,
+            notes_per_word,
+            segment_bounds,
+            offset + st.session_state["octave"] * 12,
+            st.session_state["sample_rate"],
+            sample_rate_pm,
+        )
+    )
+    print(f"{len(synthesised_versions_of_words) = }")
+
+    full_wave: floatlist = merge_into_one_wave(
         synthesised_versions_of_words,
-        notes_per_word,
         len(audio_data),
         segment_bounds,
+        new_word_flags,
         st.session_state["sample_rate"],
         sample_rate_pm,
     )
 
     st.divider()
     st.header("Whistle Coach's interpretation:")
-    for pair in paired:
-        st.write(pair[0], pair[1])  # type: ignore
+
+    for string, name in zip(strings_to_print, word_names):
+        st.write(string, name)  # type: ignore
 
     st.header("Deviations:")
     plot_with_target(audio_data, full_wave, offset)
 
     st.header("Word by word feedback:")
+
+    print("AAAAA")
+    print(f"{target_words = }")
+    print(f"{recording_per_word = }")
+    print(f"{synthesised_versions_of_words = }")
+
     for word, recording_word, synthesised_word in zip(
         target_words,
-        individual_words_from_recording,
+        recording_per_word,
         synthesised_versions_of_words,
     ):
         if word is not None:
@@ -257,6 +272,8 @@ def analyse_and_show_analysis():
             st.write("This word is represented by a key change up by 2 semitones")  # type: ignore
         elif word is not None and word.name in ["la", "unpi"]:
             st.write("This word is represented by a key change down by 2 semitones")  # type: ignore
+        elif recording_word is None:
+            st.write("This really shouldn't happen")  # type: ignore
         else:
             st.write("Your audio:")  # type: ignore
             st_audio(recording_word, st.session_state["sample_rate"])
@@ -273,6 +290,8 @@ def callback():
         return
 
 
+# Build the page
+
 if "speed" not in st.session_state:
     st.session_state["speed"] = 10
 if "prefer_composites" not in st.session_state:
@@ -288,8 +307,6 @@ if "octave" not in st.session_state:
 if "reference" not in st.session_state:
     st.session_state["reference"] = ""
 
-
-st.title("Whistle Coach")
 
 with st.expander("Who is Whistle Coach??"):
     st.subheader("Hello I am Whistle Coach.")
@@ -449,8 +466,8 @@ if (
     "my_recorder_output" in st.session_state
     and st.session_state["my_recorder_output"] is not None
 ):
-    try:
-        analyse_and_show_analysis()
-    except:
-        st.divider()
-        st.write("Something went wrong, but do try again!!!")  # type: ignore
+    # try:
+    analyse_and_show_analysis()
+    # except:
+    #     st.divider()
+    #     st.write("Something went wrong, but do try again!!!")  # type: ignore

@@ -31,7 +31,7 @@ def analyse_recording_to_notes(
     sample_rate_recording: int,
     f_min: float = 300,
     f_max: float = 4000,
-) -> tuple[list[Note], segbounds, float, int]:
+) -> tuple[list[Note], segbounds, list[bool], float, int]:
     """Extracts from a recording: the notes, when the notes occur, and the offset of the root from C.
 
     This analysis relies on the Parselmouth package. It uses `parselmouth.Sound` and `snd.to_pitch_ac`.
@@ -50,12 +50,13 @@ def analyse_recording_to_notes(
 
     Returns
     -------
-    tuple[list[Note], segbounds, float]
+    tuple[list[Note], segbounds, list[bool], float, int]
         A `tuple`, with the following information:
         - The notes in the recording, represented by a `list` of `Note` objects.
         - The bounds of these notes, represented by a `list` of `tuples`, each with two `int`s,
             representing the start and end of each note, in terms of indices of the samples
             of the output of the pitch analysis (approx 400 samples per second).
+        - A list of flags indicating which notes are the first of a word.
         - The distance of the determined root of the recording from C in semitones.
             If the sentence is in D, this value will be 2.
         - The sample rate in the pitch analysis.
@@ -95,26 +96,27 @@ def analyse_recording_to_notes(
 
     _, long_pause_threshold = determine_pause_thresholds(segment_bounds)
     pauses = determine_pause_lengths(segment_bounds)
-    new_notes = [True] + [pause > long_pause_threshold for pause in pauses]
+    new_word_flags = [True] + [pause > long_pause_threshold for pause in pauses]
 
-    for i in range(len(new_notes)):
-        if new_notes[i]:
+    for i in range(1, len(new_word_flags)):
+        if new_word_flags[i]:
             unexpected_one_note_word = (
-                i == len(new_notes) - 1 or new_notes[i + 1]
-            ) and (float_notes[i] < -2.5 or float_notes[i] > 2.5)
+                i == len(new_word_flags) - 1 or new_word_flags[i + 1]
+            ) and (normalised_float_notes[i] < -2.5 or normalised_float_notes[i] > 2.5)
             if unexpected_one_note_word:
-                new_notes[i] = False
+                new_word_flags[i] = False
 
     notes: list[Note] = [
-        Note(pitch, length, augmentation_list, new_note)
-        for pitch, length, augmentation_list, new_note in zip(
-            normalised_float_notes, lengths, augmentations, new_notes
+        Note(pitch, length, augmentation_list, new_word)
+        for pitch, length, augmentation_list, new_word in zip(
+            normalised_float_notes, lengths, augmentations, new_word_flags
         )
     ]
 
     return (
         notes,
         segment_bounds,
+        new_word_flags,
         offset,
         sample_rate_recording * len(freqs) // (len(recording)),
     )
@@ -662,7 +664,7 @@ def get_stem_and_modifiers_of_notes_string(
         s = s[2:]
 
     # If the first 0 is elongated, we have a finite verb, and we remove the elongation
-    elif s[1] == "_":
+    elif s[1] == "0":
         finite_verb = True
         s = s[0] + s[2:]
 
@@ -959,7 +961,8 @@ def find_closest_words_for_notes_string(
     Returns
     -------
     tuple[list[Word], int] | None
-        A list of the best matches, and the amount by which they deviate from the input,
+        The best match, possibly preceeded by a word indicating key change,
+        and the amount by which this match deviates from the input,
         or `None`, if no matches are found.
     """
     if notes_string[0] == "2":
@@ -1223,8 +1226,8 @@ def get_synthesised_versions_of_words(
             if word.name in ["la", "unpi"]:
                 d_offsets.append(-2)
         else:
-            lower = segment_bounds[i_sb][0]
-            upper = segment_bounds[i_sb + nr_of_notes - 1][1]
+            lower, _ = segment_bounds[i_sb]
+            _, upper = segment_bounds[i_sb + nr_of_notes - 1]
             expected_nr_of_samples_from_segment_bounds = (
                 (upper - lower) / sample_rate_pm * sample_rate_recording
             )
@@ -1255,9 +1258,9 @@ def get_synthesised_versions_of_words(
 
 def merge_into_one_wave(
     wave_per_word: list[floatlist | None],
-    notes_per_word: list[list[Note]],
     len_recording: int,
     segment_bounds: segbounds,
+    new_word_flags: list[bool],
     sample_rate_recording: int,
     sample_rate_pm: int,
 ) -> floatlist:
@@ -1267,12 +1270,12 @@ def merge_into_one_wave(
     ----------
     wave_per_word : list[floatlist | None]
         A wave for each word we want to merge, `None` for unindentified words.
-    notes : list[Note]
-        The notes in the recording.
     len_recording : int
         The length of the full original recording.
     segment_bounds : segbounds
         The onsets and ends of the recorded notes.
+    new_word_flags : list[bool]
+        A list of flags indicating which notes are the first of a word.
     sample_rate_recording : int
         The sample rate of the recording.
     sample_rate_pm : int
@@ -1284,20 +1287,26 @@ def merge_into_one_wave(
         The merged wave
     """
     full_wave = np.zeros(len_recording)
-    bounds_in_recording = determine_bounds_for_notes_in_recording(
-        notes_per_word, segment_bounds, sample_rate_recording, sample_rate_pm
+    word_bounds_in_recording = determine_bounds_for_words_in_recording(
+        segment_bounds, new_word_flags, sample_rate_recording, sample_rate_pm
     )
-    onsets = [onset for onset, _ in bounds_in_recording]
-    for word_wave, onset in zip(wave_per_word, onsets):
+    onsets = [onset for onset, _ in word_bounds_in_recording]
+    wave_per_word_real: list[floatlist] = [
+        wave for wave in wave_per_word if wave is not None
+    ]
+
+    for word_wave, onset in zip(wave_per_word_real, onsets):
+        print(f"{onset = }")
         if word_wave is not None:
+            print(f"{len(word_wave) = }")
             full_wave[onset : onset + len(word_wave)] = word_wave
 
     return full_wave
 
 
-def determine_bounds_for_notes_in_recording(
-    notes_per_word: list[list[Note]],
+def determine_bounds_for_words_in_recording(
     segment_bounds: segbounds,
+    new_word_flags: list[bool],
     sample_rate_recording: int,
     sample_rate_pm: int,
 ) -> segbounds:
@@ -1305,10 +1314,10 @@ def determine_bounds_for_notes_in_recording(
 
     Parameters
     ----------
-    notes_in_sentence : list[Note]
-        All notes in a recorded sentence.
     segment_bounds : segbounds
         The segment bounds of the notes in the recorded sentence.
+    new_word_flags : list[bool]
+        A list of flags indicating which notes are the first of a word.
     sample_rate_recording : int
         The sample rate of the recording.
     sample_rate_pm : int
@@ -1319,39 +1328,48 @@ def determine_bounds_for_notes_in_recording(
     list[tuple[int, int]]
         A `tuple` for every word, with the start and end index in terms of samples in the recording.
     """
-    nr_of_notes_per_word = [len(notes_for_word) for notes_for_word in notes_per_word]
-    indices_of_first_notes = [0] + list(np.cumsum(nr_of_notes_per_word))[:-1]
-    indices_of_last_notes = [
-        index - 1 for index in list(np.cumsum(nr_of_notes_per_word))[:-1]
-    ] + [-1]
-    onsets_pm: list[int] = [segment_bounds[i_fn][0] for i_fn in indices_of_first_notes]
-    ends_pm: list[int] = [segment_bounds[i_ln][1] for i_ln in indices_of_last_notes]
-    onsets: list[int] = [
-        onset_pm * sample_rate_recording // sample_rate_pm for onset_pm in onsets_pm
+    assert len(segment_bounds) == len(new_word_flags), "should be the same size"
+    last_note_flags = new_word_flags[1:] + [True]
+    onsets = [
+        onset
+        for (onset, _), new_word in zip(segment_bounds, new_word_flags)
+        if new_word
     ]
-    ends: list[int] = [
-        end_pm * sample_rate_recording // sample_rate_pm for end_pm in ends_pm
+    endings = [
+        ending
+        for (_, ending), last_note in zip(segment_bounds, last_note_flags)
+        if last_note
     ]
-    return list(zip(onsets, ends))
+    bounds_recording = [
+        (
+            (onset * sample_rate_recording) // sample_rate_pm,
+            (ending * sample_rate_recording) // sample_rate_pm,
+        )
+        for onset, ending in zip(onsets, endings)
+    ]
+    return bounds_recording
 
 
-def extract_individual_words_from_recording(
+def extract_recording_per_word(
     recording: floatlist,
-    notes_per_word: list[list[Note]],
+    new_word_flags: list[bool],
     segment_bounds: segbounds,
+    target_words: list[Word | None],
     sample_rate_recording: int,
     sample_rate_pm: int,
-) -> list[floatlist]:
+) -> list[floatlist | None]:
     """Processes a recording into segments for each individual word.
 
     Parameters
     ----------
     recording : floatlist
         The original recording.
-    notes_in_sentence : list[Note]
-        The notes that were found in the recording.
+    new_word_flags : list[bool]
+        A list of flags indicating which notes are the first of a word.
     segment_bounds : segbounds
         The beginnings and ends of the words in terms of samples in the pitch analysis.
+    target_words : list[Word]
+        The words to match.
     sample_rate_recording : int
         The sample rate of the recording.
     sample_rate_pm : int
@@ -1359,13 +1377,18 @@ def extract_individual_words_from_recording(
 
     Returns
     -------
-    list[floatlist]
-        Waves for the individual words.
+    list[floatlist|None]
+        Waves for the individual words, or `None` as a placeholder for silent words.
     """
-    segment_bounds_samples = determine_bounds_for_notes_in_recording(
-        notes_per_word, segment_bounds, sample_rate_recording, sample_rate_pm
+    segment_bounds_samples = determine_bounds_for_words_in_recording(
+        segment_bounds, new_word_flags, sample_rate_recording, sample_rate_pm
     )
-    return [
+    recording_per_word: list[floatlist | None] = [
         marginify_wave(recording[onset - 4500 : end + 4500])
         for onset, end in segment_bounds_samples
     ]
+    for i, word in enumerate(target_words):
+        if word is None or word.nr_of_notes == 0 or word.name == "rest":
+            recording_per_word.insert(i, None)
+
+    return recording_per_word
