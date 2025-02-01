@@ -114,8 +114,8 @@ def plot_with_target(
     plt.title("Whistle Pitch Analysis")  # type: ignore
     plt.legend(loc="upper left")  # type: ignore
     ax = plt.gca()
-    y_min = min(-8, min(pitch_recording), min(pitch_synth))
-    y_max = max(10, max(pitch_recording), max(pitch_synth))
+    y_min = float(min(-5, np.nanmin(pitch_recording), np.nanmin(pitch_synth)) - 1)
+    y_max = float(max(9, np.nanmax(pitch_recording), np.nanmax(pitch_synth)) + 1)
     ax.set_ylim(y_min, y_max)
     st.pyplot(plt)  # type: ignore
 
