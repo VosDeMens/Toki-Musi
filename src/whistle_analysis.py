@@ -1101,7 +1101,7 @@ def cut_notes_sentence_into_notes_per_word(
         notes_per_word[-1].append(note)
 
     for i, word in enumerate(target_words):
-        if word is None or word.nr_of_notes == 0:
+        if word is not None and (word.nr_of_notes == 0 or word.name == "rest"):
             notes_per_word.insert(i, [])
 
     return notes_per_word
@@ -1265,11 +1265,11 @@ def merge_into_one_wave(
         segment_bounds, new_word_flags, sample_rate_recording, sample_rate_pm
     )
     onsets = [onset for onset, _ in word_bounds_in_recording]
-    wave_per_word_real: list[floatlist] = [
-        wave for wave in wave_per_word if wave is not None
-    ]
 
-    for word_wave, onset in zip(wave_per_word_real, onsets):
+    print(f"{len(word_bounds_in_recording) = }")
+    print(f"{onsets = }")
+
+    for word_wave, onset in zip(wave_per_word, onsets):
         print(f"{onset = }")
         if word_wave is not None:
             print(f"{len(word_wave) = }")
@@ -1362,7 +1362,7 @@ def extract_recording_per_word(
         for onset, end in segment_bounds_samples
     ]
     for i, word in enumerate(target_words):
-        if word is None or word.nr_of_notes == 0 or word.name == "rest":
+        if word is not None and (word.nr_of_notes == 0 or word.name == "rest"):
             recording_per_word.insert(i, None)
 
     return recording_per_word
