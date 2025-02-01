@@ -9,6 +9,7 @@ from streamlit_mic_recorder import mic_recorder  # type: ignore
 from scipy.io import wavfile  # type: ignore
 
 
+from src.constants import SAMPLE_RATE
 from src.note import Note, turn_into_notes_strings
 from src.util_streamlit import st_audio
 from src.wave_generation import marginify_wave
@@ -112,6 +113,10 @@ def plot_with_target(
     plt.ylabel("Pitch (semitones)")  # type: ignore
     plt.title("Whistle Pitch Analysis")  # type: ignore
     plt.legend(loc="upper left")  # type: ignore
+    ax = plt.gca()
+    y_min = min(-8, min(pitch_recording), min(pitch_synth))
+    y_max = max(10, max(pitch_recording), max(pitch_synth))
+    ax.set_ylim(y_min, y_max)
     st.pyplot(plt)  # type: ignore
 
 
@@ -306,6 +311,8 @@ if "octave" not in st.session_state:
     st.session_state["octave"] = -1
 if "reference" not in st.session_state:
     st.session_state["reference"] = ""
+if "sample_rate" not in st.session_state:
+    st.session_state["sample_rate"] = SAMPLE_RATE
 
 
 with st.expander("Who is Whistle Coach??"):
