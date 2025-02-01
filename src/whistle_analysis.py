@@ -69,7 +69,12 @@ def analyse_recording_to_notes(
     )
     freqs: floatlist = np.array(parselmouth_output.selected_array["frequency"])  # type: ignore
     segment_bounds_raw = find_segment_bounds_parselmouth(freqs)
+
+    print(f"{segment_bounds_raw = }")
+
     segment_bounds = process_segments(segment_bounds_raw)
+
+    print(f"{segment_bounds = }")
 
     float_pitches = freqs_to_float_pitches(freqs)
 
@@ -82,6 +87,8 @@ def analyse_recording_to_notes(
         )
         for lower_bound, upper_bound in segment_bounds
     ]
+
+    print(f"{float_notes_and_augmentations = }")
 
     float_notes: list[float] = [
         float_note for float_note, _ in float_notes_and_augmentations
@@ -266,29 +273,31 @@ def determine_pause_thresholds(
         The lower and upper bounds of a regular pause length, respectively.
     """
     regular_length = determine_regular_pause_length(segment_bounds)
+    print(f"{regular_length = }")
     short_pause_threshold = regular_length * short_factor
     long_pause_threshold_guess = regular_length * long_factor
     all_lengths = determine_pause_lengths(segment_bounds)
+    print(f"{all_lengths = }")
     relevant_lengths = [
         length
         for length in all_lengths
         if length >= regular_length and length < long_pause_threshold_guess
     ]
+    print(f"{relevant_lengths = }")
     higher_lengths = [
         length for length in all_lengths if length >= long_pause_threshold_guess
     ]
+    print(f"{higher_lengths = }")
     if higher_lengths:
         relevant_lengths.append(min(higher_lengths))
     sorted_relevant_lengths = list(sorted(relevant_lengths))
+    print(f"{sorted_relevant_lengths = }")
     if len(sorted_relevant_lengths) == 0:
         return (0, 0)
     if len(sorted_relevant_lengths) == 1:
         return (sorted_relevant_lengths[0] - 1, sorted_relevant_lengths[0] + 1)
-    if (
-        len(sorted_relevant_lengths) == 2
-        and sorted_relevant_lengths[1] < 2 * sorted_relevant_lengths[0]
-    ):
-        return (sorted_relevant_lengths[0] - 1, sorted_relevant_lengths[1] + 1)
+    if len(all_lengths) == 2 and all_lengths[1] < 2 * all_lengths[0]:
+        return (all_lengths[0] - 1, all_lengths[1] + 1)
     index_of_last_short_pause = np.argmax(np.diff(sorted_relevant_lengths))
     if sorted_relevant_lengths[-1] < long_pause_threshold_guess:
         long_pause_threshold = long_pause_threshold_guess
@@ -1137,41 +1146,6 @@ def determine_deviances_from_target_for_sentence(
         total_deviances += deviances
 
     return total_deviances
-
-
-def find_closest_sentence_for_notes_strings(
-    strings_from_recording: list[str],
-) -> list[Word | None]:
-    """Finds the best match(es) in Toki Musi for a provided sentence.
-
-    Sometimes a notes string has a perfect match in the language, and otherwise we'll look
-    for the closest matches.
-
-    Parameters
-    ----------
-    strings_from_recording : list[str]
-        A `list` of notes strings per word in the sentence.
-
-    Returns
-    -------
-    list[Word | None]
-        A `list` of `Word` objects, or `None` for a string that could not be matched.
-    """
-    words_from_recording: list[Word | None] = []
-    offset = 0
-    for i in range(len(strings_from_recording)):
-        s = strings_from_recording[i]
-        if (result := find_closest_words_for_notes_string(s)) is None:
-            words_from_recording.append(None)
-        else:
-            closest_words, offset = result
-            words_from_recording += closest_words
-            for j in range(i + 1, len(strings_from_recording)):
-                strings_from_recording[j] = pitch_string_by(
-                    strings_from_recording[j], offset
-                )
-
-    return words_from_recording
 
 
 def get_synthesised_versions_of_words(
