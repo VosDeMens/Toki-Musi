@@ -3,7 +3,7 @@
     "notes_string": ":r",
     "description": "used to indicate a new sentence, or a colon, or comma, or whatever reason you would have to pause in natural language",
     "nr_of_notes": 1,
-    "etymelogies": [],
+    "etymelogies": ["..."],
     "toki_pona": false,
     "particle": true,
     "content_word": false,

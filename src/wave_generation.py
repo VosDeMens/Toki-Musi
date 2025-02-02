@@ -248,7 +248,8 @@ def freq_timeline_from_string(
             start: float = freq_timeline_segments[-1][-1]  # type: ignore
             i += 1
 
-            if i == len(s):
+            found_digits_after: bool = any(c.isdigit() for c in s[i:])
+            if i == len(s) or not found_digits_after:
                 if symbol == Augmentation.SLIDE_UP.value:
                     dest: float = start * 2 ** (7 / 12)
                 else:
@@ -293,7 +294,7 @@ def freq_timeline_from_string(
     return freq_timeline_segments
 
 
-def pcw_from_string(
+def pcw_from_notes_string(
     s: str, speed: float = 10, offset: float = 0, sample_rate: int = SAMPLE_RATE
 ) -> floatlist:
     """Generates a sound wave for a notes string.

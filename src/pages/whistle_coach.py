@@ -336,8 +336,9 @@ with st.expander("Settings"):
     )
     st.divider()
     st.subheader("Prefer composites")
-    st.write(  # type: ignore
-        "If two words belong together, you can turn their melodies into one melody. Check the #guide for more information on how that works. If you select this option, established combinations of words will be turned into composite words."
+    st.markdown(  # type: ignore
+        'If two words belong together, you can turn their melodies into one melody. Check the <a href="./guide" style="color:#FF0000;">guide</a> for more information on how that works. If you select this option, established combinations of words will be turned into composite words.',
+        unsafe_allow_html=True,
     )
     st.checkbox(
         " ",

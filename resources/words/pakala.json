@@ -1,10 +1,10 @@
 {
     "name": "pakala",
-    "notes_string": "0:3:7",
+    "notes_string": "0:3_:7",
     "description": "accident, mistake, to break, damage, FUCK",
     "nr_of_notes": 3,
     "etymelogies": [
-        "minor triad ofc"
+        "minor triad ofc, but to prevent confusion with tawa and jaki, the middle note is longer"
     ],
     "toki_pona": true,
     "particle": false,

@@ -1,8 +1,12 @@
+import io
+import soundfile as sf  # type: ignore
+import base64
 from itertools import product
 import re
 from typing import Any
 
-from src.constants import ROOT
+from src.constants import ROOT, SAMPLE_RATE
+from src.my_types import floatlist
 
 
 def remove_sublist(main_list: list[Any], sub_list: list[Any]) -> list[Any] | None:
@@ -207,3 +211,32 @@ def pitch_to_freq(pitch: float, root: float = ROOT) -> float:
         Frequency for provided pitch value.
     """
     return 440 * 2 ** ((pitch + root) / 12)
+
+
+def audio_to_html(audio_array: floatlist, sample_rate: int = SAMPLE_RATE) -> str:
+    """Turns a sound wave into a small inline playable HTML button.
+
+    Parameters
+    ----------
+    audio_array : floatlist
+        Sound wave.
+    sample_rate : int
+        Sample rate, by default SAMPLE_RATE := 44100
+
+    Returns
+    -------
+    str
+        Playable HTML object.
+    """
+    buffer = io.BytesIO()
+    sf.write(buffer, audio_array, sample_rate, format="WAV")  # type: ignore
+    buffer.seek(0)
+
+    audio_base64 = base64.b64encode(buffer.read()).decode("utf-8")
+    audio_base64_url = f"data:audio/wav;base64,{audio_base64}"
+    audio_html = f"""<audio controls style="vertical-align: middle; height: 1.5rem; width: 3rem">
+        <source src="{audio_base64_url}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    """
+    return audio_html

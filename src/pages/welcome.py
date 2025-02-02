@@ -1,7 +1,7 @@
 import streamlit as st
 
-from src.file_management import HOME_TEXT_FILE, load_markdown_from_file
+from src.file_management import WELCOME_TEXT_FILE, load_markdown_from_file
 
-HOME_TEXT = load_markdown_from_file(HOME_TEXT_FILE)
+HOME_TEXT = load_markdown_from_file(WELCOME_TEXT_FILE)
 
-st.write(HOME_TEXT)  # type: ignore
+st.write(HOME_TEXT, unsafe_allow_html=True)  # type: ignore
