@@ -5,7 +5,7 @@ from src.augmentation import Augmentation
 from src.constants import SAMPLE_RATE
 from src.util import generate_contractions
 from src.wave_generation import (
-    pcw_from_string,
+    pcw_from_notes_string,
 )
 from src.my_types import floatlist
 
@@ -152,7 +152,10 @@ class Word:
         """
         if self.nr_of_notes == 0:
             return None
-        return pcw_from_string(self.get_notes_string(), speed, offset, sample_rate)
+        print(f"{self.get_notes_string() = }")
+        return pcw_from_notes_string(
+            self.get_notes_string(), speed, offset, sample_rate
+        )
 
     def __eq__(self, value: object) -> bool:
         return (

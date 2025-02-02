@@ -23,7 +23,9 @@ WHISTLE_COACH_INSTRUCTIONS_FILE = create_path(
 TRANSCRIBE_COACH_INSTRUCTIONS_FILE = create_path(
     "../resources/transcribe_coach_instructions.md"
 )
-HOME_TEXT_FILE = create_path("../resources/home_text.md")
+WELCOME_TEXT_FILE = create_path("../resources/welcome_text.md")
+GUIDE_TEXT_FILE = create_path("../resources/guide_text.md")
+ABOUT_TEXT_FILE = create_path("../resources/about_text.md")
 
 
 def save_words_to_folder(*words: Word, composite: bool = False) -> None:
