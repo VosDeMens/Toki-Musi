@@ -234,7 +234,6 @@ But if the end of the first word is the same as the beginning of the second word
 Or `tomo` (`space you can be in`) and `tawa` (`move`), together meaning `vehicle`, often `car`: `0:7:4 0:4:7`\$ -> `0:7:4:7`\$, which we can combine with `po` (`police`), to get `police car`: `0:7:4:7 0:9:5:9`\$ which I think is hilarious that that worked out if I may say so myself.
 I'm ok to be a bit liberal with what amount to a valid overlap, like with `kalama` (`sound`) and `musi` (`fun`) together meaning `music`: `0:2_:4:5:5 0:5_:9`\$ -> `0:2_:4:5_:9`\$
 Of course this is gonna be difficult to do and to recognise initially, but I wanted to leave space for this to evolve, so I explored options and I actually spent a lot of time trying to keep an overview of which melodies I had picked for which words, to prevent any potential clashes. For example if we have two pairs of words that often appear together, like `0:4 0:5:7`\$ (`good` and `wholesome`) and `0:4:5 0:7`\$ (`truth` and `conversation`), these could both be contracted to `0:4:5:7`\$. So I made sure that these aren't both combinations we could decide to want to contract. Actually in this I expect neither of these to be important combinations, and `0:4:5:7`\$ hasn't currently been assigned a meaning, although I would like for it to mean `hour` in some form, because of the song Ik Loat D'n Dag Nog Efkes Dure by Gerard van Maasakkers, about the beauty of the last hour before sunset.
-I tried to leave as much space for this to evolve,
 
 ## 🎼 Key changes
 

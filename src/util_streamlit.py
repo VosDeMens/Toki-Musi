@@ -67,7 +67,6 @@ def render_section(header: str, content: list[str]) -> None:
 def enrich_text(raw: str) -> str:
     def replacement(match: re.Match[str], include_notes_string: bool) -> str:
         match_string = match.group(0)[1:-3]
-        print(match_string)
         without_parentheses = match_string.replace("(", "").replace(")", "")
         notes_strings = without_parentheses.split(" ")
         for i in range(len(notes_strings)):
