@@ -2,7 +2,7 @@
 
 ### Order of operations
 
-This guide does not assume that you know any of the words in Toki Musi yet, or in Toki Pona for that matter, and is intended as a first introduction to learning Toki Musi. All words that are used in this guide will be translated. It's good if you understand how Toki Pona is structured though, but I'll provide a small overview.
+This guide does not assume that you know any of the words in TM (Toki Musi) yet, or in Toki Pona for that matter, and is intended as a first introduction to learning Toki Musi. All words that are used in this guide will be translated. It's good if you understand how Toki Pona is structured though, but I'll provide a small overview.
 
 ### Guidelines
 
@@ -124,7 +124,7 @@ I needed a way to write down melodies that my janky DIY synthesiser would be abl
 - To indicate a trill down, we add `*`: `0:4*`\$.
 - To indicate silence, we can use `r` instead of a number, although I didn't end up including this in a lot of words.
 
-Try it yourself! (I didn't plan to include this feature, so I didn't create logic to check whether a notes string is formatted correctly. Have fun breaking the synthesizer and getting weird unhandled exceptions.)
+Try it yourself! (I didn't plan to include this feature, so I didn't create logic to check whether a notes string is formatted correctly. Have fun breaking the synthesiser and getting weird unhandled exceptions.)
 \$\$
 
 ## ✨ Word modifications
@@ -241,7 +241,7 @@ I tried to leave as much space for this to evolve,
 In Toki Pona, we use `la` and `pi` to convey certain grammatical intentions, as explained above. These words kind of exist in Toki Musi, but they don't have a melody. Instead, they are expressed by key changes. This is probably the most difficult part of the language, as you can now not be sure that the first note of a sentence is always gonna be the first note of a new word later in the sentence, and it can just be pretty difficult to whistle. Personally though I'm really happy I was able to incorporate key changes in a way that makes sense, as it indicates a seperate part of a sentence of sorts.
 - `la` is expressed by a key change down.
 - `pi` is expressed by a key change up, but it should be followed by a key change back down to the original key after the group of words `pi` belongs to. In Toki Musi this key change back down is written out as `unpi`.
-- I imagine key changes of 2 semitones will be a good rule of thumb, and this is what I've used in the synthesizer, and what Whistle Coach is looking out for, but I don't think it has to be 2 semitones if you prefer something else.
+- I imagine key changes of 2 semitones will be a good rule of thumb, and this is what I've used in the synthesiser, and what Whistle Coach is looking out for, but I don't think it has to be 2 semitones if you prefer something else.
 - If you don't wanna do key changes, the words `0*` and `0^` are free as of yet and could be replacements.
 
 Written out:
@@ -269,4 +269,4 @@ Toki Pona is genderless by default, but has words for `man/male`, for `woman/fem
 
 ## 👋 Closing remarks
 
-Hey! Welcome to the end of the guide. I have worked on Toki Musi on and off for half a year, and it kept me going through otherwise pretty challenging times. I am so fucking excited I actually finished it, and can now share it. Just today I have been programming and writing for 12 consecutive hours. ✌️ I know it's a lot to take in, good on you for making it through! I think you're ready to look at some words and get a-whistling. I want to reiterate this is the first time I ever make a language, and there's probably a lot of room for improvement, so let me know if you have suggestions or any comments at all and thanks again for being here!
+Hey! Welcome to the end of the guide. I have worked on Toki Musi on and off for half a year, and it kept me going through otherwise pretty challenging times. I am so fucking excited I actually finished it, and can now share it. Just today I have been programming and writing for 16 consecutive hours. ✌️ Which is definitely a hyperfocus PR for me but I could just smell the finish line. I know this guide a lot to take in, good on you for making it through! I think you're ready to look at some words and get a-whistling. I want to reiterate this is the first time I ever make a language, and there's probably a lot of room for improvement, so let me know if you have suggestions or any comments at all and thanks again for being here!

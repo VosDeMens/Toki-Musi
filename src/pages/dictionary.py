@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.util_streamlit import st_audio
+from src.util_streamlit import display_example, render_settings, st_audio
 from src.word import (
     InvalidWordException,
     Word,
@@ -8,7 +8,6 @@ from src.word import (
 from src.words_functions import (
     get_prevalence,
     get_words_from_sentence,
-    get_sentence_wave,
 )
 from src.file_management import (
     load_examples_from_file,
@@ -55,7 +54,7 @@ def display_word(word: Word) -> None:
                 "You can use this to practise your understanding, but keep in mind that all provided translations should be interpreted as suggestions. Toki Musi, like Toki Pona, is a highly contextual language, so if you thought of a different translation than the one provided, that doesn't mean yours is wrong."
             )
             for tm, en in st.session_state["loaded_examples"][word.name]:
-                display_example(tm, en, word.name)
+                display_example(tm, en, word.name, WORDS, "displayed_sentences_dict")
 
 
 def load_examples_for_word(word: Word) -> None:
@@ -75,42 +74,6 @@ def load_examples_for_word(word: Word) -> None:
             st.session_state["loaded_examples"][word.name].append((tm, en))
         except InvalidWordException:
             pass
-
-
-def display_example(tm: str, en: str, name: str):
-    """Displays a particular example for a
-
-    Parameters
-    ----------
-    tm : str
-        The Toki Musi sentence.
-    en : str
-        The English sentence.
-    """
-    words_in_sentence = get_words_from_sentence(tm, WORDS)
-    st_audio(get_sentence_wave(words_in_sentence))
-    id_tm = f"{name}_{tm}"
-    if id_tm not in st.session_state["displayed_sentences"]:
-        if st.button(
-            "Show text version",
-            key=id_tm,
-            on_click=lambda s=id_tm: st.session_state["displayed_sentences"].add(s),  # type: ignore
-        ):
-            pass
-    else:
-        st.write(tm)  # type: ignore
-
-    id_en = f"{name}_{en}"
-    if id_en not in st.session_state["displayed_sentences"]:
-        if st.button(
-            "Show translation",
-            key=id_en,
-            on_click=lambda s=id_en: st.session_state["displayed_sentences"].add(s),  # type: ignore
-        ):
-            pass
-    else:
-        st.write(en)  # type: ignore
-    st.divider()
 
 
 def sentences_match(sentence_input: list[Word], sentence_actual: list[Word]) -> bool:
@@ -188,8 +151,8 @@ if "clicked_buttons" not in st.session_state:
     st.session_state["clicked_buttons"] = set()
 if "loaded_examples" not in st.session_state:
     st.session_state["loaded_examples"] = {}
-if "displayed_sentences" not in st.session_state:
-    st.session_state["displayed_sentences"] = set()
+if "displayed_sentences_dict" not in st.session_state:
+    st.session_state["displayed_sentences_dict"] = set()
 if "nr_of_notes" not in st.session_state:
     st.session_state["nr_of_notes"] = 0
 if "toki_pona" not in st.session_state:
@@ -206,6 +169,8 @@ if "colour" not in st.session_state:
     st.session_state["colour"] = False
 if "atomic" not in st.session_state:
     st.session_state["atomic"] = True
+
+render_settings(True, True, False, False, False, False)
 
 with st.expander("Filters"):
     st.number_input(

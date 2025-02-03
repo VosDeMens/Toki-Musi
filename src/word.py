@@ -152,7 +152,6 @@ class Word:
         """
         if self.nr_of_notes == 0:
             return None
-        print(f"{self.get_notes_string() = }")
         return pcw_from_notes_string(
             self.get_notes_string(), speed, offset, sample_rate
         )
