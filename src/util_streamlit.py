@@ -90,8 +90,8 @@ def enrich_text(raw: str) -> str:
     enriched1 = re.sub(pattern1, lambda x: replacement(x, True), raw)
     pattern2 = r"`([^`]+)`\\\&"
     enriched2 = re.sub(pattern2, lambda x: replacement(x, False), enriched1)
-    # enriched3 = replace_TM_with_audio(enriched2)
-    return enriched2
+    enriched3 = replace_TM_with_audio(enriched2)
+    return enriched3
 
 
 def replace_TM_with_audio(text: str) -> str:
