@@ -1,7 +1,7 @@
 import numpy as np
 import streamlit as st
-from streamlit.delta_generator import DeltaGenerator
 import re
+from typing import Iterator
 
 from src.constants import SAMPLE_RATE
 from src.my_types import floatlist
@@ -17,8 +17,8 @@ TM_AUDIO = get_sentence_wave(TM_WORDS)
 TM_HTML = audio_to_html(TM_AUDIO)
 
 
-def st_audio(wave: floatlist, sample_rate: int = SAMPLE_RATE) -> DeltaGenerator:
-    return st.audio(marginify_wave(wave), sample_rate=sample_rate, format="audio/wav")  # type: ignore
+def st_audio(wave: floatlist, sample_rate: int = SAMPLE_RATE) -> None:
+    st.audio(marginify_wave(wave), sample_rate=sample_rate, format="audio/wav")  # type: ignore
 
 
 def render_enriched_markdown(md: str) -> None:
@@ -53,7 +53,6 @@ def render_section(header: str, content: list[str]) -> None:
             content[i] = enrich_text(line)
 
     with st.expander(header):
-        st.markdown(header, unsafe_allow_html=True)
         for line in content:
             if line == 2 * "\\$":
                 render_try_yourself()
@@ -68,6 +67,7 @@ def render_section(header: str, content: list[str]) -> None:
 def enrich_text(raw: str) -> str:
     def replacement(match: re.Match[str], include_notes_string: bool) -> str:
         match_string = match.group(0)[1:-3]
+        print(match_string)
         without_parentheses = match_string.replace("(", "").replace(")", "")
         notes_strings = without_parentheses.split(" ")
         for i in range(len(notes_strings)):
@@ -86,22 +86,51 @@ def enrich_text(raw: str) -> str:
         else:
             return html
 
-    pattern1 = r"`([^`]+)`\\\$"
-    enriched1 = re.sub(pattern1, lambda x: replacement(x, True), raw)
-    pattern2 = r"`([^`]+)`\\\&"
-    enriched2 = re.sub(pattern2, lambda x: replacement(x, False), enriched1)
-    enriched3 = replace_TM_with_audio(enriched2)
-    return enriched3
+    notes_string_dollar = r"`([^`]+)`\\\$"
+    notes_string_amp = r"`([^`]+)`\\\&"
+    toki_musi = r"TM"
+
+    patterns = [
+        (notes_string_dollar, "$"),
+        (notes_string_amp, "&"),
+        (toki_musi, "TM"),
+    ]
+
+    result_parts: list[str] = []
+    last_end = 0
+    match_iters = [(re.finditer(pattern, raw), flag) for pattern, flag in patterns]
+    active_matches: list[tuple[re.Match[str], Iterator[re.Match[str]], str]] = []
+    for match_iter, flag in match_iters:
+        first_match = next(match_iter, None)
+        if first_match:
+            active_matches.append((first_match, match_iter, flag))
+
+    while active_matches:
+        next_match = min(active_matches, key=lambda x: x[0].start())
+        match, match_iter, flag = next_match
+        result_parts.append(raw[last_end : match.start()])
+        if flag == "$":
+            result_parts.append(replacement(match, True))
+        elif flag == "&":
+            result_parts.append(replacement(match, False))
+        elif flag == "TM":
+            result_parts.append(TM_HTML)
+
+        last_end = match.end()
+        next_match = next(match_iter, None)
+        if next_match:
+            active_matches.append((next_match, match_iter, flag))
+        active_matches.remove((match, match_iter, flag))
+
+    result_parts.append(raw[last_end:])
+    return "".join(result_parts)
 
 
 def replace_TM_with_audio(text: str) -> str:
-    if "TM" in text:
-        enriched = TM_HTML.join(text.split("TM"))
-        return enriched
-    return text
+    return text.replace("TM", TM_HTML)
 
 
-def render_try_yourself() -> DeltaGenerator:
+def render_try_yourself() -> None:
     st.text_input(
         " ",
         value=st.session_state["try"],
@@ -113,26 +142,24 @@ def render_try_yourself() -> DeltaGenerator:
         ),
     )
     pcw = pcw_from_notes_string(st.session_state["try"])
-    return st_audio(pcw)
+    st_audio(pcw)
 
 
-def render_image() -> DeltaGenerator:
+def render_image() -> None:
     _, col2, _ = st.columns((1, 2, 1))
     with col2:
-        img = st.image("https://i.imgur.com/59r5RGa.jpeg")
-    return img
+        st.image("https://i.imgur.com/59r5RGa.jpeg")
 
 
-def render_nose_whistle_cover() -> DeltaGenerator:
+def render_nose_whistle_cover() -> None:
     _, col2, _ = st.columns((1, 2, 1))
     with col2:
-        vid = st.video("https://youtu.be/oDHs8Z-F--o")
-    return vid
+        st.video("https://youtu.be/oDHs8Z-F--o")
 
 
 def display_example(
     tm: str, en: str, name: str, words: list[Word], displayed_sentences_key: str
-):
+) -> None:
     """Displays a particular example for a
 
     Parameters

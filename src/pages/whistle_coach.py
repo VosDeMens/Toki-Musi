@@ -140,7 +140,6 @@ def analyse_and_show_analysis():
     )
 
     strings_from_recording: list[str] = turn_into_notes_strings(notes_from_recording)
-    print(f"{strings_from_recording = }")
     target_words: list[Word | None] = []
     usable_reference = False
 
@@ -173,7 +172,6 @@ def analyse_and_show_analysis():
         for i in range(len(strings_from_recording)):
             s = strings_from_recording[i]
             # try:
-            print(f"{s = }")
             if (result := find_closest_words_for_notes_string(s)) is None:
                 target_words.append(None)
             else:
@@ -190,9 +188,6 @@ def analyse_and_show_analysis():
         if word is None or word.nr_of_notes == 0 or word.name == "rest":
             strings_from_recording.insert(i, "")
 
-    print(f"{strings_from_recording = }")
-    print(f"{target_words = }")
-
     strings_to_print = [
         (
             target_word.get_notes_string(True)
@@ -203,19 +198,14 @@ def analyse_and_show_analysis():
             target_words, strings_from_recording
         )
     ]
-    print(f"{strings_to_print = }")
 
     word_names = [
         f"({str(word)})" if word is not None else "(???)" for word in target_words
     ]
-    print(f"{word_names = }")
 
     notes_per_word: list[list[Note]] = cut_notes_sentence_into_notes_per_word(
         notes_from_recording, target_words
     )
-
-    for notes_for_word in notes_per_word:
-        print(f"{len(notes_for_word) = }")
 
     recording_per_word: list[floatlist | None] = extract_recording_per_word(
         audio_data,
@@ -236,7 +226,6 @@ def analyse_and_show_analysis():
             sample_rate_pm,
         )
     )
-    print(f"{len(synthesised_versions_of_words) = }")
 
     full_wave: floatlist = merge_into_one_wave(
         synthesised_versions_of_words,
@@ -257,11 +246,6 @@ def analyse_and_show_analysis():
     plot_with_target(audio_data, full_wave, offset)
 
     st.header("Word by word feedback:")
-
-    print("AAAAA")
-    print(f"{target_words = }")
-    print(f"{recording_per_word = }")
-    print(f"{synthesised_versions_of_words = }")
 
     for word, recording_word, synthesised_word in zip(
         target_words,

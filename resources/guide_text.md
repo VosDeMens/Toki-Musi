@@ -193,7 +193,7 @@ English:
 
 ### Past tense
 
-To past tensify a word, we glide the last note down. If you're someone who like having fun, nothing is stopping you from getting creative with this. For all I care you don't have to limit yourself to verbs even. I don't think it's too outrageous to talk about the past tense of a person, if we're talking somebody who died. Actually I think it's more poetic than saying they were a person.
+To past tensify a word, we glide the last note down. If you're someone who likes having fun, nothing is stopping you from getting creative with this. For all I care you don't have to limit yourself to verbs even. I don't think it's too outrageous to talk about the past tense of a person, if we're talking somebody who died. Actually I think it's more poetic than saying they were a person.
 
 Written out:
 `mi-s _kama sona` -> `mi-s _kama-ed sona` -> `mi-s _kama sona-ed` -> `mi-s _kama-ed sona-ed`
