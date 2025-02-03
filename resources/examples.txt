@@ -160,12 +160,11 @@ o pakala ala .lipu - Do not tear the paper.
 mama o - Mom!
 jan sona o rest sina _pona - Teacher, you're excellent!
 sina _pona rest jan sona o - You're excellent, teacher!
-jan ale o rest o pana .lipu sina - Everyone, please turn in your papers!
 jan ale o pana .lipu sina - Everyone, please turn in your papers!
 mi _kute-ed .pakala rest taso mi _pona - I heard something break. But I'm alright!
 kute taso _pona .sona sina - Only listening can improve your understanding.
 kute _pona taso .sona sina - Listening will only improve your understanding.
-kute _pona .sona sina _taso - Listening will improve your understanding only.
+kute _pona .sona sina taso - Listening will improve your understanding only.
 taso _pona - Being alone is good.
 ona _kama-ed taso - They became alone.
 o utala ala .soweli - Don't attack the animal!

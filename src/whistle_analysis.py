@@ -70,11 +70,7 @@ def analyse_recording_to_notes(
     freqs: floatlist = np.array(parselmouth_output.selected_array["frequency"])  # type: ignore
     segment_bounds_raw = find_segment_bounds_parselmouth(freqs)
 
-    print(f"{segment_bounds_raw = }")
-
     segment_bounds = process_segments(segment_bounds_raw)
-
-    print(f"{segment_bounds = }")
 
     float_pitches = freqs_to_float_pitches(freqs)
 
@@ -87,8 +83,6 @@ def analyse_recording_to_notes(
         )
         for lower_bound, upper_bound in segment_bounds
     ]
-
-    print(f"{float_notes_and_augmentations = }")
 
     float_notes: list[float] = [
         float_note for float_note, _ in float_notes_and_augmentations
@@ -273,25 +267,20 @@ def determine_pause_thresholds(
         The lower and upper bounds of a regular pause length, respectively.
     """
     regular_length = determine_regular_pause_length(segment_bounds)
-    print(f"{regular_length = }")
     short_pause_threshold = regular_length * short_factor
     long_pause_threshold_guess = regular_length * long_factor
     all_lengths = determine_pause_lengths(segment_bounds)
-    print(f"{all_lengths = }")
     relevant_lengths = [
         length
         for length in all_lengths
         if length >= regular_length and length < long_pause_threshold_guess
     ]
-    print(f"{relevant_lengths = }")
     higher_lengths = [
         length for length in all_lengths if length >= long_pause_threshold_guess
     ]
-    print(f"{higher_lengths = }")
     if higher_lengths:
         relevant_lengths.append(min(higher_lengths))
     sorted_relevant_lengths = list(sorted(relevant_lengths))
-    print(f"{sorted_relevant_lengths = }")
     if len(sorted_relevant_lengths) == 0:
         return (0, 0)
     if len(sorted_relevant_lengths) == 1:
@@ -1266,13 +1255,8 @@ def merge_into_one_wave(
     )
     onsets = [onset for onset, _ in word_bounds_in_recording]
 
-    print(f"{len(word_bounds_in_recording) = }")
-    print(f"{onsets = }")
-
     for word_wave, onset in zip(wave_per_word, onsets):
-        print(f"{onset = }")
         if word_wave is not None:
-            print(f"{len(word_wave) = }")
             full_wave[onset : onset + len(word_wave)] = word_wave
 
     return full_wave

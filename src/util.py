@@ -229,13 +229,13 @@ def audio_to_html(audio_array: floatlist, sample_rate: int = SAMPLE_RATE) -> str
         Playable HTML object.
     """
     buffer = io.BytesIO()
-    sf.write(buffer, audio_array, sample_rate, format="WAV")  # type: ignore
+    sf.write(buffer, audio_array, sample_rate, format="OGG")  # type: ignore
     buffer.seek(0)
 
     audio_base64 = base64.b64encode(buffer.read()).decode("utf-8")
-    audio_base64_url = f"data:audio/wav;base64,{audio_base64}"
+    audio_base64_url = f"data:audio/ogg;base64,{audio_base64}"
     audio_html = f"""<audio controls style="vertical-align: middle; height: 1.5rem; width: 3rem">
-        <source src="{audio_base64_url}" type="audio/wav">
+        <source src="{audio_base64_url}" type="audio/ogg">
         Your browser does not support the audio element.
     </audio>
     """

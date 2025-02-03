@@ -1,4 +1,4 @@
-And thanks for stopping by! This is a web app dedicated to TM (Toki Musi), a melody based language based that you can whistle, sing, or play on an instrument, although depending on the instrument you might need to get creative. It is based on Toki Pona, as I will explain later. Toki Musi is Toki Musi for `fun language`.
+And thanks for stopping by! This is a web app dedicated to TM (Toki Musi), a melody based language that you can whistle, sing, or play on an instrument, although depending on the instrument you might need to get creative. It is based on Toki Pona, as I will explain later. Toki Musi is Toki Pona for "fun language".
 
 If you're interested in learning Toki Musi, I suggest the following steps:
 
