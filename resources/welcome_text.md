@@ -1,6 +1,6 @@
-And thanks for stopping by! This is a web app dedicated to Toki Musi, a melody based language that you can whistle, sing, or play on an instrument, although depending on the instrument you might need to get creative.
+And thanks for stopping by! This is a web app dedicated to TM (Toki Musi), a melody based language based that you can whistle, sing, or play on an instrument, although depending on the instrument you might need to get creative. It is based on Toki Pona, as I will explain later. Toki Musi is Toki Musi for `fun language`.
 
-Credit where it's due, Toki Musi is barely its own language. If you're familiar with other conlangs (constructed languages), the name Toki Musi might remind you of Toki Pona. For everyone else: <a href="http://tokipona.org/" style="color:#FF0000;">Toki Pona</a> is a conlang designed by Sonja Lang, and developed further by the Toki Pona community. Toki Pona is famous (nerd famous) for only having up to about 140 words, depending on which ones you decide to need exactly. Toki Musi is, in a sense, a port of Toki Pona to melody, but it has some additional words and grammatical features. If you're interested in learning Toki Musi, I suggest the following steps:
+If you're interested in learning Toki Musi, I suggest the following steps:
 
 ## 🙋 Let me <a href="./about" style="color:#FF0000;">explain</a> (optional)
 
@@ -12,7 +12,7 @@ Or at least get familiar with the basic concepts like how to group words, and th
 
 ## 🧭 Check out the <a href="./guide" style="color:#FF0000;">guide</a>
 
-Where I'll explain in depth how Toki Musi works, referring a lot to how it's simliar to or different from Toki Pona. If you skipped learning Toki Pona because you *simply* **cannot** *wait* to **whistle**, and you think you're *smart* enough to just **learn Toki Musi** without learning Toki Pona first, chances are you're right. I've tried to make the guide as comprehensive as possible, but if you get confused it's never too late to learn Toki Pona, and I've included a section where I explain some key concepts.
+Where I'll explain in depth how Toki Musi works, referring a lot to how it's simliar to or different from Toki Pona. If you skipped learning Toki Pona because you *simply* **cannot** *wait* to **whistle**, and you think you're *smart* enough to just **learn** Toki Musi without learning Toki Pona first, chances are you're right. I've tried to make the guide as comprehensive as possible, but if you get confused it's never too late to learn Toki Pona, and I've included a section where I explain some key concepts.
 
 ## 📖 Study the <a href="./dictionary" style="color:#FF0000;">dictionary</a>
 

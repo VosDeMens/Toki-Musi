@@ -11,7 +11,7 @@ from scipy.io import wavfile  # type: ignore
 
 from src.constants import SAMPLE_RATE
 from src.note import Note, turn_into_notes_strings
-from src.util_streamlit import st_audio
+from src.util_streamlit import render_settings, st_audio
 from src.wave_generation import marginify_wave
 from src.whistle_analysis import (
     analyse_recording_to_notes,
@@ -144,12 +144,12 @@ def analyse_and_show_analysis():
     target_words: list[Word | None] = []
     usable_reference = False
 
-    if st.session_state["reference"] != "":
+    if st.session_state["reference_whistle"] != "":
         try:
             target_words = cast(
                 list[Word | None],
                 get_words_from_sentence(
-                    st.session_state["reference"], WORDS_WITHOUT_SLIDES
+                    st.session_state["reference_whistle"], WORDS_WITHOUT_SLIDES
                 ),
             )
             nr_of_sounded_target_words = len(
@@ -297,20 +297,8 @@ def callback():
 
 # Build the page
 
-if "speed" not in st.session_state:
-    st.session_state["speed"] = 10
-if "prefer_composites" not in st.session_state:
-    st.session_state["prefer_composites"] = False
-if "allow_keychanges" not in st.session_state:
-    st.session_state["allow_keychanges"] = False
-if "f_min" not in st.session_state:
-    st.session_state["f_min"] = 300
-if "f_max" not in st.session_state:
-    st.session_state["f_max"] = 4000
-if "octave" not in st.session_state:
-    st.session_state["octave"] = -1
-if "reference" not in st.session_state:
-    st.session_state["reference"] = ""
+if "reference_whistle" not in st.session_state:
+    st.session_state["reference_whistle"] = ""
 if "sample_rate" not in st.session_state:
     st.session_state["sample_rate"] = SAMPLE_RATE
 
@@ -319,116 +307,33 @@ with st.expander("Who is Whistle Coach??"):
     st.subheader("Hello I am Whistle Coach.")
     st.write(INTRUCTIONS)  # type: ignore
 
-with st.expander("Settings"):
-    st.subheader("Speed")
-    st.write(  # type: ignore
-        "The playback speed of the example sentence. You don't need to match this in your recording."
-    )
-    st.slider(
-        " ",
-        1,
-        15,
-        value=st.session_state["speed"],
-        key="speed_input",
-        on_change=lambda: setattr(
-            st.session_state, "speed", st.session_state["speed_input"]
-        ),
-    )
-    st.divider()
-    st.subheader("Prefer composites")
-    st.markdown(  # type: ignore
-        'If two words belong together, you can turn their melodies into one melody. Check the <a href="./guide" style="color:#FF0000;">guide</a> for more information on how that works. If you select this option, established combinations of words will be turned into composite words.',
-        unsafe_allow_html=True,
-    )
-    st.checkbox(
-        " ",
-        value=st.session_state["prefer_composites"],
-        key="prefer_composites_input",
-        on_change=lambda: setattr(
-            st.session_state,
-            "prefer_composites",
-            st.session_state["prefer_composites_input"],
-        ),
-    )
-    st.divider()
-    st.subheader("Allow keychanges")
-    st.write(  # type: ignore
-        "When loading a random reference sentence, allow sentences with key changes (more difficult)."
-    )
-    st.checkbox(
-        " ",
-        value=st.session_state["allow_keychanges"],
-        key="allow_keychanges_input",
-        on_change=lambda: setattr(
-            st.session_state,
-            "allow_keychanges",
-            st.session_state["allow_keychanges_input"],
-        ),
-    )
-    st.divider()
-    st.subheader("Min frequency")
-    st.write(  # type: ignore
-        "The lowest frequency in your range. For whistling, you can leave this alone."
-    )
-    st.text_input(
-        " ",
-        value=str(st.session_state["f_min"]),
-        key="f_min_input",
-        on_change=lambda: setattr(
-            st.session_state, "f_min", int(st.session_state["f_min_input"])
-        ),
-    )
-    st.divider()
-    st.subheader("Max frequency")
-    st.write(  # type: ignore
-        "The highest frequency in your range. For whistling, you can leave this alone."
-    )
-    st.text_input(
-        " ",
-        value=str(st.session_state["f_max"]),
-        key="f_max_input",
-        on_change=lambda: setattr(
-            st.session_state, "f_max", int(st.session_state["f_max_input"])
-        ),
-    )
-    st.divider()
-    st.subheader("Octave offset correction")
-    st.write("Whistles are really high pitched, so by default, the synthesised sounds in the corrections are pitched down by an octave, as to not be super jarring. If you're gonna sing, you might want to set this to 0, or even 1 if you have a low voice.")  # type: ignore
-    st.slider(
-        " ",
-        -1,
-        1,
-        value=st.session_state["octave"],
-        step=1,
-        key="octave_input",
-        on_change=lambda: setattr(
-            st.session_state, "octave", st.session_state["octave_input"]
-        ),
-    )
+render_settings()
 
 st.divider()
 st.subheader("Reference sentence")
 
 st.text_input(
     " ",
-    value=st.session_state["reference"],
-    key="reference_input",
+    value=st.session_state["reference_whistle"],
+    key="reference_whistle_input",
     on_change=lambda: setattr(
-        st.session_state, "reference", st.session_state["reference_input"]
+        st.session_state,
+        "reference_whistle",
+        st.session_state["reference_whistle_input"],
     ),
 )
 
 try:
-    if st.session_state["reference"]:
+    if st.session_state["reference_whistle"]:
         words_in_sentence = get_words_from_sentence(
-            st.session_state["reference"],
+            st.session_state["reference_whistle"],
             WORDS_WITHOUT_SLIDES,
             st.session_state["prefer_composites"],
         )
-        if st.session_state["reference"] in (
+        if st.session_state["reference_whistle"] in (
             dictionary := {tm: en for tm, en in EXAMPLES}
         ):
-            st.write(f'Meaning: {dictionary[st.session_state["reference"]]}')  # type: ignore
+            st.write(f'Meaning: {dictionary[st.session_state["reference_whistle"]]}')  # type: ignore
         st.write(  # type: ignore
             f"Notes string:&nbsp;&nbsp;&nbsp;{'&nbsp;&nbsp;&nbsp;'.join(w.get_notes_string(True) for w in words_in_sentence)}"
         )
@@ -450,7 +355,7 @@ st.button(
     "Randomise",
     on_click=lambda: setattr(
         st.session_state,
-        "reference",
+        "reference_whistle",
         choice(
             [
                 tm

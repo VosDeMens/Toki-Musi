@@ -1,0 +1,27 @@
+{
+    "name": "family",
+    "notes_string": "0:-4:5_:3",
+    "description": "family, come here",
+    "nr_of_notes": 4,
+    "etymelogies": [
+        "When I was a kid, my father would whistle this to me and my sister when we'd run off in the supermarket, and we'd find him back that way."
+    ],
+    "toki_pona": false,
+    "particle": false,
+    "content_word": true,
+    "preposition": false,
+    "interjection": false,
+    "pluralizable": true,
+    "past_tensifiable": true,
+    "comparativizable": true,
+    "questionifiable": true,
+    "colour": false,
+    "composite": false,
+    "plural": false,
+    "past_tense": false,
+    "comparative": false,
+    "superlative": false,
+    "question": false,
+    "finite_verb": false,
+    "direct_object": false
+}
