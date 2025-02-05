@@ -172,7 +172,7 @@ def display_example(
         loading the same example multiple times on the same page.
     """
     words_in_sentence = get_words_from_sentence(tm, words)
-    st_audio(get_sentence_wave(words_in_sentence))
+    st_audio(get_sentence_wave(words_in_sentence, speed=st.session_state["speed"]))
     id_tm = f"{name}_{tm}"
     if id_tm not in st.session_state[displayed_sentences_key]:
         if st.button(
