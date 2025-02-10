@@ -1,10 +1,10 @@
 {
     "name": "len sijelo",
-    "notes_string": "0:7:5:4:5:3",
+    "notes_string": "0:7:5:4:5_:7:3",
     "description": "shirt",
-    "nr_of_notes": 6,
+    "nr_of_notes": 7,
     "etymelogies": [
-        "composite word from len and sijelo 0:7:5:4:5:**~~0:5~~**:3"
+        "composite word from len and sijelo 0:7:5:4:**~~5:0~~**:5_:7:3"
     ],
     "toki_pona": false,
     "particle": false,

@@ -1859,7 +1859,6 @@ ike taso 0:3:-4
 telo taso 0:-4_:3:-4
 kala toki 0:9_:7:5_:3:7
 kala pakala 0:9_:7:5_:3:7
-jan ike 0:5:3
 sona sijelo 0:2_:5:3
 sona ike 0:2_:5:3
 lon sijelo 0:4:5:3
