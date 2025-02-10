@@ -1,19 +1,19 @@
 {
-    "name": "pona sijelo",
-    "notes_string": "0:4:5:7_:3",
-    "description": "health",
-    "nr_of_notes": 5,
+    "name": "jan pona",
+    "notes_string": "0:5:4",
+    "description": "friend, good person",
+    "nr_of_notes": 3,
     "etymelogies": [
-        "composite word from pona and sijelo 0:4:**~~0~~**:5:7_:3"
+        "composite word from jan and pona 0:5:**~~0~~**:4"
     ],
     "toki_pona": false,
     "particle": false,
     "content_word": true,
     "preposition": false,
-    "interjection": true,
+    "interjection": false,
     "pluralizable": true,
     "past_tensifiable": true,
-    "comparativizable": true,
+    "comparativizable": false,
     "questionifiable": true,
     "colour": false,
     "composite": true,
