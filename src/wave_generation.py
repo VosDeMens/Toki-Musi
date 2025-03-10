@@ -230,15 +230,15 @@ def freq_timeline_from_string(
 
         # If we encounter symbols representing augmentations, we alter the note we just added accordingly.
         if s[i] == Augmentation.LONG.value:
-            freq_timeline_segments[-1] = apply_lengthen(freq_timeline_segments[-1], 1)  # type: ignore
+            freq_timeline_segments[-1] = apply_lengthen(freq_timeline_segments[-1], speed, sample_rate, 1)  # type: ignore
             i += 1
             continue
         if s[i] == Augmentation.TRILL_UP.value:
-            freq_timeline_segments[-1] = apply_trill(freq_timeline_segments[-1], 2)  # type: ignore
+            freq_timeline_segments[-1] = apply_trill(freq_timeline_segments[-1], speed, sample_rate, 2)  # type: ignore
             i += 1
             continue
         if s[i] == Augmentation.TRILL_DOWN.value:
-            freq_timeline_segments[-1] = apply_trill(freq_timeline_segments[-1], -2)  # type: ignore
+            freq_timeline_segments[-1] = apply_trill(freq_timeline_segments[-1], speed, sample_rate, -2)  # type: ignore
             i += 1
             continue
         # This one is slightly more complicated bc it can indicate a slide between notes
@@ -369,9 +369,9 @@ def generate_frequency_timeline(
 
 def apply_lengthen(
     frequency_segment: floatlist,
+    speed: float,
+    sample_rate: int,
     duration_scalar: int = 2,
-    speed: float = 10,
-    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Extends a frequency timeline into a timeline with a tail.
 
@@ -401,9 +401,9 @@ def apply_lengthen(
 
 def apply_trill(
     frequency_segment: floatlist,
+    speed: float,
+    sample_rate: int,
     reach: int = 2,
-    speed: float = 10,
-    sample_rate: int = SAMPLE_RATE,
 ) -> floatlist:
     """Turns a frequency timeline into a timeline with a trill in the middle.
 

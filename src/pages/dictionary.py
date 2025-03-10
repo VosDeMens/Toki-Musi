@@ -30,7 +30,7 @@ def display_word(word: Word) -> None:
     with st.expander(str(word)):
         st.write(word.description, unsafe_allow_html=True)  # type: ignore
         st.write(f"notes: {word.get_notes_string(True)}")  # type: ignore
-        wave = word.wave()
+        wave = word.wave(st.session_state["speed"])
         if wave is not None:
             st_audio(wave)
         if word.etymelogies:
@@ -54,7 +54,13 @@ def display_word(word: Word) -> None:
                 "You can use this to practise your understanding, but keep in mind that all provided translations should be interpreted as suggestions. Toki Musi, like Toki Pona, is a highly contextual language, so if you thought of a different translation than the one provided, that doesn't mean yours is wrong."
             )
             for tm, en in st.session_state["loaded_examples"][word.name]:
-                display_example(tm, en, word.name, WORDS, "displayed_sentences_dict")
+                display_example(
+                    tm,
+                    en,
+                    word.name,
+                    WORDS,
+                    "displayed_sentences_dict",
+                )
 
 
 def load_examples_for_word(word: Word) -> None:
