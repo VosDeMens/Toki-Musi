@@ -157,7 +157,11 @@ def render_nose_whistle_cover() -> None:
 
 
 def display_example(
-    tm: str, en: str, name: str, words: list[Word], displayed_sentences_key: str
+    tm: str,
+    en: str,
+    name: str,
+    words: list[Word],
+    displayed_sentences_key: str,
 ) -> None:
     """Displays a particular example for a
 
@@ -171,7 +175,9 @@ def display_example(
         Name of the word this example is loaded for, used for the key ok to leave empty unless
         loading the same example multiple times on the same page.
     """
-    words_in_sentence = get_words_from_sentence(tm, words)
+    words_in_sentence = get_words_from_sentence(
+        tm, words, st.session_state["prefer_composites"]
+    )
     st_audio(get_sentence_wave(words_in_sentence, speed=st.session_state["speed"]))
     id_tm = f"{name}_{tm}"
     if id_tm not in st.session_state[displayed_sentences_key]:
