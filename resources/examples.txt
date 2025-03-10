@@ -241,8 +241,8 @@ poki ni _awen tawa sike la mi _kama nasa jaki - If this ride keeps spinning, I'm
 mi _esun .kon la mi _awen lon - If I exchange air (breathe), I remain alive
 open la mi _sona ala - At the beginning, I didn't understand.
 
-ona _moku-? .ale - Did they EAT everything?
-ona _moku .ale-? - Did they eat EVERYTHING?
+ona _moku-ed-? .ale - Did they EAT everything?
+ona _moku-ed .ale-? - Did they eat EVERYTHING?
 moku - Yes (in response to the above)
 ona _pini-? .musi - Did they end the game?
 ona _pini a - Yes, they ended (the game)! (in response to the above)
