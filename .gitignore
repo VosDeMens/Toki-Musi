@@ -11,6 +11,8 @@ redundant/
 experimentation/
 
 .DS_Store
+.env
+profile_output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
