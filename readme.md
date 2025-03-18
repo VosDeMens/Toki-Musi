@@ -1,5 +1,7 @@
 # 🎵 Toki Musi
 
+This is a [Streamlit based web app](https://tokimusi.streamlit.app/) teaching a whistled conlang (constructed language) called Toki Musi.
+
 ## What is Toki Musi?
 
 Toki Musi ("fun language") is a melody-based language that you can whistle, sing, or play on an instrument. It is a whistled language port of Toki Pona, with some additional words and grammatical features.
@@ -11,11 +13,6 @@ Toki Musi is built on the foundation of [Toki Pona](http://tokipona.org/), a min
 While Toki Musi preserves the vocabulary and grammatical structure of Toki Pona, it transforms the language into musical notes, allowing it to be communicated through whistling, singing, or playing musical instruments.
 
 ## Whistled Language
-
-Toki Musi joins a global tradition of whistled languages, which exist on nearly every continent:
-
-- **Silbo Gomero** from the Canary Islands is perhaps the most well-known whistled language, developed by shepherds to communicate across steep hillsides
-- Whistled languages typically evolved in mountainous regions or dense forests where traditional speech couldn't carry far enough
 
 Unlike natural whistled languages that often encode existing spoken languages (like Silbo Gomero whistling Spanish), Toki Musi was purposely designed as a musical language with:
 
