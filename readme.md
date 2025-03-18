@@ -28,9 +28,9 @@ Unlike natural whistled languages that often encode existing spoken languages (l
 To get started with Toki Musi:
 
 1. **Learn Toki Pona** (strongly advised) - Familiarize yourself with the basic concepts and grammar
-2. Check out the [guide](./guide) to understand the musical aspects
-3. Study the [dictionary](./dictionary) to learn the melodic patterns for words
-4. Practice with our virtual [whistling assistant](./whistle_coach) and [transcription coach](./transcribe_coach)
+2. Check out the [guide](https://tokimusi.streamlit.app/guide) to understand the musical aspects
+3. Study the [dictionary](https://tokimusi.streamlit.app/dictionary) to learn the melodic patterns for words
+4. Practice with our virtual [whistling assistant](https://tokimusi.streamlit.app/whistle_coach) and [transcription coach](https://tokimusi.streamlit.app/transcribe_coach)
 
 You don't need to be a musical expert to learn Toki Musi. If you can recognize familiar songs when someone hums them, you likely have the necessary musical ear to understand and use this language.
 
