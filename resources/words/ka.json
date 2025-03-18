@@ -1,12 +1,12 @@
 {
-    "name": "ko",
-    "notes_string": "0:-1:-5:7",
-    "description": "sand, dust (for goo, check ka)",
+    "name": "ka",
+    "notes_string": "0:-5:-3:-5",
+    "description": "goo, clay, foam (i didn't like that ko meant both sand and goo, so i separated them into ko for dry substances, and ka for wet substances)",
     "nr_of_notes": 4,
     "etymelogies": [
-        "S\u00e4je - Desert Song ([and] [watch] [your] [heart])"
+        "Cory Wong - Juke On Jelly ([caught] [in] [your] [dreams])"
     ],
-    "toki_pona": true,
+    "toki_pona": false,
     "particle": false,
     "content_word": true,
     "preposition": false,

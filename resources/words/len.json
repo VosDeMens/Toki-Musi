@@ -1,10 +1,10 @@
 {
     "name": "len",
-    "notes_string": "0:7:5:4:5",
+    "notes_string": "0:2_:4:4",
     "description": "clothing, fabric, cover",
-    "nr_of_notes": 5,
+    "nr_of_notes": 4,
     "etymelogies": [
-        "Carole King - Tapestry ([*root*] [life] [has] [been] [a])"
+        "Rihanna - Umbrella"
     ],
     "toki_pona": true,
     "particle": false,

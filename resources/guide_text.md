@@ -7,7 +7,7 @@ This guide does not assume that you know any of the words in TM (Toki Musi) yet,
 ### Guidelines
 
 All of the **lines** in this **guide** are just *guidelines* (thank you).
-I made Toki Musi because I wanted it to exist. You can take from it what you want, and change everything else. I think it would be cute if there's a bunch of people that can understand each other through Toki Musi, so the more you stay on script, the more that could be a reality, but that's only important if you care about it. I have added things to Toki Musi that aren't strictly necessary, because I could and I thought it made it more fun, but I believe languages aren't something we should be too rigid about. In a way, as it stands currently, this is just version 1 of Toki Musi, and I'm the only that speaks it, and as I'm writing this I'm hardly fluent. There are probably many aspects of it that will prove to be annoying or confusing in actual use, and that should be changed, and I'm prepared to embrace that.
+I made Toki Musi because I wanted it to exist. You can take from it what you want, and change everything else. I think it would be cute if there's a bunch of people that can understand each other through Toki Musi, so the more you stay on script, the more that could be a reality, but that's only important if you care about it. I have added things to Toki Musi that aren't strictly necessary, because I could and I thought it made it more fun, but I believe languages aren't something we should be too rigid about. In a way, as it stands currently, this is just version 1 of Toki Musi, and I'm the only one that speaks it, and as I'm writing this I'm hardly fluent. There are probably many aspects of it that will prove to be annoying or confusing in actual use, and that should be changed, and I'm prepared to embrace that.
 
 ### Videos
 
@@ -25,16 +25,16 @@ You don't need to whistle Toki Musi, you can sing it or play it on an instrument
 
 ### Notes on having a "good musical ear"
 
-Are you able to recognise songs you listen to a lot by someone humming the song? If so, I believe you have the necessary musical ear to learn to understand Toki Musi. I don't think you need to be able to name musical intervals to get there. In fact, if I speak to you in a language you already understand, you are probably able to get what I'm trying to convey effortlessly. But if I then ask you how many times my sentence contained the letter f, you would have to really go over it, visualise the words, and count. This is much harder to do, and it's also clearly unnecessary. I don't have a lot of concrete evidence for this claim, but I'm unempirically convinced that anybody with the capacity to extract meaning from a bunch of phonemes (letters-ish) jumbled together in speech, also has the capacity to extract meaning from melody, if they familiarise themselves. And if you've done that, I think actually the step to being able to name musical intervals is pretty small from there, if that's something you're interesting in being able to do.
+Are you able to recognise songs you listen to a lot by someone humming the song? If so, I believe you have the necessary musical ear to learn to understand Toki Musi. I don't think you need to be able to name musical intervals to get there. In fact, if I speak to you in a language you already understand, you are probably able to get what I'm trying to convey effortlessly. But if I then ask you how many times my sentence contained the letter f, you would have to really go over it, visualise the words, and count. This is much harder to do, and it's also clearly unnecessary. I don't have a lot of concrete evidence for this claim, but I'm unempirically convinced that anybody with the capacity to extract meaning from a bunch of phonemes (letters-ish) jumbled together in speech, also has the capacity to extract meaning from melody, if they familiarise themselves. And if you've done that, I think the step to being able to name musical intervals is actually pretty small from there, if that's something you're interesting in being able to do.
 Speaking it, on the other hand, might be more tricky, as there is some building up of muscle memory involved in whistling, but then again that also goes for learning to speak any other new language. I don't remember ever not being able to reproduce a melody with my voice, so I don't know what it means to have to learn that, but there's tools to train both your ear and your whistle within this website if you want to explore this.
 
 ### Range
 
-All of the words (that you really need) in Toki Musi are within the range of the average human whistle. It spans 14 semitones, which is just over an octave, and you can whistle in any key. However, mid-sentence key changes can encode meaning if you want to get more complex sentences, but realistically this would only add 2 semitones to the required range. See what the lowest note is you can comfortably whistle, and the highest. If you don't have the range, you could decide to hum or sing instead, aside from practising your whistle of course.
+All of the words (that you really need) in Toki Musi are within the range of the average human whistle. It spans 14 semitones, which is just over an octave, and you can whistle in any key. However, mid-sentence key changes can encode meaning if you want to get more complex sentences, but realistically this would only add 2 semitones to the required range. See what the lowest note is you can comfortably whistle, and the highest. If you don't have the range, you could decide to hum or sing instead, or practise whistling of course.
 
 ### Gliding
 
-Gliding means going from one note to another in a continuous way. Toki Musi uses glides for past tense and for questions, and some words depend on glides by default. Gliding is pretty easy for most people who are able to whistle or sing, but as far as I'm aware it's impossible to do on a piano, and hard to do on a guitar, at least if you wanna glide down. A lot of musical instruments are discrete in that way, but that doesn't mean you can't play Toki Musi on these instruments. It just means you have to develop a new dialect, and I think you're just the right person for the job.
+Gliding means moving from one note to another in a continuous way. Toki Musi uses glides for past tense and for questions, and some words depend on glides by default. Gliding is pretty easy for most people who are able to whistle or sing, but as far as I'm aware it's impossible to do on a piano, and hard to do on a guitar, at least if you wanna glide down. A lot of musical instruments are discrete in that way, but that doesn't mean you can't play Toki Musi on these instruments. It just means you have to develop a new dialect, and I think you're just the right person for the job.
 
 ### Toki Pona
 
@@ -49,7 +49,7 @@ If you're here and you haven't learned Toki Pona yet, I admire your impatience. 
 <!-- - `kili` -> fruit -->
 <!-- - `telo nasa kili` -> wine -->
 <!---->
-Yes, Toki Pona only has up to 140 words, and we want to express more concepts than that, so how do we get there? We can get more specific by grouping together words. If you want to talk about wine, the closest you can get with one word is `telo`, which means water, or really any kind of liquid. If you're drinking wine with someone, this might suffice, as the other person can get it from context, but if you want to, you could add `nasa`, which means weird, or psychoactive. So now it's pretty clear you're talking about an alcoholic drink, probably, but if you want to make sure the other person doesn't think you're talking about beer, bc you're decadent like that, you could add `kili`, meaning fruit. So now you've narrowed it down pretty far. (Look at you go!) So in total this looks like `telo nasa kili` (fruity weird liquid, capturing the essence of wine). If you're someone who distinguishes between different kinds of wine beyond colour, maybe you should learn French instead.
+Yes, Toki Pona only has up to 140 words, and we want to express more concepts than that, so how do we get there? We can get more specific by grouping words together. If you want to talk about wine, the closest you can get with one word is `telo`, which means water, or really any kind of liquid. If you're drinking wine with someone, this might suffice, as the other person can get it from context, but if you want to, you could add `nasa`, which means weird, or psychoactive. So now it's pretty clear you're talking about an alcoholic drink, probably, but if you want to make sure the other person doesn't think you're talking about beer, bc you're decadent like that, you could add `kili`, meaning fruit. So now you've narrowed it down pretty far. (Look at you go!) So in total this looks like `telo nasa kili` (fruity weird liquid, capturing the essence of wine). If you're someone who distinguishes between different kinds of wine beyond colour, maybe you should learn French instead.
 
 #### Versatility of words
 
@@ -58,7 +58,7 @@ Yes, Toki Pona only has up to 140 words, and we want to express more concepts th
 <!-- - `jan moku` -> `cook` / `eater` (`moku` used as adjective) -->
 <!-- - `jan li moku` -> `the person is eating` (`moku` used as verb) -->
 <!---->
-Most words can be used in different ways, like nouns, and like verbs, and like adjectives. If we want to talk about somebody being weird, many of us have the decency to try and avoid them noticing, so we could wait until they're gone, or we could do it in a language they probably don't understand. As a Dutch person I can usually get away with this abroad, but it can occasionally lead to painful scenarios. If somebody knows Toki Pona, they've probably accepted the fact that they're weird, so if anything it's exciting for them to overhear you. The word for person is `jan`, so if you want to say weird person, we could `jan nasa`. But what if we want to say the person IS weird? There is no word for `is` in Toki Pona, so we can say `jan li nasa`, where `li` is a \~grammatical indicator\~, indicating the next word is a \~finite verb\~. Don't worry if these words scare you, for now just remember that we can use words in different ways, and we're gonna need ways to indicate which way we intend to use the words, to avoid ambiguity, which is important. In the words of Jan Misali, Toki Pona is not ambiguous, it is just vague.
+Most Toki Pona words can be used in different ways: like nouns, and like verbs, and like adjectives. If we want to talk about somebody being weird, many of us have the decency to try and avoid them noticing, so we could wait until they're gone, or we could do it in a language they probably don't understand. As a Dutch person I can usually get away with this abroad, but it can occasionally lead to painful scenarios. If somebody knows Toki Pona, they've probably accepted the fact that they're weird, so if anything it's exciting for them to overhear you. The word for person is `jan`, so if you want to say weird person, we could say `jan nasa`. But what if we want to say the person IS weird? There is no word for `is` in Toki Pona, so we can say `jan li nasa`, where `li` is a \~grammatical indicator\~, indicating the next word is a \~finite verb\~. Don't worry if these words scare you, for now just remember that we can use words in different ways, and we're gonna need ways to indicate which way we intend to use the words, to avoid ambiguity, which is important. In the words of Jan Misali, Toki Pona is not ambiguous, it is just vague.
 
 #### Ok sorry, a bit more on grammatical indicators
 
@@ -83,7 +83,7 @@ This bit contains some scary grammar words but they will all be explained by exa
 `jan pona li kama` -> `The friend comes`.
 `jan pona o kama` -> `Come, friend!`.
 `kasi o kama` -> `The plant should come`.
-This last one is implied to mean that it should happen somehow, because clearly the plant itself is not gonna come on its own volition.
+This last one means that it should happen somehow, because clearly the plant itself is not gonna come on its own volition.
 We all agree it's ok to use `o` and it's not rude.
 
 ##### a
@@ -98,18 +98,18 @@ We all agree it's ok to use `o` and it's not rude.
 `ma pi kali suli` -> `[big plant]-y place` (forest might be small but the trees are huge)
 
 ##### la
-If you want to say something like: `In my opinion, ...` in Toki Pona, this isn't translated word by word, but we use `la` to achieve this, which could be translated roughly to `regarding [whatever came before it]`. So `In my opinion, ...` could be `mi la ...`, and `If x, y` could be `x la y`. What exactly `la` means depends on the context, but it will become intuitive.
+If you want to say something like: `In my opinion, ...` in Toki Pona, this isn't translated word by word, but we use `la` to achieve this, which could be translated roughly to `regarding [whatever came before it]`. So `In my opinion, ...` could be `mi la ...`, and `If x, then y` could be `x la y`. What exactly `la` means depends on the context, but it will become intuitive.
 
 
 ## 🧱 How are Toki Musi words built
 
-As with any respectable set of rules, there are exceptions to almost all of these, and like all teachers I've ever had in my life, I'm gonna pretend like that's not the case initially, in an attempt to not overwhelm the reader, but hey at least I'm giving you a heads up, and I'll indicate where exceptions apply with a * and then go into it later in the guide. Luckily, in practice all of these exceptions stand out clearly and are not confusing.*
+As with any respectable set of rules, there are exceptions to almost all of these, and like all teachers I've ever had in my life, I'm gonna pretend like that's not the case initially, in an attempt to not overwhelm the reader, but hey at least I'm giving you a heads-up, and I'll indicate where exceptions apply with a * and then go into it later in the guide. Luckily, in practice all of these exceptions stand out clearly and are not confusing.*
 - All words in Toki Musi are short melodies*, of 1 to 5 notes*, depending on how often we need them. Wherever I could, I picked these melodies to represent the meaning of the word somehow.
-- All words have a text version, which is either the Toki Pona translation, if the word is taken from Toki Pona, or a variation to a word in Toki Pona, if I thought there needed to be a variation, or some English word I thought was fitting.
+- All words have a text version, which is either the Toki Pona translation (if the word is taken from Toki Pona), or a variation to a word in Toki Pona (if I thought there needed to be a variation), or some English word I thought was fitting.
 - Notes can be short, long, trill up, trill down, glide up, and glide down, or some combination.
 - All words, in their unmodified form, start on the same short note.* You can choose per sentence which note that should be, but you have to be consistent within the sentence.* The first note of a word doesn't appear anywhere else within the word.* So if you hear the first note of a sentence repeated, it's probably the start of a new word.* Also it is advised to leave a small pause between words as an extra indication of a new word.
 - All words, in their unmodified form, end on a short note.*
-- Otherwise notes in the middle can be short, long, or trill or glide, but they almost never trill or glide mid-word.
+- Otherwise notes in the middle can be short, long, or trill or glide, although trills and glides for middle notes are rare.
 - Words can be combined into composition words, by contracting their melodies, but don't worry about this initially. I tried to minimise possible clashes between different probable combinations of words as I was assigning melodies to words.
 
 ## 🧐 How to read notes strings
@@ -122,19 +122,19 @@ I needed a way to write down melodies that my janky DIY synthesiser would be abl
 - To indicate a long note, we add `_`: `0:7_:3`\$.
 - To indicate a trill up, we add `^`: `0:3:5^:3`\$.
 - To indicate a trill down, we add `*`: `0:4*`\$.
-- To indicate silence, we can use `r` instead of a number, although I didn't end up including this in a lot of words.
+- To indicate silence, we can use `r` (for rest) instead of a number, although I didn't end up including this in a lot of words.
 
 Try it yourself! (I didn't plan to include this feature, so I didn't create logic to check whether a notes string is formatted correctly. Have fun breaking the synthesiser and getting weird unhandled exceptions.)
 \$\$
 
 ## ✨ Word modifications
 
-In Toki Pona, there is no plural, no comparative (good -> better), no superlative (good -> best), no past tense, no question mark, a lot of things aren't in Toki Pona. This is kind of the point of Toki Pona, because you don't reeaally really need any of that, and for some of these there are ways to work around these absences. I appreciate Toki Pona for this, but it was never my intention to make this language as simple as possible. I picked Toki Pona as an inspiration because I couldn't imagine building a whole dictionary, but I'm otherwise all about \~grammar\~. All of these modifications are expressed by changes to the first or the last note. This is the reason that by default, the first and the last note are always short.
+In Toki Pona, there is no plural, no comparative (good -> better), no superlative (good -> best), no past tense, no question mark. All in all, a lot of things aren't in Toki Pona. This is kind of the point of Toki Pona, because you don't reeaally really need any of that, and for some of these there are ways to work around these absences. I appreciate Toki Pona for this, but it was never my intention to make this language as simple as possible, so I added them in Toki Musi. I picked Toki Pona as an inspiration because I couldn't imagine building a whole dictionary, but I'm otherwise all about \~grammar\~. All of these modifications are expressed by changes to the first or the last note. This is the reason that by default, the first and the last note are always short.
 
 ### Plural
 
 To pluralise a word, we elongate the last note.
-Written out:
+Written out Toki Musi:
 `tomo` -> `tomo-s`
 Notes strings:
 `0:7:4`\$ -> `0:7:4_`\$ 
@@ -145,7 +145,7 @@ English:
 
 To comparativise a word, we trill the last note down.
 
-Written out:
+Written out Toki Musi:
 `musi` -> `musi-er (tawa)`
 Notes strings:
 `0:5_:9`\$ -> `0:5_:9* (0:4:7)`\$
@@ -154,9 +154,8 @@ English:
 
 ### Superlative
 
-To comparativise a word, we trill the last note up.
-Written out:
-
+To superlativise a word, we trill the last note up.
+Written out Toki Musi:
 `jaki` -> `jaki-est`
 Notes strings:
 `0:3:6`\$ -> `0:3:6^`\$
@@ -168,7 +167,7 @@ English:
 A finite verb is the verb that gets an `s` in English in the third person singular: The tree `falls`. The tree `doesn't` fall. In one of them, `fall` is used as a finite verb, in the other one it isn't.
 To finite verbify a word, we elongate the first note.
 
-Written out:
+Written out Toki Musi:
 `soweli suli` -> `soweli _suli`
 Notes strings:
 `0:-4_:-2 0:1:2`\$ -> `0:-4_:-2 0_:1:2`\$
@@ -182,7 +181,7 @@ English:
 
 The direct object is the part of a sentence that something is happening to. I see `you`. I carry `the ball`. To direct objectify a word, we double the first note.
 
-Written out:
+Written out Toki Musi:
 `kiwen _pakala suno` -> `kiwen _pakala .suno`
 Notes strings:
 `0:2:5:2:5 0_:3_:7 0:2:5:7`\$ -> `0:2:5:2:5 0_:3_:7 0:0:2:5:7`\$
@@ -193,9 +192,9 @@ English:
 
 ### Past tense
 
-To past tensify a word, we glide the last note down. If you're someone who likes having fun, nothing is stopping you from getting creative with this. For all I care you don't have to limit yourself to verbs even. I don't think it's too outrageous to talk about the past tense of a person, if we're talking somebody who died. Actually I think it's more poetic than saying they were a person.
+To past tensify a word, we glide the last note down. If you're someone who likes having fun, nothing is stopping you from getting creative with this. For all I care you don't have to limit yourself to verbs even. I don't think it's too outrageous to talk about the past tense of a person, if we're talking about somebody who died. Actually I think it's more poetic than saying they were a person. In Japanese there is a past tense for adjectives as well, apparently.
 
-Written out:
+Written out Toki Musi:
 `mi-s _kama sona` -> `mi-s _kama-ed sona` -> `mi-s _kama sona-ed` -> `mi-s _kama-ed sona-ed`
 Notes strings:
 `0:-5_ 0_:4:-5 0:7:5`\$ -> `0:-5_ 0_:4:-5\ 0:7:5`\$ -> `0:-5_ 0_:4:-5 0:7:5\`\$ -> `0:-5_ 0_:4:-5\ 0:7:5\`\$
@@ -208,7 +207,7 @@ Funnily, usually happens in that order in practice.
 
 If we want to turn a statement into a question, we have a lot more freedom to do that than in English, as we can turn any one word into a question, by gliding its last note up.
 
-Written out:
+Written out Toki Musi:
 `ona _pali .na` -> `ona-? _pali .na` -> `ona _pali-? .na` -> `ona _pali .na-?`
 Notes strings:
 `0:-1 0_:-3:4 0:0:2:2`\$ -> `0:-1/ 0_:-3:4 0:0:2:2`\$ -> `0:-1 0_:-3:4/ 0:0:2:2`\$ -> `0:-1 0_:-3:4 0:0:2:2/`\$
@@ -219,7 +218,7 @@ English:
 
 Of course we can combine different modifications to words.
 
-Written out:
+Written out Toki Musi:
 `sina lili` -> `sina _lili` -> `sina _lili-er` -> `sina _lili-er-ed` -> `sina _lili-er-ed-?`
 Notes strings:
 `0:-2 0:-1:-2`\$ -> `0:-2 0_:-1:-2`\$ -> `0:-2 0_:-1:-2*`\$ -> `0:-2 0_:-1:-2*\`\$ -> `0:-2 0_:-1:-2*\/`\$
@@ -232,7 +231,7 @@ If words often appear together, we might want to contract their melodies into on
 We can do this by just removing the `0` of the second word and sticking the melodies together: `pona` (`good`) and `ken` (`being able`), together meaning `easy`: `0:4 0:5:7_:5`\$ -> `0:4:5:7_:5`\$.
 But if the end of the first word is the same as the beginning of the second word (disregarding the `0` we were gonna remove anyway), we could decide to overlap the melodies. I really like this one: `blue` (`blue`) with `waso` (`bird`), together meaning `sky` (haven't seen this used in Toki Pona but I really like it): `0:2:7_:4 0:7_:4:7_:4`\$ -> `0:2:7_:4:7_:4`\$.
 Or `tomo` (`space you can be in`) and `tawa` (`move`), together meaning `vehicle`, often `car`: `0:7:4 0:4:7`\$ -> `0:7:4:7`\$, which we can combine with `po` (`police`), to get `police car`: `0:7:4:7 0:9:5:9`\$ which I think is hilarious that that worked out if I may say so myself.
-I'm ok to be a bit liberal with what amount to a valid overlap, like with `kalama` (`sound`) and `musi` (`fun`) together meaning `music`: `0:2_:4:5:5 0:5_:9`\$ -> `0:2_:4:5_:9`\$
+I'm ok to be a bit liberal with what amounts to a valid overlap, like with `kalama` (`sound`) and `musi` (`fun`) together meaning `music`: `0:2_:4:5:5 0:5_:9`\$ -> `0:2_:4:5_:9`\$
 Of course this is gonna be difficult to do and to recognise initially, but I wanted to leave space for this to evolve, so I explored options and I actually spent a lot of time trying to keep an overview of which melodies I had picked for which words, to prevent any potential clashes. For example if we have two pairs of words that often appear together, like `0:4 0:5:7`\$ (`good` and `wholesome`) and `0:4:5 0:7`\$ (`truth` and `conversation`), these could both be contracted to `0:4:5:7`\$. So I made sure that these aren't both combinations we could decide to want to contract. Actually in this I expect neither of these to be important combinations, and `0:4:5:7`\$ hasn't currently been assigned a meaning, although I would like for it to mean `hour` in some form, because of the song Ik Loat D'n Dag Nog Efkes Dure by Gerard van Maasakkers, about the beauty of the last hour before sunset.
 
 ## 🎼 Key changes
@@ -243,7 +242,7 @@ In Toki Pona, we use `la` and `pi` to convey certain grammatical intentions, as 
 - I imagine key changes of 2 semitones will be a good rule of thumb, and this is what I've used in the synthesiser, and what Whistle Coach is looking out for, but I don't think it has to be 2 semitones if you prefer something else.
 - If you don't wanna do key changes, the words `0*` and `0^` are free as of yet and could be replacements.
 
-Written out:
+Written out Toki Musi:
 `mi la ni _pona`
 Notes string:
 `0:-5 - 0:2 0_:4`\$
@@ -268,4 +267,4 @@ Toki Pona is genderless by default, but has words for `man/male`, for `woman/fem
 
 ## 👋 Closing remarks
 
-Hey! Welcome to the end of the guide. I have worked on Toki Musi on and off for half a year, and it kept me going through otherwise pretty challenging times. I am so fucking excited I actually finished it, and can now share it. Just today I have been programming and writing for 17 consecutive hours ✌️ Which is definitely a hyperfocus PR for me but I could just smell the finish line. I know this guide a lot to take in, good on you for making it through! I think you're ready to look at some words and get a-whistling. I want to reiterate this is the first time I ever make a language, and there's probably a lot of room for improvement, so let me know if you have suggestions or any comments at all and thanks again for being here!
+Hey! Welcome to the end of the guide. I have worked on Toki Musi on and off for half a year, and it kept me going through otherwise pretty challenging times. I am so fucking excited I actually finished it, and can now share it. Just today I have been programming and writing for 17 consecutive hours ✌️ Which is definitely a hyperfocus PR for me but I could just smell the finish line. I know this guide is a lot to take in, good on you for making it through! I think you're ready to look at some words and get a-whistling. I want to reiterate this is the first time I ever make a language, and there's probably a lot of room for improvement, so let me know if you have suggestions or any comments at all (my contacts are in the About page somewhere) and thanks again for being here!

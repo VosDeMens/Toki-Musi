@@ -55,12 +55,12 @@ moku _pona .sina - The food will make you feel better.
 mi _sona-ed .lipu - I understood the textbook.
 mi _jo .kiwen - I have a rock...
 mama _lukin .sina - Mom sees you.
-telo _pali .ko - The water is making foam.
+telo _pali .ka - The water is making foam.
 sina _pakala-ed .musi - You ruined the game!
 sina _ante-ed .lipu - You changed the code.
 mi _kute .kulupu - I hear the choir.
 jan _pana .sona - People will teach you!
-sina _pilin .ko - You're feeling the gum!
+sina _pilin .ka - You're feeling the gum!
 kasi _wile .pona - The garden needs help!
 kasi _nasa _jaki - The flower is weird and smelly!
 mama _pona .sina .mi - Mom and dad are gonna make you and I better!

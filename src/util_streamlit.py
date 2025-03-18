@@ -259,7 +259,7 @@ def render_settings(
             )
             st.divider()
         if allow_keychanges:
-            st.subheader("Allow keychanges")
+            st.subheader("Allow key changes")
             st.write(  # type: ignore
                 "When loading a random reference sentence, allow sentences with key changes (more difficult)."
             )
