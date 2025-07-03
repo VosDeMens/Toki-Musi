@@ -61,8 +61,8 @@ def render_section(header: str, content: list[str]) -> None:
             elif line == 4 * "\\$":
                 render_nose_whistle_cover()
             else:
-                formatted_text = re.sub(r"`([^`]+)`", r"<code>\1</code>", line)
-                st.markdown(formatted_text, unsafe_allow_html=True)
+                # formatted_text = re.sub(r"`([^`]+)`", r"<tt>\1</tt>", line)
+                st.markdown(line, unsafe_allow_html=True)
 
 
 def enrich_text(raw: str) -> str:
