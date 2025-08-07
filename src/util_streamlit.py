@@ -16,6 +16,20 @@ TM_WORDS = get_words_from_sentence("toki musi")
 TM_AUDIO = get_sentence_wave(TM_WORDS)
 TM_HTML = audio_to_html(TM_AUDIO)
 
+STYLE = """<style>
+.code-hightlight {
+  padding: 0.2em 0.4em;
+  overflow-wrap: break-word;
+  margin: 0px;
+  border-radius: 0.25rem;
+  background: rgb(26, 28, 36);
+  color: rgb(9, 171, 59);
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.75em;
+}
+</style>
+"""
+
 
 def st_audio(wave: floatlist, sample_rate: int = SAMPLE_RATE) -> None:
     st.audio(marginify_wave(wave), sample_rate=sample_rate, format="audio/wav")  # type: ignore
@@ -61,8 +75,11 @@ def render_section(header: str, content: list[str]) -> None:
             elif line == 4 * "\\$":
                 render_nose_whistle_cover()
             else:
-                # formatted_text = re.sub(r"`([^`]+)`", r"<tt>\1</tt>", line)
-                st.markdown(line, unsafe_allow_html=True)
+                formatted_text = re.sub(
+                    r"`([^`]+)`", r'<code class="code-hightlight">\1</code>', line
+                )
+                formatted_text = STYLE + formatted_text.replace(":-1:", ":&#8203;-1:")
+                st.markdown(formatted_text, unsafe_allow_html=True)
 
 
 def enrich_text(raw: str) -> str:

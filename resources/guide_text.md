@@ -118,7 +118,7 @@ I needed a way to write down melodies that my janky DIY synthesiser would be abl
 - Notes are denoted by numbers, where `0` is the root, and `1` is the note one semi-tone above `0`. The rest of the numbers should make sense then, but as an example a major chord in sequence would be `0`, then `4`, then `7`.
 - To seperate notes, we use `:`, so the major chord would look like this: `0:4:7`\$, or a different voicing: `0:4:-5`\$.
 - You won't find any notes below `-5` or above `9`. (:eyes:)
-- To indicate a glide between two notes, we use `/` or `\`: `0/4`\$, `0\-5`\$. A glide at the end of a word to no particular note is similarly denoted like this: `0:4/`\$ or `0:4\`\$.
+- To indicate a glide between two notes, we use `/` or `\\`: `0/4`\$, `0\-5`\$. A glide at the end of a word to no particular note is similarly denoted like this: `0:4/`\$ or `0:4\\`\$.
 - To indicate a long note, we add `_`: `0:7_:3`\$.
 - To indicate a trill up, we add `^`: `0:3:5^:3`\$.
 - To indicate a trill down, we add `*`: `0:4*`\$.
@@ -197,7 +197,7 @@ To past tensify a word, we glide the last note down. If you're someone who likes
 Written out Toki Musi:
 `mi-s _kama sona` -> `mi-s _kama-ed sona` -> `mi-s _kama sona-ed` -> `mi-s _kama-ed sona-ed`
 Notes strings:
-`0:-5_ 0_:4:-5 0:7:5`\$ -> `0:-5_ 0_:4:-5\ 0:7:5`\$ -> `0:-5_ 0_:4:-5 0:7:5\`\$ -> `0:-5_ 0_:4:-5\ 0:7:5\`\$
+`0:-5_ 0_:4:-5 0:7:5`\$ -> `0:-5_ 0_:4:-5\ 0:7:5`\$ -> `0:-5_ 0_:4:-5 0:7:5\\`\$ -> `0:-5_ 0_:4:-5\ 0:7:5\\`\$
 English:
 `we learn (come to know)` -> `we learned (came to know)` -> `we forget (come to knew)` -> `we forgot (came to knew)`
 
@@ -221,7 +221,7 @@ Of course we can combine different modifications to words.
 Written out Toki Musi:
 `sina lili` -> `sina _lili` -> `sina _lili-er` -> `sina _lili-er-ed` -> `sina _lili-er-ed-?`
 Notes strings:
-`0:-2 0:-1:-2`\$ -> `0:-2 0_:-1:-2`\$ -> `0:-2 0_:-1:-2*`\$ -> `0:-2 0_:-1:-2*\`\$ -> `0:-2 0_:-1:-2*\/`\$
+`0:-2 0:-1:-2`\$ -> `0:-2 0_:-1:-2`\$ -> `0:-2 0_:-1:-2*`\$ -> `0:-2 0_:-1:-2*\\`\$ -> `0:-2 0_:-1:-2*\/`\$
 English:
 `little you` -> `you are small` -> `you are smaller` -> `you were smaller` -> `were you smaller?`
 
