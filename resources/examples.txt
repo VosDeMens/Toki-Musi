@@ -146,7 +146,7 @@ mi _pali lon tenpo mute - I work for a lot of time.
 mi _wale tawa ma ante - I have to go somewhere different!
 ma _suli-er ala tawa sewi rest ona _suli-er tawa jan-s - The earth isn't larger than the sky. It's larger than people.
 mi _pilin ike tan tawa-ed anpa lon tenpo poka - I'm feeling bad because I fell down recently.
-mi _pana .ni tawa sina _tan wale-ed mi - I'm giving this to you because I had to.
+mi _pana .ni tawa sina tan wale mi - I'm giving this to you because I had to.
 mi _ken lon ma ale lon tenpo ale - I can be in any place, at any time!
 kasi-s _lon ala ma sewi - Plants aren't on ground that is way high up!
 kasi-s lili _sama ala kasi suli - The shrubs and grasses are not similar to the trees.
