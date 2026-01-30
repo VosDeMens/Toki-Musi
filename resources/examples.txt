@@ -117,7 +117,7 @@ sina _sona ala wawa .ken sina - You don't know how to empower your ability.
 mi _wile ala awen lape - I don't want to keep sleeping.
 mi _alasa ala kama loje - I'm not trying to get sunburnt!
 ona _pana .ni ala rest ona _pana .ni! - They gave NOT this. They gave that!
-ni _jaki mute! mi luka ala .ni - That is so gross. I'm not touching that!
+ni _jaki mute! rest mi luka ala .ni - That is so gross. I'm not touching that!
 
 mi _tawa telo suli - I'm traveling to the ocean!
 ona _pana-ed .sona _tawa jan-s ante - They gave knowledge to different people.
