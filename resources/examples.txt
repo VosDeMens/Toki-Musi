@@ -253,7 +253,7 @@ soweli _kipisi-ed .moku tawa pana - The animal divided up the food to give (it).
 ni _nanpa 1 tawa mi - This is my favorite!
 sina _jo .kasi-s 27 - You have twenty seven plants.
 jan-s 201 _lon - There are two hundred and one people here.
-mi _lukin .lipu-s 15 - I've read fifteen books.
+mi _lukin-ed .lipu-s 15 - I've read fifteen books.
 mi kin _wile na - I also want to do that!
 kasi ni _loje kin - This plant is red (and another colour), too!
 mi _lukin .lipu kin - I read this book as well (and read something else).
